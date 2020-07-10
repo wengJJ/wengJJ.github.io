@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+      <meta name="robots" content="noindex,follow">
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>标签：pandas - 挖掘之家</title>
+  
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img class='logo' src='https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png'/>
+          
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+
+<div class='l_main'>
+  
+    
+      
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/">
+      数据矿工学习-Python数据分析之pandas
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>Mr. X</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Python/数据挖掘</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2018年5月21日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面一篇文章我们介绍了numpy，但numpy的特长并不是在于数据处理，而是在它能非常方便地实现科学计算，所以我们日常对数据进行处理时用的numpy情况并不是很多，我们需要处理的数据一般都是带有列标签和index索引的，而numpy并不支持这些，这时我们就需要pandas上场啦！</p>
+<h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT?"></a>WHAT?</h2><p><strong>Pandas</strong>是基于<strong>Numpy</strong>构建的库，在数据处理方面可以把它理解为numpy加强版，同时Pandas也是一项开源项目：<a href="https://mp.csdn.net/postedit/http" target="_blank" rel="noopener">Github</a> 。不同于numpy的是，pandas拥有种数据结构：<strong>Series</strong>和<strong>DataFrame</strong>： </p>
+<p><img src="https://img-blog.csdn.net/20180517170316529" alt=""></p>
+<p><strong>下面我们就来生成一个简单的series对象来方便理解：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line">In [<span class="number">2</span>]: <span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">In [<span class="number">3</span>]: data = Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],index = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>])</span><br><span class="line">In [<span class="number">4</span>]: data</span><br><span class="line">Out[<span class="number">4</span>]:</span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">c    <span class="number">3</span></span><br><span class="line">d    <span class="number">4</span></span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+<p>Series是一种类似一维数组的数据结构，由一组数据和与之相关的index组成，这个结构一看似乎与dict字典差不多，我们知道字典是一种<strong>无序</strong>的数据结构，而pandas中的Series的数据结构不一样，它相当于<strong>定长有序</strong>的字典，并且它的<strong>index和value</strong>之间是<strong>独立</strong>的，两者的索引还是有区别的，Series的<strong>index</strong>是<strong>可变</strong>的，而<strong>dict</strong>字典的<strong>key</strong>值是不可变的。</p>
+<p><img src="https://img-blog.csdn.net/20180517170334710" alt=""></p>
+<p><strong>下面照例生成一个简单的DataFrame对象：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">8</span>]: data = &#123;<span class="string">'a'</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="string">'b'</span>:[<span class="string">'we'</span>,<span class="string">'you'</span>,<span class="string">'they'</span>],<span class="string">'c'</span>:[<span class="string">'btc'</span>,<span class="string">'eos'</span>,<span class="string">'ae'</span>]&#125;</span><br><span class="line">In [<span class="number">9</span>]: df = DataFrame(data)</span><br><span class="line">In [<span class="number">10</span>]: df</span><br><span class="line">Out[<span class="number">10</span>]:</span><br><span class="line">   a     b    c</span><br><span class="line"><span class="number">0</span>  <span class="number">1</span>    we  btc</span><br><span class="line"><span class="number">1</span>  <span class="number">2</span>   you  eos</span><br><span class="line"><span class="number">2</span>  <span class="number">3</span>  they   ae</span><br></pre></td></tr></table></figure>
+<p>DataFrame这种数据结构我们可以把它看作是一张二维表，DataFrame长得跟我们平时使用的Excel表格差不多，DataFrame的横行称为<strong>columns</strong>，竖列和Series一样称为<strong>index</strong>，DataFrame每一列可以是不同类型的值集合，所以DataFrame你也可以把它视为不同数据类型同一index的Series集合。</p>
+<h1 id="WHY"><a href="#WHY" class="headerlink" title="WHY?"></a>WHY?</h1><p>科学计算方面numpy是优势，但在数据处理方面DataFrame就更胜一筹了，事实上DataFrame已经覆盖了一部分的数据操作了，对于数据挖掘来说，工作可大概分为读取数据-数据清洗-分析建模-结果展示：</p>
+<p>先说说<strong>读取数据</strong>，Pandas提供强大的IO读取工具，csv格式、Excel文件、数据库等都可以非常简便地读取，对于大数据，pandas也支持大文件的分块读取； </p>
+<p>接下来就是<strong>数据清洗</strong>，面对数据集，我们遇到最多的情况就是存在缺失值，Pandas把各种类型数据类型的缺失值统一称为NaN（这里要多说几句，None==None这个结果是true，但np.nan==np.nan这个结果是false，NaN在官方文档中定义的是float类型，有关于NaN和None的区别以及使用，有位博主已经做好整理：<a href="https://junjiecai.github.io/posts/2016/Oct/20/none_vs_nan/" target="_blank" rel="noopener">None vs NaN</a>）,Pandas提供许多方便快捷的方法来处理这些缺失值NaN。 </p>
+<p>最重要的<strong>分析建模</strong>阶段，Pandas自动且明确的数据对齐特性，非常方便地使新的对象可以正确地与一组标签对齐，有了这个特性，Pandas就可以非常方便地将数据集进行拆分-重组操作。 </p>
+<p>最后就是<strong>结果展示</strong>阶段了，我们都知道Matplotlib是个数据视图化的好工具，Pandas与Matplotlib搭配，不用复杂的代码，就可以生成多种多样的数据视图。</p>
+<h1 id="HOW？"><a href="#HOW？" class="headerlink" title="HOW？"></a>HOW？</h1><h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p><strong>Series的两种生成方式：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">19</span>]: data = Series([<span class="number">222</span>,<span class="string">'btc'</span>,<span class="number">234</span>,<span class="string">'eos'</span>])</span><br><span class="line">In [<span class="number">20</span>]: data</span><br><span class="line">Out[<span class="number">20</span>]:</span><br><span class="line"><span class="number">0</span>    <span class="number">222</span></span><br><span class="line"><span class="number">1</span>    btc</span><br><span class="line"><span class="number">2</span>    <span class="number">234</span></span><br><span class="line"><span class="number">3</span>    eos</span><br><span class="line">dtype: object</span><br></pre></td></tr></table></figure>
+<p>虽然我们在生成的时候没有设置index值，但Series还是会自动帮我们生成index，这种方式生成的Series结构跟list列表差不多，可以把这种形式的Series理解为竖起来的list列表。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">21</span>]: data = Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],index = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>])</span><br><span class="line">In [<span class="number">22</span>]: data</span><br><span class="line">Out[<span class="number">22</span>]:</span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">c    <span class="number">3</span></span><br><span class="line">d    <span class="number">4</span></span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+<p>这种形式的Series可以理解为numpy的array外面披了一件index的马甲，所以array的相关操作，Series同样也是支持的。结构非常相似的<strong>dict字典同样也是可以转化为Series格式的</strong>： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">29</span>]: dic = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="string">'as'</span>&#125; </span><br><span class="line">In [<span class="number">30</span>]: dicSeries = Series(dic)</span><br></pre></td></tr></table></figure>
+<p><strong>查看Series的相关信息：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">32</span>]: data.index </span><br><span class="line">Out[<span class="number">32</span>]: Index([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>], dtype=<span class="string">'object'</span>) </span><br><span class="line">In [<span class="number">33</span>]: data.values </span><br><span class="line">Out[<span class="number">33</span>]: array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], dtype=int64) </span><br><span class="line">In [<span class="number">35</span>]: <span class="string">'a'</span> <span class="keyword">in</span> data <span class="comment">#in方法默认判断的是index值 </span></span><br><span class="line">Out[<span class="number">35</span>]: <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p><strong>Series的NaN生成：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">46</span>]: index1 = [ <span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>]</span><br><span class="line">In [<span class="number">47</span>]: dic = &#123;<span class="string">'b'</span>:<span class="number">1</span>,<span class="string">'c'</span>:<span class="number">1</span>,<span class="string">'d'</span>:<span class="number">1</span>&#125;</span><br><span class="line">In [<span class="number">48</span>]: data2 = Series(dic,index=index1)</span><br><span class="line">In [<span class="number">49</span>]: data2</span><br><span class="line">Out[<span class="number">49</span>]:</span><br><span class="line">a    NaN</span><br><span class="line">b    <span class="number">1.0</span></span><br><span class="line">c    <span class="number">1.0</span></span><br><span class="line">d    <span class="number">1.0</span></span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
+<p>从这里我们可以看出Series的生成依据的是<strong>index值</strong>，index‘a’在字典dic的key中并不存在，Series自然也找不到’a’的对应value值，这种情况下Pandas就会自动生成<strong>NaN(not a number)</strong>来填补缺失值，这里还有个有趣的现象，原本dtype是int类型，生成NaN后就变成了float类型了，因为NaN的官方定义就是<strong>float类型</strong>。</p>
+<p><strong>NaN的相关查询：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">58</span>]: data2.isnull()</span><br><span class="line">Out[<span class="number">58</span>]:</span><br><span class="line">a     <span class="literal">True</span></span><br><span class="line">b    <span class="literal">False</span></span><br><span class="line">c    <span class="literal">False</span></span><br><span class="line">d    <span class="literal">False</span></span><br><span class="line">dtype: bool</span><br><span class="line"> </span><br><span class="line">In [<span class="number">59</span>]: data2.notnull()</span><br><span class="line">Out[<span class="number">59</span>]:</span><br><span class="line">a    <span class="literal">False</span></span><br><span class="line">b     <span class="literal">True</span></span><br><span class="line">c     <span class="literal">True</span></span><br><span class="line">d     <span class="literal">True</span></span><br><span class="line">dtype: bool</span><br><span class="line"> </span><br><span class="line">In [<span class="number">60</span>]: data2[data2.isnull()==<span class="literal">True</span>]    <span class="comment">#嵌套查询NaN</span></span><br><span class="line">Out[<span class="number">60</span>]:</span><br><span class="line">a   NaN</span><br><span class="line">dtype: float64</span><br><span class="line"> </span><br><span class="line">In [<span class="number">64</span>]: data2.count()    <span class="comment">#统计非NaN个数</span></span><br><span class="line">Out[<span class="number">64</span>]: <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>切记切记，查询NaN值切记不要使用np.nan==np.nan这种形式来作为判断条件，结果永远是False，==是用作<strong>值判断</strong>的，而NaN并没有值，如果你不想使用上方的判断方法，你可以使用is作为判断方法，<strong>is</strong>是<strong>对象引用判断</strong>，<strong>np.nan is np.nan</strong>，结果就是你要的True。 </p>
+<p><strong>Series自动对齐：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">72</span>]: data1</span><br><span class="line">Out[<span class="number">72</span>]:</span><br><span class="line">a      <span class="number">1</span></span><br><span class="line">asd    <span class="number">1</span></span><br><span class="line">b      <span class="number">1</span></span><br><span class="line">dtype: int64</span><br><span class="line"> </span><br><span class="line">In [<span class="number">73</span>]: data</span><br><span class="line">Out[<span class="number">73</span>]:</span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">c    <span class="number">3</span></span><br><span class="line">d    <span class="number">4</span></span><br><span class="line">dtype: int64</span><br><span class="line"> </span><br><span class="line">In [<span class="number">74</span>]: data+data1</span><br><span class="line">Out[<span class="number">74</span>]:</span><br><span class="line">a      <span class="number">2.0</span></span><br><span class="line">asd    NaN</span><br><span class="line">b      <span class="number">3.0</span></span><br><span class="line">c      NaN</span><br><span class="line">d      NaN</span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
+<p>从上面两个Series中不难看出各自的index所处位置并不完全相同，这时Series的<strong>自动对齐</strong>特性就发挥作用了，在算术运算中，Series会自动寻找匹配的<strong>index值</strong>进行运算，如果index不存在匹配则自动赋予NaN,值得注意的是，<strong>任何数+NaN=NaN</strong>,你可以把NaN理解为吸收一切的黑洞。 </p>
+<p><strong>Series的name属性：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">84</span>]: data.index.name = <span class="string">'abc'</span></span><br><span class="line">In [<span class="number">85</span>]: data.name = <span class="string">'test'</span></span><br><span class="line">In [<span class="number">86</span>]: data</span><br><span class="line">Out[<span class="number">86</span>]:</span><br><span class="line">abc</span><br><span class="line">a    <span class="number">1</span></span><br><span class="line">b    <span class="number">2</span></span><br><span class="line">c    <span class="number">3</span></span><br><span class="line">d    <span class="number">4</span></span><br><span class="line">Name: test, dtype: int64</span><br></pre></td></tr></table></figure>
+<p>Series<strong>对象本身</strong>及其<strong>索引index</strong>都有一个<strong>name属性</strong>，name属性主要发挥作用是在<strong>DataFrame</strong>中，当我们把一个Series对象放进DataFrame中，新的列将根据我们的name属性对该列进行命名，如果我们没有给Series命名，DataFrame则会自动帮我们命名为<strong>0</strong>。  </p>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><p><strong>DataFrame的生成：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">87</span>]:  data = &#123;<span class="string">'name'</span>: [<span class="string">'BTC'</span>, <span class="string">'ETH'</span>, <span class="string">'EOS'</span>], <span class="string">'price'</span>:[<span class="number">50000</span>, <span class="number">4000</span>, <span class="number">150</span>]&#125;</span><br><span class="line">In [<span class="number">88</span>]: data = DataFrame(data)</span><br><span class="line">In [<span class="number">89</span>]: data</span><br><span class="line">Out[<span class="number">89</span>]:</span><br><span class="line">  name  price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span></span><br><span class="line"><span class="number">2</span>  EOS    <span class="number">150</span></span><br></pre></td></tr></table></figure>
+<p>DataFrame的生成与Series差不多，你可以自己指定index，也可不指定，DataFrame会自动帮你补上。</p>
+<p><strong>查看DataFrame的相关信息：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">95</span>]: data.index</span><br><span class="line">Out[<span class="number">95</span>]: RangeIndex(start=<span class="number">0</span>, stop=<span class="number">3</span>, step=<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">96</span>]: data.values</span><br><span class="line">Out[<span class="number">96</span>]:</span><br><span class="line">array([[<span class="string">'BTC'</span>, <span class="number">50000</span>],</span><br><span class="line">       [<span class="string">'ETH'</span>, <span class="number">4000</span>],</span><br><span class="line">       [<span class="string">'EOS'</span>, <span class="number">150</span>]], dtype=object)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">97</span>]: data.columns    <span class="comment">#DataFrame的列标签</span></span><br><span class="line">Out[<span class="number">97</span>]: Index([<span class="string">'name'</span>, <span class="string">'price'</span>], dtype=<span class="string">'object'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>DataFrame的索引：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">92</span>]: data.name</span><br><span class="line">Out[<span class="number">92</span>]:</span><br><span class="line"><span class="number">0</span>    BTC</span><br><span class="line"><span class="number">1</span>    ETH</span><br><span class="line"><span class="number">2</span>    EOS</span><br><span class="line">Name: name, dtype: object</span><br><span class="line"> </span><br><span class="line">In [<span class="number">93</span>]: data[<span class="string">'name'</span>]</span><br><span class="line">Out[<span class="number">93</span>]:</span><br><span class="line"><span class="number">0</span>    BTC</span><br><span class="line"><span class="number">1</span>    ETH</span><br><span class="line"><span class="number">2</span>    EOS</span><br><span class="line">Name: name, dtype: object</span><br><span class="line"> </span><br><span class="line">In [<span class="number">94</span>]: data.iloc[<span class="number">1</span>]    <span class="comment">#loc['name']查询的是行标签</span></span><br><span class="line">Out[<span class="number">94</span>]:</span><br><span class="line">name      ETH</span><br><span class="line">price    <span class="number">4000</span></span><br><span class="line">Name: <span class="number">1</span>, dtype: object</span><br></pre></td></tr></table></figure>
+<p>其实行索引，除了iloc，loc还有个<strong>ix</strong>，<strong>ix</strong>既可以进行<strong>行标签索引</strong>，也可以进行<strong>行号索引</strong>，但这也大大增加了它的不确定性，有时会出现一些奇怪的问题，所以pandas在0.20.0版本的时候就把ix给弃用了。 </p>
+<p><strong>DataFrame的常用操作：</strong></p>
+<p><strong>简单地增加行、列：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">105</span>]: data[<span class="string">'type'</span>] = <span class="string">'token'</span>    <span class="comment">#增加列</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">106</span>]: data</span><br><span class="line">Out[<span class="number">106</span>]:</span><br><span class="line">  name  price   type</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span>  token</span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span>  token</span><br><span class="line"><span class="number">2</span>  EOS    <span class="number">150</span>  token</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">109</span>]: data.loc[<span class="string">'3'</span>] = [<span class="string">'ae'</span>,<span class="number">200</span>,<span class="string">'token'</span>]    <span class="comment">#增加行</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">110</span>]: data</span><br><span class="line">Out[<span class="number">110</span>]:</span><br><span class="line">  name  price   type</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span>  token</span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span>  token</span><br><span class="line"><span class="number">2</span>  EOS    <span class="number">150</span>  token</span><br><span class="line"><span class="number">3</span>   ae    <span class="number">200</span>  token</span><br></pre></td></tr></table></figure>
+<p><strong>删除行、列操作：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">117</span>]: <span class="keyword">del</span> data[<span class="string">'type'</span>]    <span class="comment">#删除列</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">118</span>]: data</span><br><span class="line">Out[<span class="number">118</span>]:</span><br><span class="line">  name  price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span></span><br><span class="line"><span class="number">2</span>  EOS    <span class="number">150</span></span><br><span class="line"><span class="number">3</span>   ae    <span class="number">200</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">120</span>]: data.drop([<span class="number">2</span>])    <span class="comment">#删除行</span></span><br><span class="line">Out[<span class="number">120</span>]:</span><br><span class="line">  name  price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span></span><br><span class="line"><span class="number">3</span>   ae    <span class="number">200</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">121</span>]: data</span><br><span class="line">Out[<span class="number">121</span>]:</span><br><span class="line">  name  price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span></span><br><span class="line"><span class="number">2</span>  EOS    <span class="number">150</span></span><br><span class="line"><span class="number">3</span>   ae    <span class="number">200</span></span><br></pre></td></tr></table></figure>
+<p>这里需要注意的是，使用<strong>drop（）方法</strong>返回的是<strong>Copy</strong>而不是<strong>视图</strong>，要想真正在原数据里删除行，就要设置<strong><em>inplace=True</em></strong>： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">125</span>]: data.drop([<span class="number">2</span>],inplace=<span class="literal">True</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">126</span>]: data</span><br><span class="line">Out[<span class="number">126</span>]:</span><br><span class="line">  name  price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span></span><br><span class="line"><span class="number">3</span>   ae    <span class="number">200</span></span><br></pre></td></tr></table></figure>
+<p><strong>设置某一列为index：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">131</span>]: data.set_index([<span class="string">'name'</span>],inplace=<span class="literal">True</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">132</span>]: data</span><br><span class="line">Out[<span class="number">132</span>]:</span><br><span class="line">      price</span><br><span class="line">name</span><br><span class="line">BTC   <span class="number">50000</span></span><br><span class="line">ETH    <span class="number">4000</span></span><br><span class="line">ae      <span class="number">200</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">133</span>]: data.reset_index(inplace=<span class="literal">True</span>)    <span class="comment">#将index返回回dataframe中</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">134</span>]: data</span><br><span class="line">Out[<span class="number">134</span>]:</span><br><span class="line">  name  price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000</span></span><br><span class="line"><span class="number">2</span>   ae    <span class="number">200</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>处理缺失值：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">149</span>]: data</span><br><span class="line">Out[<span class="number">149</span>]:</span><br><span class="line">  name    price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>   ae    <span class="number">200.0</span></span><br><span class="line"><span class="number">3</span>  eos      NaN</span><br><span class="line"> </span><br><span class="line">In [<span class="number">150</span>]: data.dropna()    <span class="comment">#丢弃含有缺失值的行</span></span><br><span class="line">Out[<span class="number">150</span>]:</span><br><span class="line">  name    price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>   ae    <span class="number">200.0</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">151</span>]: data.fillna(<span class="number">0</span>)    <span class="comment">#填充缺失值数据为0</span></span><br><span class="line">Out[<span class="number">151</span>]:</span><br><span class="line">  name    price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>   ae    <span class="number">200.0</span></span><br><span class="line"><span class="number">3</span>  eos      <span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+<p>还是需要注意：<strong>这些方法返回的是copy而不是视图，如果想在原数据上改变，别忘了inplace=True</strong>。 </p>
+<p><strong>数据合并：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">160</span>]: data</span><br><span class="line">Out[<span class="number">160</span>]:</span><br><span class="line">  name    price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>   ae    <span class="number">200.0</span></span><br><span class="line"><span class="number">3</span>  eos      NaN</span><br><span class="line"> </span><br><span class="line">In [<span class="number">161</span>]: data1</span><br><span class="line">Out[<span class="number">161</span>]:</span><br><span class="line">  name  other</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000</span></span><br><span class="line"><span class="number">1</span>  BTC   <span class="number">4000</span></span><br><span class="line"><span class="number">2</span>  EOS    <span class="number">150</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">162</span>]: pd.merge(data,data1,on=<span class="string">'name'</span>,how=<span class="string">'left'</span>)    <span class="comment">#以name为key进行左连接</span></span><br><span class="line">Out[<span class="number">162</span>]:</span><br><span class="line">  name    price    other</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000.0</span>  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>  BTC  <span class="number">50000.0</span>   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>  ETH   <span class="number">4000.0</span>      NaN</span><br><span class="line"><span class="number">3</span>   ae    <span class="number">200.0</span>      NaN</span><br><span class="line"><span class="number">4</span>  eos      NaN      NaN</span><br></pre></td></tr></table></figure>
+<p>平时进行数据合并操作，更多的会出一种情况，那就是出现<strong>重复值</strong>，DataFrame也为我们提供了简便的方法： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.drop_duplicates(inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>数据的简单保存与读取：</strong> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">165</span>]: data.to_csv(<span class="string">'test.csv'</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">166</span>]: pd.read_csv(<span class="string">'test.csv'</span>)</span><br><span class="line">Out[<span class="number">166</span>]:</span><br><span class="line">   Unnamed: <span class="number">0</span> name    price</span><br><span class="line"><span class="number">0</span>           <span class="number">0</span>  BTC  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>           <span class="number">1</span>  ETH   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>           <span class="number">2</span>   ae    <span class="number">200.0</span></span><br><span class="line"><span class="number">3</span>           <span class="number">3</span>  eos      NaN</span><br></pre></td></tr></table></figure>
+<p>为什么会出现这种情况呢，从头看到尾的同学可能就看出来了，增加第三行时，我用的是<strong>loc[‘3’]行标签</strong>来增加的，而<strong>read_csv方法是默认index是从0开始增长的</strong>，此时只需要我们设置下index参数就ok了： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">167</span>]: data.to_csv(<span class="string">'test.csv'</span>,index=<span class="literal">None</span>)    <span class="comment">#不保存行索引</span></span><br><span class="line">In [<span class="number">168</span>]: pd.read_csv(<span class="string">'test.csv'</span>)</span><br><span class="line">Out[<span class="number">168</span>]:</span><br><span class="line">  name    price</span><br><span class="line"><span class="number">0</span>  BTC  <span class="number">50000.0</span></span><br><span class="line"><span class="number">1</span>  ETH   <span class="number">4000.0</span></span><br><span class="line"><span class="number">2</span>   ae    <span class="number">200.0</span></span><br><span class="line"><span class="number">3</span>  eos      NaN</span><br></pre></td></tr></table></figure>
+<p>其他的还有<strong>header</strong>参数，这些参数都是我们在保存数据时需要注意的。</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>pandas的操作和方法肯定远远不止于这些，查看这些方法最好的方法就是查看官方文档，pandas还有许多强大有用的方法，例如大数据读取，时间序列等等，这些就靠大家自己去pandas官方文档好好挖掘了。  </p>
+<p>参考资料：<br><a href="https://liulixiang1988.github.io/pythonshu-ju-fen-xi-3-dataframe.html" target="_blank" rel="noopener">Liu Lixiang的博客</a> <a href="https://blog.yangx.site/2016/07/18/pandas-intro/" target="_blank" rel="noopener">YXiao’s Blog</a><br><a href="https://wiki.jikexueyuan.com/project/start-learning-python/311.html" target="_blank" rel="noopener">极客学院-《从零开始学Python-第二版》</a><br><a href="https://pandas.pydata.org/pandas-docs/stable/" target="_blank" rel="noopener">Pandas 0.23.0官方文档</a></p>
+<p><font color = red><strong>才学疏浅，欢迎评论指导</strong></font></p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+
+  
+
+
+    
+  
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">挖掘之家</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xaoxuu"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/NLP/" href="/categories/NLP/"
+            id="categoriesNLP"
+            ><div class='name'>NLP</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
+            id="categoriesNLPE8AEBAE69687E7AE80E69E90"
+            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
+            id="categoriesPythonE695B0E68DAEE68C96E68E98"
+            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/"
+            id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808B"
+            ><div class='name'>《统计学习方法-李航》</div><div class='badge'>(13)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
+            id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808BE695B0E68DAEE68C96E68E98"
+            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"
+            id="categoriesE59BBEE5838FE8AF86E588AB"
+            ><div class='name'>图像识别</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
+            id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7AE80E69E90"
+            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
+            id="categoriesE695B0E68DAEE68C96E68E98"
+            ><div class='name'>数据挖掘</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
+            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
+            ><div class='name'>机器学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
+            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0"
+            ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
+            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7AE80E69E90"
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #999">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #999">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #999">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #555">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #999">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #999">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #555">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #999">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #999">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #999">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #999">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #999">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #999">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">非线性支持向量机</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

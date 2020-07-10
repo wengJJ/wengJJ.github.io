@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家</title>
+  
+    <meta name="keywords" content="情感分析框架DeepEmo">
+  
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img class='logo' src='https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png'/>
+          
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/">
+      数据矿工学习-情感分析框架DeepEmo论文简析
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <p>Mr. X</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>NLP/论文简析</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2018年6月20日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>来自台湾国立清华大学的Elvis Saravia等研究人员提出了一种基于<strong>图论(graph-based)</strong>的机制来提取<strong>丰富情感(rich-emotion)</strong>的相关<strong>模式(pattern)</strong>，用来加强对语料库的线上情感表达进行深入分析。论文实验结果表明，所提出的情感分析框架DeepEmo比目前大多数的情感分析框架的F1-score都要高（仅次于Volvoka(2016)），而且其提出的<strong>富集模式(enriched patterns)</strong>也被证实了具有很高的领域适用性。 </p>
+<p>首先我们先通过思维导图来简要了解下这篇DeepEmo论文的整体结构：<br><img src="https://img-blog.csdn.net/20180620152324166?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="">  </p>
+<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a><strong>WHAT</strong></h2><h3 id="情感分析框架DeepEmo是什么？"><a href="#情感分析框架DeepEmo是什么？" class="headerlink" title="情感分析框架DeepEmo是什么？"></a>情感分析框架DeepEmo是什么？</h3><p><img src="https://img-blog.csdn.net/20180620152537343?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>DeepEmo论文提出了三种方法论，分别是： </p>
+<p>(1) 基于图论的基本模式提取方法；<br>(2) 利用词嵌入的基本模式丰富方法-<strong>富集模式(enriched patterns)</strong>；<br>(3) 对<strong>tf-idf(词频-逆文件频率)</strong>进行修改的<strong>pf- ief(模式频率 - 逆情感频率)</strong>评分机制； </p>
+<p>DeepEmo情感分析框架正是由这三种方法论搭配<strong>卷积神经网络CNN</strong>组成，由这三种方法论所生成的<strong>基于图论的嵌入矩阵</strong>，作为输入数据，最后由卷积神经网络CNN输出其情感类别。  </p>
+<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><h3 id="情感分析框架DeepEmo的优势在哪里？"><a href="#情感分析框架DeepEmo的优势在哪里？" class="headerlink" title="情感分析框架DeepEmo的优势在哪里？"></a>情感分析框架DeepEmo的优势在哪里？</h3><p>近些年的情感识别系统一般采用表征学习进行特征检测。一般来说，<strong>词语嵌入</strong>（如word2vec）作为输入和<strong>深度学习模型</strong>（如卷积神经网络（CNN））的组合在句子分类中表现良好。由于这些类型的模型的<strong>性质</strong>和他们学习的<strong>特征类型</strong>，它们往往具有较高的<strong>覆盖率(</strong><em>覆盖率  - 特征应该能够隐藏重要的隐性和显性情绪信息</em><strong>)</strong>，较高的<strong>适应性(</strong><em>适应性 - 这些特征可以应用于其他类型的情绪语料库，起源于不同的领域</em><strong>)</strong>，仅需要很少的监督（即自动学习特征），并且能在一定程度上捕捉上下文。然而，这种类型的模型在<strong>可解释性</strong>和<strong>高性能</strong>之间是存在一定的权衡的。基于图论的特征提取机制DeepEmo更侧重于语言组件之间的底层交互。因此，模式会自动显示隐式和明确的情绪表达。 </p>
+<p>为了验证DeepEmo的性能，研究人员将DeepEmo与scikit-learn提供的常用于句子分类的传统情感分析器（例如，字袋（BoW），字符级（char），n-gram，TF-IDF）进行比较，结果如下表：<br><img src="https://img-blog.csdn.net/2018062015362615?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>从这张表我们能看到一些较<strong>“反常”</strong>的情况，根据一些以往的经验来说，深度学习的效果应该比传统的学习方法效果要好，但从这张结果表中，我们可以看出<strong>基于TF-IDF的BoW</strong>和<strong>基于词频的BoW</strong>的得分都比<strong>基于基本模式的CNN模型</strong>识别效果都要好，从这里我们看出，深度学习器并不一定总比传统学习器的分类效果要好，从这里我们可以得到一个更为重要的论点，DeepEmo的情感识别效果好并不是因为使用了CNN，而是因为使用了<strong>富集模式(Enriched Patterns)</strong>。  </p>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a><strong>How</strong></h2><h3 id="DeepEmo使用细则"><a href="#DeepEmo使用细则" class="headerlink" title="DeepEmo使用细则"></a>DeepEmo使用细则</h3><p>目前的话，DeepEmo的研究人员还未将DeepEmo的模型代码放出来，所以现阶段我们要使用DeepEmo的话只能照着论文自己手打出来，这里就简要说明下DeepEmo的运行流程，让大家对DeepEmo的运行有个较为清晰的整体理解：<br><img src="https://img-blog.csdn.net/20180620154227400?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>深度学习架构支持从文本信息中自动学习的功能。目前在用于情感分类的深度学习模型的学习器中，它们因输入的选择而异：<strong>预先训练的词/字符嵌入</strong>和<strong>端到端学习的词/字符表示</strong>。DeepEmo的不同之处在于使用丰富的<strong>基于图论的表征矩阵</strong>作为输入，所以构建DeepEmo框架最重要的部分就是生成<strong>基于图论的矩阵</strong>，关于具体的生成，论文里面写的非常详细，有兴趣的同学可以自行查看(DeepEmo论文的中文版笔者我将在修改润色后发布)，在<strong>提取基本模式</strong>这一步上，由于DeepEmo的研究者并不在模式提取过程中强行添加语法启发或规则，因此，提取的基本模式倾向于自然而然地具有更高的<strong>覆盖率</strong>并更全面地捕捉<strong>隐含和明确的情感内容</strong>。  </p>
+<h2 id="DISCUSS"><a href="#DISCUSS" class="headerlink" title="DISCUSS"></a><strong>DISCUSS</strong></h2><h3 id="关于DeepEmo的讨论与思考"><a href="#关于DeepEmo的讨论与思考" class="headerlink" title="关于DeepEmo的讨论与思考"></a>关于DeepEmo的讨论与思考</h3><p><img src="https://img-blog.csdn.net/20180620154552957?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""> </p>
+<p>从DeepEmo研究人员的样本分布表中不难看出情感样本其实是具有一定的<strong>样本不均匀的</strong>，<strong>厌恶(disgust)</strong>和<strong>期盼(anticipation)</strong>的样本相对较少，但其实DeepEmo研究人员也发现了这个问题，但平衡样本后F1的平均分数并没有得到提升。<br><img src="https://img-blog.csdn.net/20180620154636797?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""> </p>
+<p>在与目前最新的论文所提出情感分类器相对比，DeepEmo情感识别系统取得了比除（Volkova和Bachrach，2016）例外的大多数方法有更好的结果（F1得分为72％）。Volvoka情绪识别系统比DeepEmo的表现更好（F1分数为78％），因为Volvoka使用更为明确的语言特征，例如<strong>表情符号</strong>和<strong>主题标签</strong>。而DeepEmo的数据集更容易受到噪音的影响，因为DeepEmo的目的是获得更高的<strong>覆盖范围</strong>，以捕捉更多<strong>隐含的情绪表达</strong>。但太过于明确的数据集也意味着生成的情感分析器可能不适用于其他的情感数据集，也就是泛化程度可能过低。</p>
+<p><img src="https://img-blog.csdn.net/20180620154715690?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzODI5NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""> </p>
+<p>那目前DeepEmo的问题在哪里呢？在笔者看来，现在DeepEmo最大的问题在于数据集的<strong>规模太小</strong>，这个问题在吴恩达的深度学习课程第一周就有提到过，根据上方的图得知，深度学习的高性能一般得在<strong>百万级别</strong>的数据集的学习上才体现的出来，小样本学习深度学习器跟传统学习器效果差不多，所以目前DeepEmo要想有更上一步的性能提高，笔者认为可以从数据集的规模方面入手，给与DeepEmo更多的丰富样本去学习。   </p>
+<p>DeepEmo论文地址： <a href="https://arxiv.org/abs/1804.08847" target="_blank" rel="noopener">DeepEmo: Learning and Enriching Pattern-Based Emotion Representations </a>   </p>
+<p><font color = red><strong>才学疏浅，欢迎评论指导</strong></font></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/>https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-11T16:50:51+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年6月11日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>情感分析框架DeepEmo</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2018/06/25/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据矿工学习-情感分析框架DeepEmo论文-个人中文翻译</p>
+                <p class='content'>DeepEmo: Learning and Enriching Pattern-Based Emotion Representations作者： Elvis Saravia /National ...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/06/06/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE6.2-%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/'>
+                <p class='title'>数据矿工学习-《统计学习方法》思维导图6.2-最大熵模型与最优化算法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>最大熵模型目前应用在NLP上比较多，本章的最大熵模型的内容与数学推导公式比较多（最优化算法部分本人水平有限(ˉ▽ˉ；)…，当时看的最优化算法时有点懵逼，可能会有疏漏，望各位海涵，欢迎提出修改意见...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '数据矿工学习-情感分析框架DeepEmo论文简析',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-text">WHAT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#情感分析框架DeepEmo是什么？"><span class="toc-text">情感分析框架DeepEmo是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-text">WHY</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#情感分析框架DeepEmo的优势在哪里？"><span class="toc-text">情感分析框架DeepEmo的优势在哪里？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How"><span class="toc-text">How</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DeepEmo使用细则"><span class="toc-text">DeepEmo使用细则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DISCUSS"><span class="toc-text">DISCUSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于DeepEmo的讨论与思考"><span class="toc-text">关于DeepEmo的讨论与思考</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
