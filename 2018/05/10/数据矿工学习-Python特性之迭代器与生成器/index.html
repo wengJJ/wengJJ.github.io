@@ -408,7 +408,7 @@
         <div class="article-entry" itemprop="articleBody">
           
           <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>要知道生成器是啥，首先得先了解下迭代器是什么，概念的部分还是用我最喜欢的老套路思维导图来表示：</p>
-<p><img src="https://img-blog.csdn.net/20180509160117544" alt=""></p>
+<p><img src="https://i.loli.net/2020/08/29/FjxNWO5fVighUTR.png" alt=""></p>
 <p>凹脑图在线浏览地址：<a href="https://aonaotu.com/open/5af15cc0f46a3100142000e3" target="_blank" rel="noopener">迭代器</a></p>
 <p>仔细看完这份思维导图后，我们需要区分好两个概念<strong>可迭代对象（iterable）</strong>与<strong>迭代器（iterator）</strong> </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> num: </span><br><span class="line">	print(i)</span><br></pre></td></tr></table></figure>
@@ -422,9 +422,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">7</span>]: isinstance(numIter(<span class="number">5</span>),Iterator) </span><br><span class="line">Out[<span class="number">7</span>]: <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><p>生成器也是一种特殊的迭代器，概念部分继续惯例思维导图贴上：</p>
-<p><img src="https://img-blog.csdn.net/20180509165722103" alt=""> </p>
+<p><img src="https://i.loli.net/2020/08/29/vUJPmez6tsSEVTr.png" alt=""> </p>
 <p>凹脑图在线浏览地址：<a href="https://aonaotu.com/open/5af1acfa929fdf00106c7ec8" target="_blank" rel="noopener">生成器</a></p>
-<p>看完了思维导图，我们继续回到上面的那句话生成器也是一种特殊的迭代器，从上面的生成器运行流程中我们不难发现两个身影<strong>返回自身对象</strong>和<strong>next方法返回迭代值</strong>，这不就是我们上面迭代器讲的迭代器协议（<strong><strong>iter</strong>方法</strong>和_<strong>_next__方法</strong>）吗？我们还是来用<strong>isinstance</strong>来验证一下 </p>
+<p>看完了思维导图，我们继续回到上面的那句话生成器也是一种特殊的迭代器，从上面的生成器运行流程中我们不难发现两个身影<strong>返回自身对象</strong>和<strong>next方法返回迭代值</strong>，这不就是我们上面迭代器讲的迭代器协议（<strong><strong>iter</strong>方法</strong>和 <strong>next方法</strong> ）吗？我们还是来用<strong>isinstance</strong>来验证一下 </p>
 <p>先用<strong>生成器表达式</strong>来生成一个表达器： </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">13</span>]: num = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>)) <span class="comment">#注意这里使用的是（）不是[] </span></span><br><span class="line">In [<span class="number">14</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> num: </span><br><span class="line">...: print(i)</span><br></pre></td></tr></table></figure>
 <p>isinstance验证是否为迭代器： </p>
@@ -451,55 +451,15 @@
 <p>接着调用send（999）方法，将值999传到代码执行中断的地方，也就是关键字yield处，将999赋值给y，输出y，执行x+=1，执行到关键字yield处，返回1；</p>
 <p>继续调用next（）方法，无值赋给y，y=None，输出y，执行x+=1，执行到关键字yield处，返回2；</p>
 <p>继续调用next（）方法，无值赋给y，y=None，输出y，执行x+=1,x=n跳出while循环，找不到关键字yield，抛出StopIteration 异常；</p>
-<h2 id="throw（）方法"><a href="#throw（）方法" class="headerlink" title="throw（）方法"></a>throw（）方法</h2><pre><code class="python">In [<span class="number">4</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span>
-   ...:     <span class="keyword">try</span>:
-   ...:         x = <span class="number">0</span>
-   ...:         <span class="keyword">while</span> x &lt; n:
-   ...:             <span class="keyword">yield</span> x
-   ...:             x += <span class="number">1</span>
-   ...:     <span class="keyword">except</span> ValueError:
-   ...:         <span class="keyword">yield</span> <span class="string">'Error'</span>
-   ...:     <span class="keyword">finally</span>:
-   ...:         print(<span class="string">'Finally'</span>)
-   ...:  
-   ...: num = numGen(<span class="number">3</span>)
-   ...: print(num.__next__())
-   ...: print(num.throw(ValueError))
-   ...: print(num.__next__())
-   ...:
-<span class="number">0</span>
-Error
-Finally
----------------------------------------------------------------------------
-StopIteration                             Traceback (most recent call last)</code></pre>
+<h2 id="throw（）方法"><a href="#throw（）方法" class="headerlink" title="throw（）方法"></a>throw（）方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">4</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">   ...:     <span class="keyword">try</span>:</span><br><span class="line">   ...:         x = <span class="number">0</span></span><br><span class="line">   ...:         <span class="keyword">while</span> x &lt; n:</span><br><span class="line">   ...:             <span class="keyword">yield</span> x</span><br><span class="line">   ...:             x += <span class="number">1</span></span><br><span class="line">   ...:     <span class="keyword">except</span> ValueError:</span><br><span class="line">   ...:         <span class="keyword">yield</span> <span class="string">'Error'</span></span><br><span class="line">   ...:     <span class="keyword">finally</span>:</span><br><span class="line">   ...:         print(<span class="string">'Finally'</span>)</span><br><span class="line">   ...:  </span><br><span class="line">   ...: num = numGen(<span class="number">3</span>)</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...: print(num.throw(ValueError))</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...:</span><br><span class="line"><span class="number">0</span></span><br><span class="line">Error</span><br><span class="line">Finally</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
 <p>可以看出当我们向生成器抛去ValueError错误时，整个生成器就执行finally，最后抛出StopIteration 异常；</p>
-<h2 id="close（）方法"><a href="#close（）方法" class="headerlink" title="close（）方法"></a>close（）方法</h2><pre><code class="python">In [<span class="number">5</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span>
-   ...:     x = <span class="number">0</span>
-   ...:     <span class="keyword">while</span> x &lt; n:
-   ...:         <span class="keyword">yield</span> x
-   ...:         x += <span class="number">1</span>
-   ...:  
-   ...: num = numGen(<span class="number">3</span>)
-   ...: print(num.__next__())
-   ...: num.close()
-   ...: print(num.__next__())
-   ...:
-<span class="number">0</span>
----------------------------------------------------------------------------
-StopIteration                             Traceback (most recent call last)</code></pre>
+<h2 id="close（）方法"><a href="#close（）方法" class="headerlink" title="close（）方法"></a>close（）方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">5</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">   ...:     x = <span class="number">0</span></span><br><span class="line">   ...:     <span class="keyword">while</span> x &lt; n:</span><br><span class="line">   ...:         <span class="keyword">yield</span> x</span><br><span class="line">   ...:         x += <span class="number">1</span></span><br><span class="line">   ...:  </span><br><span class="line">   ...: num = numGen(<span class="number">3</span>)</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...: num.close()</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...:</span><br><span class="line"><span class="number">0</span></span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
 <p>当我们运行close（）方法时，整个生成器就终止了，再执行next（）方法，就抛出StopIteration 异常；</p>
 <p>最后，学了这么多，生成器到底有什么过人之处：<br>1）由于生成器这种“走停走停”策略，使得生成器可以<strong>逐步生成序列</strong>，不用像list一样初始化时就要开辟所有的空间，所以当你一次只需对一个数进行处理时，使用生成器是一个不错的选择。 </p>
 <p>2）运用好生成器的四种方法next（）throw（）send（）close（）还有生成器的关键字yield的特性，是可以实现<strong>伪并发</strong>操作的，Python虽然支持多线程，可由于GIL（全局解释锁）的存在，使得同一时刻只能有一条线程运行，并没有办法并行操作，所以Python的多线程实际上就是鸡肋。 </p>
 <p>3）我们在读取文件时，如果直接对文件对象调用 read() 方法，会导致不可预测的内存占用。好的方法是利用固定长度的缓冲区来不断读取文件内容。通过 yield，我们不再需要编写读文件的迭代类，就可以轻松实现文件读取： 下面贴上廖雪峰老师的yield读取文件代码： </p>
-<pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(fpath)</span>:</span> 
-   BLOCK_SIZE = <span class="number">1024</span> 
-   <span class="keyword">with</span> open(fpath, <span class="string">'rb'</span>) <span class="keyword">as</span> f: 
-       <span class="keyword">while</span> <span class="literal">True</span>: 
-           block = f.read(BLOCK_SIZE) 
-           <span class="keyword">if</span> block: 
-               <span class="keyword">yield</span> block 
-           <span class="keyword">else</span>: 
-               <span class="keyword">return</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(fpath)</span>:</span> </span><br><span class="line">   BLOCK_SIZE = <span class="number">1024</span> </span><br><span class="line">   <span class="keyword">with</span> open(fpath, <span class="string">'rb'</span>) <span class="keyword">as</span> f: </span><br><span class="line">       <span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">           block = f.read(BLOCK_SIZE) </span><br><span class="line">           <span class="keyword">if</span> block: </span><br><span class="line">               <span class="keyword">yield</span> block </span><br><span class="line">           <span class="keyword">else</span>: </span><br><span class="line">               <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
 <p>参考资料：<br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/" target="_blank" rel="noopener">廖雪峰老师的Python yield 使用浅析</a><br><a href="http://www.bjhee.com/python-yield.html" target="_blank" rel="noopener">Billy.J.Hee的技术博客</a><br><a href="http://pyzh.readthedocs.io/en/latest/the-python-yield-keyword-explained.html" target="_blank" rel="noopener">(译)Python关键字yield的解释(stackoverflow)</a></p>
 <p><font color = red><strong>才学疏浅，欢迎评论指导</strong></font></p>
 
@@ -589,10 +549,10 @@ StopIteration                             Traceback (most recent call last)</cod
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-12T20:46:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T20:29:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年6月12日</p>
+    <p>更新于：2020年8月29日</p>
   </a>
 </div>
 
