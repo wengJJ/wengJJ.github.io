@@ -16,10 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>数据矿工学习-Python数据分析之pandas - 挖掘之家</title>
+    <title>数据矿工学习-Python数据分析之pandas - 挖掘之城</title>
   
     <meta name="keywords" content="pandas">
   
+  
+    <meta name="description" content="前言前面一篇文章我们介绍了numpy，但numpy的特长并不是在于数据处理，而是在它能非常方便地实现科学计算，所以我们日常对数据进行处理时用的numpy情况并不是很多，我们需要处理的数据一般都是带有列标签和index索引的，而numpy并不支持这些，这时我们就需要pandas上场啦！">
   
 
   <!-- feed -->
@@ -42,8 +44,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +160,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +170,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +262,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +272,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -359,9 +335,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -371,9 +347,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+    <a href='/categories/Python/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python/数据挖掘</p>
+      <p>Python</p>
     </a>
   </div>
 
@@ -408,6 +384,8 @@
         <div class="article-entry" itemprop="articleBody">
           
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面一篇文章我们介绍了numpy，但numpy的特长并不是在于数据处理，而是在它能非常方便地实现科学计算，所以我们日常对数据进行处理时用的numpy情况并不是很多，我们需要处理的数据一般都是带有列标签和index索引的，而numpy并不支持这些，这时我们就需要pandas上场啦！</p>
+<a id="more"></a>
+
 <h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT?"></a>WHAT?</h2><p><strong>Pandas</strong>是基于<strong>Numpy</strong>构建的库，在数据处理方面可以把它理解为numpy加强版，同时Pandas也是一项开源项目：<a href="https://mp.csdn.net/postedit/http" target="_blank" rel="noopener">Github</a> 。不同于numpy的是，pandas拥有种数据结构：<strong>Series</strong>和<strong>DataFrame</strong>： </p>
 <p><img src="https://i.loli.net/2020/08/29/cFa7JBfSLWTzbCm.jpg" alt=""></p>
 <p><strong>下面我们就来生成一个简单的series对象来方便理解：</strong></p>
@@ -496,14 +474,6 @@
     
     
 
-
-
-  
-
-  
-    
-    
-
 <section class="widget copyright  desktop mobile">
   <div class='content'>
     
@@ -515,38 +485,10 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.github.io/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/>https://wengjj.github.io/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/>https://wengjj.ink/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/</a></p>
           
         
       </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
     
   </div>
 </section>
@@ -566,10 +508,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T20:14:54+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-30T15:59:52+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月29日</p>
+    <p>更新于：2020年8月30日</p>
   </a>
 </div>
 
@@ -585,18 +527,13 @@
       
         
           
-
-        
-      
-        
-          
   <div class="new-meta-item share -mob-share-list">
   <div class="-mob-share-list share-body">
     
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.github.io/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/&title=数据矿工学习-Python数据分析之pandas - 挖掘之家&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/&title=数据矿工学习-Python数据分析之pandas - 挖掘之城&summary=前言前面一篇文章我们介绍了numpy，但numpy的特长并不是在于数据处理，而是在它能非常方便地实现科学计算，所以我们日常对数据进行处理时用的numpy情况并不是很多，我们需要处理的数据一般都是带有列标签和index索引的，而numpy并不支持这些，这时我们就需要pandas上场啦！"
           
           >
           
@@ -606,27 +543,25 @@
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wengjj.github.io/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/&title=数据矿工学习-Python数据分析之pandas - 挖掘之家&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.github.io/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/&title=数据矿工学习-Python数据分析之pandas - 挖掘之家&summary="
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas/&title=数据矿工学习-Python数据分析之pandas - 挖掘之城&summary=前言前面一篇文章我们介绍了numpy，但numpy的特长并不是在于数据处理，而是在它能非常方便地实现科学计算，所以我们日常对数据进行处理时用的numpy情况并不是很多，我们需要处理的数据一般都是带有列标签和index索引的，而numpy并不支持这些，这时我们就需要pandas上场啦！"
           
           >
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
           
         </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
       
     
   </div>
@@ -647,16 +582,20 @@
               <a class='prev' href='/2018/06/06/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE6.1-%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/'>
                 <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据矿工学习-《统计学习方法》思维导图6.1-逻辑斯蒂回归模型</p>
                 <p class='content'>逻辑斯蒂回归模型是经典的分类学习器，在二分类的监督问题上分类效果非常好，其经典之处就在于LR的分布函数-sigmoid函数。
+
+
 思维来自《统计学习方法》-李航
  
-凹脑图在线浏览地址：逻辑斯蒂回归...</p>
+凹脑图在线浏览地址：逻辑斯蒂...</p>
               </a>
             
             
               <a class='next' href='/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bnumpy/'>
                 <p class='title'>数据矿工学习-Python数据分析之numpy<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>前言刚开始学习数据挖掘时，有时总是对numpy和pandas傻傻分不清楚，这个问题在训练模型阶段输入训练数据的时候最为明显，下面就来详细介绍下numpy  
-NumpyWHAT？numpy是专门...</p>
+
+
+NumpyWHAT？numpy是...</p>
               </a>
             
           </div>
@@ -711,8 +650,6 @@ NumpyWHAT？numpy是专门...</p>
 <aside class='l_side'>
   
   
-
-  
     
     
 
@@ -727,7 +664,7 @@ NumpyWHAT？numpy是专门...</p>
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-text">WHAT?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Series"><span class="toc-text">Series</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame"><span class="toc-text">DataFrame</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas"><span class="toc-text">Pandas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-text">WHAT?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WHY"><span class="toc-text">WHY?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HOW？"><span class="toc-text">HOW？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Series"><span class="toc-text">Series</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame"><span class="toc-text">DataFrame</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol>
     </div>
   </section>
 
@@ -743,35 +680,11 @@ NumpyWHAT？numpy是专门...</p>
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -779,7 +692,7 @@ NumpyWHAT？numpy是专门...</p>
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -787,7 +700,7 @@ NumpyWHAT？numpy是专门...</p>
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -795,7 +708,7 @@ NumpyWHAT？numpy是专门...</p>
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -821,7 +734,7 @@ NumpyWHAT？numpy是专门...</p>
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -926,16 +839,6 @@ NumpyWHAT？numpy是专门...</p>
 
 
 
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
-
 
 
 
@@ -982,8 +885,8 @@ NumpyWHAT？numpy是专门...</p>
     el: '#valine_container',
     meta: meta,
     
-    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    appId: "8Isa3npIOKxatqlt6LGUnBcj-gzGzoHsz",
+    appKey: "w9JX0AWIJuBHlmcf5ICliSx4",
     placeholder: "快来评论吧~",
     pageSize:'10',
     avatar:'robohash',

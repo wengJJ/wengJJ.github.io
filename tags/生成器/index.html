@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：生成器 - 挖掘之家</title>
+    <title>标签：生成器 - 挖掘之城</title>
   
   
 
@@ -42,8 +42,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +158,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +168,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +260,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +270,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -372,9 +346,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -384,9 +358,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+    <a href='/categories/Python/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python/数据挖掘</p>
+      <p>Python</p>
     </a>
   </div>
 
@@ -426,64 +400,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>要知道生成器是啥，首先得先了解下迭代器是什么，概念的部分还是用我最喜欢的老套路思维导图来表示：</p>
-<p><img src="https://i.loli.net/2020/08/29/FjxNWO5fVighUTR.png" alt=""></p>
-<p>凹脑图在线浏览地址：<a href="https://aonaotu.com/open/5af15cc0f46a3100142000e3" target="_blank" rel="noopener">迭代器</a></p>
-<p>仔细看完这份思维导图后，我们需要区分好两个概念<strong>可迭代对象（iterable）</strong>与<strong>迭代器（iterator）</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> num: </span><br><span class="line">	print(i)</span><br></pre></td></tr></table></figure>
-<p>这里的列表num符合上面的条件之一：可以for循环，所以列表num可以称之为可迭代对象,那num可以说是迭代器吗？我们可以用<strong>isinstance方法</strong>来验证下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">2</span>]: <span class="keyword">from</span> collections <span class="keyword">import</span> Iterator </span><br><span class="line">In [<span class="number">3</span>]: isinstance(num,Iterator) </span><br><span class="line">Out[<span class="number">3</span>]: <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<p>答案是False，因为列表num并不符合迭代器协议，简单点来讲，列表num里面并没有<strong><strong>iter</strong>方法</strong>和<strong><strong>next</strong>方法</strong>。下面我们按照迭代器协议要求自己来构造一个迭代器： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">numIter</span>:</span>         <span class="comment">#迭代器</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,n)</span>:</span></span><br><span class="line">        self.n = n</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.x = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span>         <span class="comment">#Python 3.x版本     Python 2.x版本是next()</span></span><br><span class="line">        self.x += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.x &lt; self.n:</span><br><span class="line">            <span class="keyword">return</span> self.x</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> StopIteration</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> numIter(<span class="number">5</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
-<p>numIter里面包含了_iter_方法和_next_方法，符合了迭代器协议，numIter是不是迭代器呢？下面我们继续使用isinstance方法来验证： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">5</span>]: isinstance(numIter,Iterator) </span><br><span class="line">Out[<span class="number">5</span>]: <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<p>False！？！这里需要注意的是，numIter只是个<strong>类定义</strong>，本身是不会迭代的，而numIter(5)这个<strong>类的实例</strong>才可以进行迭代：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">7</span>]: isinstance(numIter(<span class="number">5</span>),Iterator) </span><br><span class="line">Out[<span class="number">7</span>]: <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><p>生成器也是一种特殊的迭代器，概念部分继续惯例思维导图贴上：</p>
-<p><img src="https://i.loli.net/2020/08/29/vUJPmez6tsSEVTr.png" alt=""> </p>
-<p>凹脑图在线浏览地址：<a href="https://aonaotu.com/open/5af1acfa929fdf00106c7ec8" target="_blank" rel="noopener">生成器</a></p>
-<p>看完了思维导图，我们继续回到上面的那句话生成器也是一种特殊的迭代器，从上面的生成器运行流程中我们不难发现两个身影<strong>返回自身对象</strong>和<strong>next方法返回迭代值</strong>，这不就是我们上面迭代器讲的迭代器协议（<strong><strong>iter</strong>方法</strong>和 <strong>next方法</strong> ）吗？我们还是来用<strong>isinstance</strong>来验证一下 </p>
-<p>先用<strong>生成器表达式</strong>来生成一个表达器： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">13</span>]: num = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>)) <span class="comment">#注意这里使用的是（）不是[] </span></span><br><span class="line">In [<span class="number">14</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> num: </span><br><span class="line">...: print(i)</span><br></pre></td></tr></table></figure>
-<p>isinstance验证是否为迭代器： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">15</span>]: isinstance(num,Iterator) </span><br><span class="line">Out[<span class="number">15</span>]: <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>答案为true，证明了生成器也是一种迭代器，那为什么要说生成器是一种特殊的迭代器呢？这时我们就得来看另一种生成器的生成方法-<strong>生成器函数</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> x &lt; n:</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">        x += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>非常简短的几行代码，关键就在于<strong>yield</strong>这个关键字，一般来说如果我们的函数中出现了yield关键字，调用该函数时就会返回成一个生成器，为了更清楚地理解<strong>yield</strong>这个关键字的作用，我们还是用代码来说话： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">19</span>]: num = numGen(<span class="number">3</span>)    <span class="comment">#得到一个生成器对象</span></span><br><span class="line">In [<span class="number">20</span>]: print(num.__next__())    <span class="comment">#执行next方法</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">21</span>]: print(num.__next__())</span><br><span class="line"><span class="number">1</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">22</span>]: print(num.__next__())</span><br><span class="line"><span class="number">2</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">23</span>]: print(num.__next__())</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
-<p>首先我们运行第一行代码 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num = numGen(<span class="number">3</span>) <span class="comment">#得到一个生成器对象</span></span><br></pre></td></tr></table></figure>
-<p>得到一个生成器对象，很容易理解的一行代码，但当我们与普通的return方法进行对比时，我们就会发现一个有趣的现象： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    print(<span class="string">"生成器执行中"</span>)</span><br><span class="line">    <span class="keyword">while</span> x &lt; n:</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">        x += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numGen1</span><span class="params">(n)</span>:</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    print(<span class="string">"普通方法执行中"</span>)</span><br><span class="line">    <span class="keyword">while</span> x &lt; n:</span><br><span class="line">        x += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">num = numGen(<span class="number">3</span>)</span><br><span class="line">num1 = numGen1(<span class="number">3</span>)</span><br><span class="line">输出：普通方法执行中</span><br></pre></td></tr></table></figure>
-<p>从这个例子我们就可以看出，当我们生成一个<strong>生成器对象</strong>时，生成器函数内部的代码并<strong>不会马上执行</strong>，而普通return函数生成对象时即开始运行内部代码，那生成器函数的代码时什么时候开始执行的呢？别急我们来运行下一行代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">25</span>]: print(num.__next__() </span><br><span class="line">生成器执行中</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>得出答案，生成器函数的内部代码是在执行next（）方法后才开始执行的，新的问题又出现了代码是执行到<strong>关键字yield</strong>就暂停还是整段代码运行完才暂停，这里我们将上面的例子再次改装（然而我第一次在ipython运行时遇到了一个“bug”，代码如下）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">26</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">    ...:     x = <span class="number">0</span></span><br><span class="line">    ...:     print(<span class="string">"生成器执行yield前"</span>)</span><br><span class="line">    ...:     <span class="keyword">while</span> x &lt; n:</span><br><span class="line">    ...:         <span class="keyword">yield</span> x</span><br><span class="line">    ...:         print(<span class="string">"生成器执行yield后"</span>)</span><br><span class="line">    ...:         x += <span class="number">1</span></span><br><span class="line">    ...:</span><br><span class="line"> </span><br><span class="line">In [<span class="number">27</span>]: print(num.__next__())</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>这其实不是bug，这是生成器的·一个特性：<strong>只可以读取一次</strong>，所以这里得再重新运行一次：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">   ...:     x = <span class="number">0</span></span><br><span class="line">   ...:     print(<span class="string">"生成器执行yield前"</span>)</span><br><span class="line">   ...:     <span class="keyword">while</span> x &lt; n:</span><br><span class="line">   ...:         <span class="keyword">yield</span> x</span><br><span class="line">   ...:         print(<span class="string">"生成器执行yield后"</span>)</span><br><span class="line">   ...:         x += <span class="number">1</span></span><br><span class="line">   ...:</span><br><span class="line"> </span><br><span class="line">In [<span class="number">2</span>]: num = numGen(<span class="number">3</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">3</span>]: print(num.__next__())</span><br><span class="line">生成器执行<span class="keyword">yield</span>前</span><br><span class="line"><span class="number">0</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">4</span>]: print(num.__next__())</span><br><span class="line">生成器执行<span class="keyword">yield</span>后</span><br><span class="line"><span class="number">1</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">5</span>]: print(num.__next__())</span><br><span class="line">生成器执行<span class="keyword">yield</span>后</span><br><span class="line"><span class="number">2</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">6</span>]: print(num.__next__())</span><br><span class="line">生成器执行<span class="keyword">yield</span>后</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
-<p>有了这个例子，我们就能很好地理解关键字<strong>yield</strong>的作用了，当代码运行到关键字<strong>yield</strong>时，执行中断并返回当前的迭代值，除此之外当前的<strong>上下文环境</strong>也会被记录下来，简单点讲就是执行<strong>中断的位置</strong>和<strong>数据</strong>都被保存起来。再次使用** next() <strong>的时候，从原来中断的地方继续执行，直至遇到 **yield</strong>，如果没有** yield**，则抛出StopIteration 异常。 </p>
-<p><strong>了解了生成器的运行机制，最后我们再来了解下生成器其余的三种方法:</strong></p>
-<h2 id="send（）方法"><a href="#send（）方法" class="headerlink" title="send（）方法"></a>send（）方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">3</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">   ...:     x = <span class="number">0</span></span><br><span class="line">   ...:     <span class="keyword">while</span> x &lt; n:</span><br><span class="line">   ...:         y = <span class="keyword">yield</span> x</span><br><span class="line">   ...:         print(y)</span><br><span class="line">   ...:         x += <span class="number">1</span></span><br><span class="line">   ...: num = numGen(<span class="number">3</span>)</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...: print(num.send(<span class="number">999</span>))</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...:</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">999</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="literal">None</span></span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
-<p>下面来说下运行流程： </p>
-<p>首先调用next（）方法，让生成器内部代码执行到关键字yield处，返回0； </p>
-<p>接着调用send（999）方法，将值999传到代码执行中断的地方，也就是关键字yield处，将999赋值给y，输出y，执行x+=1，执行到关键字yield处，返回1；</p>
-<p>继续调用next（）方法，无值赋给y，y=None，输出y，执行x+=1，执行到关键字yield处，返回2；</p>
-<p>继续调用next（）方法，无值赋给y，y=None，输出y，执行x+=1,x=n跳出while循环，找不到关键字yield，抛出StopIteration 异常；</p>
-<h2 id="throw（）方法"><a href="#throw（）方法" class="headerlink" title="throw（）方法"></a>throw（）方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">4</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">   ...:     <span class="keyword">try</span>:</span><br><span class="line">   ...:         x = <span class="number">0</span></span><br><span class="line">   ...:         <span class="keyword">while</span> x &lt; n:</span><br><span class="line">   ...:             <span class="keyword">yield</span> x</span><br><span class="line">   ...:             x += <span class="number">1</span></span><br><span class="line">   ...:     <span class="keyword">except</span> ValueError:</span><br><span class="line">   ...:         <span class="keyword">yield</span> <span class="string">'Error'</span></span><br><span class="line">   ...:     <span class="keyword">finally</span>:</span><br><span class="line">   ...:         print(<span class="string">'Finally'</span>)</span><br><span class="line">   ...:  </span><br><span class="line">   ...: num = numGen(<span class="number">3</span>)</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...: print(num.throw(ValueError))</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...:</span><br><span class="line"><span class="number">0</span></span><br><span class="line">Error</span><br><span class="line">Finally</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
-<p>可以看出当我们向生成器抛去ValueError错误时，整个生成器就执行finally，最后抛出StopIteration 异常；</p>
-<h2 id="close（）方法"><a href="#close（）方法" class="headerlink" title="close（）方法"></a>close（）方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">5</span>]: <span class="function"><span class="keyword">def</span> <span class="title">numGen</span><span class="params">(n)</span>:</span>         <span class="comment">#生成器</span></span><br><span class="line">   ...:     x = <span class="number">0</span></span><br><span class="line">   ...:     <span class="keyword">while</span> x &lt; n:</span><br><span class="line">   ...:         <span class="keyword">yield</span> x</span><br><span class="line">   ...:         x += <span class="number">1</span></span><br><span class="line">   ...:  </span><br><span class="line">   ...: num = numGen(<span class="number">3</span>)</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...: num.close()</span><br><span class="line">   ...: print(num.__next__())</span><br><span class="line">   ...:</span><br><span class="line"><span class="number">0</span></span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">StopIteration                             Traceback (most recent call last)</span><br></pre></td></tr></table></figure>
-<p>当我们运行close（）方法时，整个生成器就终止了，再执行next（）方法，就抛出StopIteration 异常；</p>
-<p>最后，学了这么多，生成器到底有什么过人之处：<br>1）由于生成器这种“走停走停”策略，使得生成器可以<strong>逐步生成序列</strong>，不用像list一样初始化时就要开辟所有的空间，所以当你一次只需对一个数进行处理时，使用生成器是一个不错的选择。 </p>
-<p>2）运用好生成器的四种方法next（）throw（）send（）close（）还有生成器的关键字yield的特性，是可以实现<strong>伪并发</strong>操作的，Python虽然支持多线程，可由于GIL（全局解释锁）的存在，使得同一时刻只能有一条线程运行，并没有办法并行操作，所以Python的多线程实际上就是鸡肋。 </p>
-<p>3）我们在读取文件时，如果直接对文件对象调用 read() 方法，会导致不可预测的内存占用。好的方法是利用固定长度的缓冲区来不断读取文件内容。通过 yield，我们不再需要编写读文件的迭代类，就可以轻松实现文件读取： 下面贴上廖雪峰老师的yield读取文件代码： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(fpath)</span>:</span> </span><br><span class="line">   BLOCK_SIZE = <span class="number">1024</span> </span><br><span class="line">   <span class="keyword">with</span> open(fpath, <span class="string">'rb'</span>) <span class="keyword">as</span> f: </span><br><span class="line">       <span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">           block = f.read(BLOCK_SIZE) </span><br><span class="line">           <span class="keyword">if</span> block: </span><br><span class="line">               <span class="keyword">yield</span> block </span><br><span class="line">           <span class="keyword">else</span>: </span><br><span class="line">               <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-
-<p>参考资料：<br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/" target="_blank" rel="noopener">廖雪峰老师的Python yield 使用浅析</a><br><a href="http://www.bjhee.com/python-yield.html" target="_blank" rel="noopener">Billy.J.Hee的技术博客</a><br><a href="http://pyzh.readthedocs.io/en/latest/the-python-yield-keyword-explained.html" target="_blank" rel="noopener">(译)Python关键字yield的解释(stackoverflow)</a></p>
-<p><font color = red><strong>才学疏浅，欢迎评论指导</strong></font></p>
-
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2018/05/10/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E7%89%B9%E6%80%A7%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
@@ -516,26 +441,17 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box' href='/about/'>
+        <a class='avatar flat-box' href='https://github.com/wengJJ' target="_blank" rel="noopener">
           <img no-lazy src='https://i.loli.net/2020/07/11/p7e1WQKUfnClyxi.png'/>
         </a>
       
     
     
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">挖掘之家</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
     
       <div class="social-wrapper">
         
           
-            <a href="/atom.xml"
+            <a href="https://github.com/wengJJ/wengJJ.github.io"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -543,7 +459,7 @@
           
         
           
-            <a href="mailto:me@xaoxuu.com"
+            <a href="mailto:weng-jj@foxmail.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -551,7 +467,7 @@
           
         
           
-            <a href="https://github.com/xaoxuu"
+            <a href="https://github.com/wengJJ"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -559,7 +475,7 @@
           
         
           
-            <a href="https://music.163.com/#/user/home?id=63035382"
+            <a href="https://music.163.com/#/user/home?id=75517789"
               class="social fas fa-headphones-alt flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -598,27 +514,22 @@
           <li><a class="flat-box child"
             title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesNLPE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesNLPE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
             id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesPythonE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>Python</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/"
             id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808B"
             ><div class='name'>《统计学习方法-李航》</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808BE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"
@@ -628,17 +539,22 @@
           <li><a class="flat-box child"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
             id="categoriesE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>数据挖掘</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/" href="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/"
+            id="categoriesE6AF94E8B59BE9A1B9E79BAE"
+            ><div class='name'>比赛项目</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
@@ -646,9 +562,9 @@
             ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
-            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -672,7 +588,7 @@
 
 
     <div class='content'>
-      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #999">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #999">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #999">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #555">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #999">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #999">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #555">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #999">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #999">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #999">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #999">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #999">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #999">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">非线性支持向量机</a>
+      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #9c9c9c">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #9c9c9c">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #9c9c9c">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #9c9c9c">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #9c9c9c">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #9c9c9c">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #cfcfcf">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #9c9c9c">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #9c9c9c">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #cfcfcf">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #9c9c9c">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #9c9c9c">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #9c9c9c">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #9c9c9c">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #9c9c9c">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #9c9c9c">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">非线性支持向量机</a>
     </div>
   </section>
 
@@ -690,35 +606,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -726,7 +618,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -734,7 +626,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -742,7 +634,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -768,7 +660,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -872,16 +764,6 @@
   
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
 
 
 

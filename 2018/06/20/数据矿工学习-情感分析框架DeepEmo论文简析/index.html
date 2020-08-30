@@ -16,10 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家</title>
+    <title>数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之城</title>
   
     <meta name="keywords" content="情感分析框架DeepEmo">
   
+  
+    <meta name="description" content="来自台湾国立清华大学的Elvis Saravia等研究人员提出了一种基于图论(graph-based)的机制来提取丰富情感(rich-emotion)的相关模式(pattern)，用来加强对语料库的线上情感表达进行深入分析。论文实验结果表明，所提出的情感分析框架DeepEmo比目前大多数的情感分析框架的F1-sc...">
   
 
   <!-- feed -->
@@ -42,8 +44,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +160,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +170,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +262,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +272,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -359,9 +335,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -408,8 +384,10 @@
         <div class="article-entry" itemprop="articleBody">
           
           <p>来自台湾国立清华大学的Elvis Saravia等研究人员提出了一种基于<strong>图论(graph-based)</strong>的机制来提取<strong>丰富情感(rich-emotion)</strong>的相关<strong>模式(pattern)</strong>，用来加强对语料库的线上情感表达进行深入分析。论文实验结果表明，所提出的情感分析框架DeepEmo比目前大多数的情感分析框架的F1-score都要高（仅次于Volvoka(2016)），而且其提出的<strong>富集模式(enriched patterns)</strong>也被证实了具有很高的领域适用性。 </p>
+<a id="more"></a>
+
 <p>首先我们先通过思维导图来简要了解下这篇DeepEmo论文的整体结构：<br><img src="https://i.loli.net/2020/08/29/hJMPLbdV9lHKovw.png" alt="">  </p>
-<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a><strong>WHAT</strong></h2><h3 id="情感分析框架DeepEmo是什么？"><a href="#情感分析框架DeepEmo是什么？" class="headerlink" title="情感分析框架DeepEmo是什么？"></a>情感分析框架DeepEmo是什么？</h3><p><img src="https://i.loli.net/2020/08/29/s6g37bwlUxHuRkf.png" alt=""><br>DeepEmo论文提出了三种方法论，分别是： </p>
+<h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><h3 id="情感分析框架DeepEmo是什么？"><a href="#情感分析框架DeepEmo是什么？" class="headerlink" title="情感分析框架DeepEmo是什么？"></a>情感分析框架DeepEmo是什么？</h3><p><img src="https://i.loli.net/2020/08/29/s6g37bwlUxHuRkf.png" alt=""><br>DeepEmo论文提出了三种方法论，分别是： </p>
 <p>(1) 基于图论的基本模式提取方法；<br>(2) 利用词嵌入的基本模式丰富方法-<strong>富集模式(enriched patterns)</strong>；<br>(3) 对<strong>tf-idf(词频-逆文件频率)</strong>进行修改的<strong>pf- ief(模式频率 - 逆情感频率)</strong>评分机制； </p>
 <p>DeepEmo情感分析框架正是由这三种方法论搭配<strong>卷积神经网络CNN</strong>组成，由这三种方法论所生成的<strong>基于图论的嵌入矩阵</strong>，作为输入数据，最后由卷积神经网络CNN输出其情感类别。  </p>
 <h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><h3 id="情感分析框架DeepEmo的优势在哪里？"><a href="#情感分析框架DeepEmo的优势在哪里？" class="headerlink" title="情感分析框架DeepEmo的优势在哪里？"></a>情感分析框架DeepEmo的优势在哪里？</h3><p>近些年的情感识别系统一般采用表征学习进行特征检测。一般来说，<strong>词语嵌入</strong>（如word2vec）作为输入和<strong>深度学习模型</strong>（如卷积神经网络（CNN））的组合在句子分类中表现良好。由于这些类型的模型的<strong>性质</strong>和他们学习的<strong>特征类型</strong>，它们往往具有较高的<strong>覆盖率(</strong><em>覆盖率  - 特征应该能够隐藏重要的隐性和显性情绪信息</em><strong>)</strong>，较高的<strong>适应性(</strong><em>适应性 - 这些特征可以应用于其他类型的情绪语料库，起源于不同的领域</em><strong>)</strong>，仅需要很少的监督（即自动学习特征），并且能在一定程度上捕捉上下文。然而，这种类型的模型在<strong>可解释性</strong>和<strong>高性能</strong>之间是存在一定的权衡的。基于图论的特征提取机制DeepEmo更侧重于语言组件之间的底层交互。因此，模式会自动显示隐式和明确的情绪表达。 </p>
@@ -439,14 +417,6 @@
     
     
 
-
-
-  
-
-  
-    
-    
-
 <section class="widget copyright  desktop mobile">
   <div class='content'>
     
@@ -458,38 +428,10 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/>https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/>https://wengjj.ink/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/</a></p>
           
         
       </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
     
   </div>
 </section>
@@ -509,10 +451,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T21:00:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-30T16:47:11+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月29日</p>
+    <p>更新于：2020年8月30日</p>
   </a>
 </div>
 
@@ -528,18 +470,13 @@
       
         
           
-
-        
-      
-        
-          
   <div class="new-meta-item share -mob-share-list">
   <div class="-mob-share-list share-body">
     
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之城&summary=来自台湾国立清华大学的Elvis Saravia等研究人员提出了一种基于图论(graph-based)的机制来提取丰富情感(rich-emotion)的相关模式(pattern)，用来加强对语料库的线上情感表达进行深入分析。论文实验结果表明，所提出的情感分析框架DeepEmo比目前大多数的情感分析框架的F1-score都要高（仅次于Volvoka(2016)），而且其提出的富集模式(enriched patterns)也被证实了具有很高的领域适用性。 "
           
           >
           
@@ -549,27 +486,25 @@
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.github.io/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之家&summary="
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2018/06/20/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-情感分析框架DeepEmo论文简析 - 挖掘之城&summary=来自台湾国立清华大学的Elvis Saravia等研究人员提出了一种基于图论(graph-based)的机制来提取丰富情感(rich-emotion)的相关模式(pattern)，用来加强对语料库的线上情感表达进行深入分析。论文实验结果表明，所提出的情感分析框架DeepEmo比目前大多数的情感分析框架的F1-score都要高（仅次于Volvoka(2016)），而且其提出的富集模式(enriched patterns)也被证实了具有很高的领域适用性。 "
           
           >
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
           
         </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
       
     
   </div>
@@ -589,7 +524,7 @@
             
               <a class='prev' href='/2018/06/25/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo%E8%AE%BA%E6%96%87-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/'>
                 <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据矿工学习-情感分析框架DeepEmo论文-个人中文翻译</p>
-                <p class='content'>DeepEmo: Learning and Enriching Pattern-Based Emotion Representations作者： Elvis Saravia /National ...</p>
+                <p class='content'>作者： Elvis Saravia /National Tsing Hua University Hsinchu, Taiwan /ellfae@gmail.com Hsien-Chi Toby...</p>
               </a>
             
             
@@ -650,8 +585,6 @@
 <aside class='l_side'>
   
   
-
-  
     
     
 
@@ -682,35 +615,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -718,7 +627,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -726,7 +635,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -734,7 +643,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -760,7 +669,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -865,16 +774,6 @@
 
 
 
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
-
 
 
 
@@ -921,8 +820,8 @@
     el: '#valine_container',
     meta: meta,
     
-    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    appId: "8Isa3npIOKxatqlt6LGUnBcj-gzGzoHsz",
+    appKey: "w9JX0AWIJuBHlmcf5ICliSx4",
     placeholder: "快来评论吧~",
     pageSize:'10',
     avatar:'robohash',

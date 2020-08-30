@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：特征缩放 - 挖掘之家</title>
+    <title>标签：特征缩放 - 挖掘之城</title>
   
   
 
@@ -42,8 +42,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +158,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +168,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +260,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +270,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -372,9 +346,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -384,9 +358,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python/数据挖掘</p>
+      <p>数据挖掘</p>
     </a>
   </div>
 
@@ -425,29 +399,16 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前些天在 <strong><a href="https://github.com/MachineLearning100/100-Days-Of-ML-Code" target="_blank" rel="noopener">100-Days-Of-ML-Code</a> **上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。</strong>我的观点是：机器学习工程中，应该先进行数据划分，再进行特征缩放。**出于严谨性，本篇文章是从机器学习-数据挖掘方面进行数据拆分与特征缩放的顺序问题阐述，同时也欢迎大家一起讨论这个问题。</p>
-<h1 id="问题阐述"><a href="#问题阐述" class="headerlink" title="问题阐述"></a>问题阐述</h1><p>关于数据拆分与特征缩放的顺序先后问题，一般会在工程中遇到，具体表现为：<br><strong>先数据拆分再特征缩放</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler,MinMaxScaler </span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=<span class="number">0.1</span>) </span><br><span class="line">sc = StandardScaler() </span><br><span class="line">X_train = sc.fit_transform(X_train) </span><br><span class="line">X_test = sc.transform(X_test)</span><br></pre></td></tr></table></figure>
-<p><strong>先数据缩放再数据拆分</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler,MinMaxScaler </span><br><span class="line">sc = StandardScaler() </span><br><span class="line">X_transform = sc.fit_transform(X) </span><br><span class="line">X_train,X_test,y_train,y_test = train_test_split(X_transform,y,test_size=<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="论点阐述"><a href="#论点阐述" class="headerlink" title="论点阐述"></a>论点阐述</h1><p>首先先来看下我们常用的两种 sklearn 上的特征缩放：<strong>StandardScaler()</strong>与<strong>MinMaxScaler()</strong><br><img src="https://i.loli.net/2020/08/29/Swdj8uivr2HL7Q1.png" alt=""><br>从图中可以看出StandardScalar涉及到了<strong>均值μ</strong>与<strong>标准差σ</strong>，而MinMaxScaler则涉及到了<strong>最大值max</strong>与<strong>最小值min</strong>。这些参数的取值都得考虑到<strong>全局样本</strong>的，什么意思呢？我们来看下两者的输出结果：<br><strong>先数据拆分再特征缩放</strong><br><img src="https://i.loli.net/2020/08/29/3p1NbgBruTw8IQY.png" alt=""><br><strong>先数据缩放再数据拆分</strong><br><img src="https://i.loli.net/2020/08/29/vzIewp9XNQRdu4q.png" alt=""><br>可以很明显看出，两种不同的操作顺序输出的数据是完全不同的，也就是说<strong>样本的分布是完全不同</strong>的(很重要！后面阐述要用到)，那这种差异性在现实工程中会有什么影响？要解答这个问题，首先我们首先需要了解<strong>fit_transform()</strong>方法，fit_transform()你可以理解为<strong>fit()</strong>方法和<strong>transform()</strong>方法的pipeline，进行特征缩放时我们的顺序是</p>
-<ol>
-<li>先fit获得相应的参数值（可以理解为获得特征缩放规则）</li>
-<li>再用transform进行转换</li>
-</ol>
-<p>fit_transform方法就是先执行fit()方法再执行transform()方法，所以每执行一次就会采用新的<strong>特征缩放规则</strong>，我们可以将训练集的特征缩放规则应用到测试集上，可以将测试集的特征缩放规则应用到训练集上(不过一般很少这么做)，但是通过全部数据集(训练集+测试集)fit到的的特征缩放规则是<strong>没有模型训练意义</strong>的。 这里我们举一个例子：假设农业部要求我们用LR模型来对花类型进行分类，我们经过学习得到了一个LR模型，模型上线后，现在需要对新的花数据进行预测分类（此时我们可以把<strong>旧花数据看做训练集</strong>，<strong>新花数据看做测试集</strong>）：</p>
-<ul>
-<li>按照<strong>先数据拆分再特征缩放</strong>的做法是：先将旧花数据fit出特征缩放规则，接着将其transform到新花数据上，接着对<strong>应用旧花数据特征缩放规则</strong>的新花数据进行预测分类；</li>
-<li>按照<strong>先数据缩放再数据拆分</strong>的做法是：将新旧花数据合并为一个总数据集，接着对总数据集进行fit_transform操作，最后再把新花数据切分出来进行预测分类；</li>
-</ul>
-<p><strong>重点！！！</strong><br>这时候问题来了，“我们经过学习得到了一个LR模型”，请问我们学习的数据是什么？旧花数据 OR 新旧花合并数据？<br>答案肯定是旧花数据啊，更为详细地讲，是<strong>应用旧花数据特征缩放规则的旧花数据</strong>，这时候第二种做法的问题就出来了，我们这个LR模型是根据<strong>应用旧花数据特征缩放规则的旧花数据</strong>的<strong>分布</strong>学习到的这条分类线<br><img src="https://i.loli.net/2020/08/29/anTWRmOQHG2ilrx.png" alt=""><br>而此时你却将这条分类线去应用在<strong>应用新旧花数据特征缩放规则的新花数据</strong>上，根据上方我们得到的论点“<strong>两种不同的操作顺序输出的样本的分布是完全不同</strong>”，两种完全不同的分布，你用根据<strong>其中一种分布</strong>学习得到分类线对<strong>另一种分布</strong>来说是<strong>完全没有使用意义</strong>的，因为两者根本可以说是根据不同的数据学习而来的，所以有些时候第二种做法效果可能会很好也可能会很糟糕，这就像你拿<strong>牛数据学习的LR模型去预测花的分类一样。</strong>而机器学习的前身就是统计学，而统计学的一个样本基本原则就是<strong>样本同质性（homogenetic）。</strong></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>iris = load_iris()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X, y = iris.data, iris.target</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>quantile_transformer = preprocessing.QuantileTransformer(random_state=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train_trans = quantile_transformer.fit_transform(X_train)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_test_trans = quantile_transformer.transform(X_test)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.percentile(X_train[:, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="number">100</span>]) </span><br><span class="line">array([ <span class="number">4.3</span>,  <span class="number">5.1</span>,  <span class="number">5.8</span>,  <span class="number">6.5</span>,  <span class="number">7.9</span>])</span><br></pre></td></tr></table></figure>
-<p>这里我贴的是sklearn的一段官方demo代码，可以看出sklearn的演示代码也是遵从<strong>先数据拆分再特征缩放的顺序</strong>进行的操作，先fit到X_train的特征缩放规则，再将其应用在X_test上，这也从一个小方面验证了我的观点吧(虽然我也不喜欢不严谨的举例论证方法)。所以综上所述，我的观点是在进行数据挖掘方面的工作时，在面对特征缩放环节时，应该<strong>先进行数据拆分再进行特征缩放环节。</strong> </p>
-<p><font color = red><strong>才学疏浅，欢迎评论指导</strong></font></p>
-
+        <p>前些天在<strong><a href="https://github.com/MachineLearning100/100-Days-Of-ML-Code" target="_blank" rel="noopener">100-Days-Of-ML-Code</a></strong>上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。<strong>我的观点是：机器学习工程中，应该先进行数据划分，再进行特征缩放</strong>。出于严谨性，本篇文章是从机器学习-数据挖掘方面进行数据拆分与特征缩放的顺序问题阐述，同时也欢迎大家一起讨论这个问题。</p>
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
@@ -480,26 +441,17 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box' href='/about/'>
+        <a class='avatar flat-box' href='https://github.com/wengJJ' target="_blank" rel="noopener">
           <img no-lazy src='https://i.loli.net/2020/07/11/p7e1WQKUfnClyxi.png'/>
         </a>
       
     
     
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">挖掘之家</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
     
       <div class="social-wrapper">
         
           
-            <a href="/atom.xml"
+            <a href="https://github.com/wengJJ/wengJJ.github.io"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -507,7 +459,7 @@
           
         
           
-            <a href="mailto:me@xaoxuu.com"
+            <a href="mailto:weng-jj@foxmail.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -515,7 +467,7 @@
           
         
           
-            <a href="https://github.com/xaoxuu"
+            <a href="https://github.com/wengJJ"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -523,7 +475,7 @@
           
         
           
-            <a href="https://music.163.com/#/user/home?id=63035382"
+            <a href="https://music.163.com/#/user/home?id=75517789"
               class="social fas fa-headphones-alt flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -562,27 +514,22 @@
           <li><a class="flat-box child"
             title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesNLPE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesNLPE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
             id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesPythonE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>Python</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/"
             id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808B"
             ><div class='name'>《统计学习方法-李航》</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808BE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"
@@ -592,17 +539,22 @@
           <li><a class="flat-box child"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
             id="categoriesE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>数据挖掘</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/" href="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/"
+            id="categoriesE6AF94E8B59BE9A1B9E79BAE"
+            ><div class='name'>比赛项目</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
@@ -610,9 +562,9 @@
             ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
-            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -636,7 +588,7 @@
 
 
     <div class='content'>
-      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #999">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #999">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #999">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #555">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #999">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #999">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #555">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #999">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #999">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #999">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #999">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #999">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #999">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">非线性支持向量机</a>
+      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #9c9c9c">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #9c9c9c">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #9c9c9c">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #9c9c9c">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #9c9c9c">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #9c9c9c">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #cfcfcf">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #9c9c9c">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #9c9c9c">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #cfcfcf">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #9c9c9c">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #9c9c9c">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #9c9c9c">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #9c9c9c">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #9c9c9c">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #9c9c9c">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">非线性支持向量机</a>
     </div>
   </section>
 
@@ -654,35 +606,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -690,7 +618,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -698,7 +626,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -706,7 +634,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -732,7 +660,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -836,16 +764,6 @@
   
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
 
 
 

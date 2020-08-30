@@ -16,10 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之家</title>
+    <title>数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之城</title>
   
     <meta name="keywords" content="样本自适应的在线卷积稀疏编码">
   
+  
+    <meta name="description" content="在瑞典斯德哥尔摩国际会展中心举行的国际机器学习大会(ICML)正在受到全世界科技界的关注。来自国内人工智能企业队代表第四范式的姚权铭与来自香港科技大学的研究者提出的“Online Convolutional Sparse Coding with Sample-Dependent Dictionary：样本自适应的...">
   
 
   <!-- feed -->
@@ -42,8 +44,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +160,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +170,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +262,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +272,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -359,9 +335,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -408,15 +384,17 @@
         <div class="article-entry" itemprop="articleBody">
           
           <p>在瑞典斯德哥尔摩国际会展中心举行的国际机器学习大会(ICML)正在受到全世界科技界的关注。来自国内人工智能企业队代表第四范式的姚权铭与来自香港科技大学的研究者提出的“Online Convolutional Sparse Coding with Sample-Dependent Dictionary：样本自适应的在线卷积稀疏编码”，入选了ICML 2018中选论文榜单。 </p>
+<a id="more"></a>
+
 <p>首先我们先通过思维导图来简要了解下这篇SCSC论文的整体结构：</p>
 <p><img src="https://i.loli.net/2020/08/29/wonuO3Zhxc2XePm.png" alt=""></p>
 <h1 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a><strong>WHAT</strong></h1><p><strong>SCSC是什么？</strong></p>
 <p><img src="https://i.loli.net/2020/08/29/jGkAUTQ9agYWlqo.png" alt=""> </p>
-<p><strong>卷积稀疏编码（**</strong><em>CSC</em><strong>**）</strong>已被广泛用于图像和信号处理中的<strong>平移不变字典(**</strong><em>sample-dependent dictionary</em><strong>**)</strong>的学习。不同于传统的CSC算法使用由<strong>所有样本共享的字典</strong>来卷积，此篇论文中的SCSC使用的是<strong>样本自适应的字典</strong>，其中每个过滤器是从数据中学习的一组<strong>基本滤波器</strong>的<strong>线性组合</strong>。这种增加的灵活性允许捕获大量依赖于样本的模式，这在处理<strong>大型</strong>或<strong>高维</strong>数据集时特别有用。在计算上，所得到的模型可以通过<strong>在线学习</strong>有效地学习。在大量的数据集上的实验结果表明，所提出的方法优于现有的CSC算法，具有显著减少的<strong>时间</strong>和<strong>空间复杂度</strong>。  </p>
-<h1 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a><strong>WHY</strong></h1><p>*<em>SCSC的优势在哪里？ *</em></p>
+<p><strong>卷积稀疏编码（<em>CSC</em>）</strong>已被广泛用于图像和信号处理中的<strong>平移不变字典(<em>sample-dependent dictionary</em>)</strong>的学习。不同于传统的CSC算法使用由<strong>所有样本共享的字典</strong>来卷积，此篇论文中的SCSC使用的是<strong>样本自适应的字典</strong>，其中每个过滤器是从数据中学习的一组<strong>基本滤波器</strong>的<strong>线性组合</strong>。这种增加的灵活性允许捕获大量依赖于样本的模式，这在处理<strong>大型</strong>或<strong>高维</strong>数据集时特别有用。在计算上，所得到的模型可以通过<strong>在线学习</strong>有效地学习。在大量的数据集上的实验结果表明，所提出的方法优于现有的CSC算法，具有显著减少的<strong>时间</strong>和<strong>空间复杂度</strong>。  </p>
+<h1 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a><strong>WHY</strong></h1><p><strong>SCSC的优势在哪里？</strong></p>
 <p>与目前的最新的CSC进行对比，SCSC的优势主要体现在三个方面: </p>
 <p><strong>1、数据集的大小</strong> </p>
-<p>小样本数据集： 在小数据集的实验中，论文中将<strong>SCSC</strong>与<strong>批量CSC方法</strong>进行比较(<em>包括<strong>DeconvNet</strong>、<strong>fast CSC</strong>、<strong>fast and flexible CSC</strong>等</em>)，其中也包括着与<strong>SCSC</strong>一样采用在线方法的<strong>OCSC</strong>，实验的检验指标采用的是PSNR(<em>峰值信噪比__Peak Signal to Noise Ratio</em>)，得到的结果如下图：</p>
+<p>小样本数据集： 在小数据集的实验中，论文中将SCSC与批量CSC方法进行比较(包括DeconvNet、fast CSC、fast and flexible CSC等)，其中也包括着与SCSC一样采用在线方法的OCSC，实验的检验指标采用的是PSNR(<em>峰值信噪比Peak Signal to Noise Ratio</em>)，得到的结果如下图：</p>
 <p><img src="https://i.loli.net/2020/08/29/RK8bkpLyzmABEZd.png" alt=""> </p>
 <p>上方的图表现了各种CSC方法在时钟时间(<em>clock time</em>)下的PSNR收敛性，实验表明了小数据集条件下，<strong>在线CSC方法</strong>比<strong>批量CSC方法</strong>收敛的更快，具有更好的PSNR，而同样是在线方法的OCSC,SCSC虽然与OCSC具有类似的PSNR，但SCSC收敛的更快。</p>
 <p>大样本数据集： 而在大数据集实验中，所有的批处理CSC算法和两个在线CSC算法<strong>OCDL DEGRAUX</strong>和<strong>OCDLLU</strong>不能处理这样大的数据集。因此，我们只比较<strong>SCSC</strong>与<strong>OCSC</strong>，比较的结果如下：</p>
@@ -426,19 +404,19 @@
 <p>高维数组采用的是三种数据集：<strong>视频数据集</strong>、<strong>光谱数据集</strong>、<strong>光场数据集</strong>。研究人员将<strong>SCSC</strong>与<strong>OCSC</strong>和<strong>CousSUS CSC（CCSC）</strong>作对比，为了公平的比较，所有的方法只使用一台机器。值得一提的是，由于SCSC的内存占用小，实验人员可以在GTX 1080 TI GPU上运行这个实验。OCSC也在GPU上运行用于视频。然而，OCSC只能在CPU上运行多光谱和光场。CCSC在处理过程中需要访问所有的样本和代码，只能在CPU 上运行，实验的结果如下图：</p>
 <p><img src="https://i.loli.net/2020/08/29/DXBQPFilApKWjwx.png" alt=""> </p>
 <p>根据论文中的实验结果显示，SCSC是<strong>唯一</strong>的可以处理整个视频，多光谱和光场数据集在<strong>一台机器</strong>上的方法。相比之下，CCSC只能处理最多30个视频样本、40个多光谱样本和35个光场样本。OCSC可以处理整个视频和多光谱，但是在使用整个光场数据集的2天内不能收敛。 </p>
-<p>至于<strong>速度</strong>，如Table 4所示SCSC的速度是最快的。但是值得注意的是，这仅仅只是作为参考，因为SCSC是在GPU上运行的，而其他的（_除了视频<strong>数据集</strong>上的OCSC_）都是在CPU上运行。然而，这仍然表明SCSC的一个重要优点，即它的小内存占用可以受益于GPU的使用，而其他的则不能。</p>
+<p>至于<strong>速度</strong>，如Table 4所示SCSC的速度是最快的。但是值得注意的是，这仅仅只是作为参考，因为SCSC是在GPU上运行的，而其他的（<em>除了视频数据集上的OCSC</em>）都是在CPU上运行。然而，这仍然表明SCSC的一个重要优点，即它的小内存占用可以受益于GPU的使用，而其他的则不能。</p>
 <p><strong>3、图像的去噪与修复</strong></p>
-<p>在以前的实验中，学习字典的优势是通过<strong>重建干净的图像</strong>来证明的。此篇论文中研究人员进一步研究学习字典中的两个应用：<strong>图像去噪</strong>和<strong>修复</strong>。研究人员使用<strong>SCSC</strong>与<strong>（批**</strong>处理CSC<strong>**）SBCSC</strong>和<strong>（在线）OCSC</strong>进行比较。结果如表5所示:</p>
+<p>在以前的实验中，学习字典的优势是通过<strong>重建干净的图像</strong>来证明的。此篇论文中研究人员进一步研究学习字典中的两个应用：<strong>图像去噪</strong>和<strong>修复</strong>。研究人员使用<strong>SCSC</strong>与<strong>（批处理CSC）SBCSC</strong>和<strong>（在线）OCSC</strong>进行比较。结果如表5所示:</p>
 <p><img src="https://i.loli.net/2020/08/29/Wv8AaCNXw1Z3ihm.png" alt=""> </p>
 <p>可以看出，由SCSC获得的PSNR始终高于其他方法。这同时也表明，在图像重建中产生高PSNR的字典也在可以使其他图像处理应用发挥更好的性能。  </p>
-<h1 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a><strong>HOW</strong></h1><p>*<em>SCSC的使用细则 *</em></p>
+<h1 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a><strong>HOW</strong></h1><p><strong>SCSC的使用细则</strong></p>
 <p>论文中提出的<strong>样本自适应的卷积稀疏编码</strong>(SCSC)主要解决<strong>传统卷积稀疏编码(CSC)</strong>不能适用于高维度数据(P表示)和较多过滤器(K表示)的问题；SCSC的核心有两点：</p>
 <p><img src="https://i.loli.net/2020/08/29/PjGLF9IM26SqewA.png" alt=""> </p>
 <p>(a)首先将CSC过滤器用两部分表示，第一部分是<strong>基础滤波器(<em>base filters</em>)</strong>所有样本共享，第二部分是<strong>样本自适应系数(<em>sample-dependent weights</em>)</strong>每个样本单独学习。这样一来，和标准CSC比较，SCSC方法中并没有全局的滤波器，而是对每个样本从一堆<strong>基础滤波器</strong>中通过<strong>样本自适应系数</strong>组合出来自己的<strong>滤波器</strong>。</p>
 <p>(b)基于以上模型，只有<strong>基础滤波器</strong>是依赖于<strong>全部数据</strong>的。方法的第二点在于我们使用在线学习的方法去<strong>快速</strong>并且<strong>小内存</strong>的学习<strong>基础滤波器</strong>。</p>
 <p>具体的<strong>SCSC学习算法</strong>如下：</p>
 <p><img src="https://i.loli.net/2020/08/29/RiAymcKHN2X4Cos.png" alt=""><br><img src="https://i.loli.net/2020/08/29/bvsYJMNaKEj1tig.png" alt=""></p>
-<h1 id="DICUSS"><a href="#DICUSS" class="headerlink" title="DICUSS"></a><strong>DICUSS</strong></h1><p>*<em>关于SCSC的讨论与思考 *</em></p>
+<h1 id="DICUSS"><a href="#DICUSS" class="headerlink" title="DICUSS"></a><strong>DICUSS</strong></h1><p><strong>关于SCSC的讨论与思考</strong></p>
 <p>随着<strong>CNN(<em>卷积神经网络</em>)</strong>在图像识别的效果越来越好，CNN越来越受AI学者的青睐，越来越多的应用也开始尝试采用CNN方法，但是，随着对CNN的尝试和研究的深入，它的<strong>不可解释性</strong>以及实验的<strong>不可复制重复的问题</strong>变的越来越严重，CNN是个黑盒魔法已几乎成为共识，相比与处理图像分类问题的CNN，CSC是一个线<strong>性卷积的无监督的学习的方法</strong>。CSC模型更<strong>简单</strong>，更<strong>直观</strong>容易<strong>分析理解</strong>。因此，最近一些机器学习&amp;机器视觉大牛(e.g. Michael Elad - 稀疏编码的创始人之一)开始尝试着用CSC解决应用问题和理解CNN，在应用层面上，医疗/生物图片数据，例如脑磁图(<em>Magnetoencephalography, MEG</em>)，(电子显微镜获得)，还有频谱(<em>hyperspectral image</em>)和光场(<em>light field</em>)数据上都使用CSC取得了非常不错的成果。 </p>
 <p>同时研究人员也表示，未来将结合<strong>自适应在线卷积稀疏编码SCSC</strong>和<strong>神经网络模型</strong>的优势，将样本自适应的idea应用到卷积神经网络模型中。这将<strong>增加</strong>神经网络<strong>迁移学习</strong>的能力同时<strong>减少</strong>其所需要的<strong>计算量</strong>，使得这些网络在<strong>高维度低样本</strong>数据上也适用。 </p>
 <p>论文链接：<a href="https://arxiv.org/pdf/1804.10366.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1804.10366.pdf</a> </p>
@@ -448,14 +426,6 @@
             <div class='article_footer'>
               
                 
-  
-    
-    
-
-
-
-  
-
   
     
     
@@ -479,38 +449,10 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.github.io/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/>https://wengjj.github.io/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/>https://wengjj.ink/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/</a></p>
           
         
       </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
     
   </div>
 </section>
@@ -530,10 +472,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T21:22:57+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-30T16:54:42+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月29日</p>
+    <p>更新于：2020年8月30日</p>
   </a>
 </div>
 
@@ -549,18 +491,13 @@
       
         
           
-
-        
-      
-        
-          
   <div class="new-meta-item share -mob-share-list">
   <div class="-mob-share-list share-body">
     
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.github.io/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之家&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之城&summary=在瑞典斯德哥尔摩国际会展中心举行的国际机器学习大会(ICML)正在受到全世界科技界的关注。来自国内人工智能企业队代表第四范式的姚权铭与来自香港科技大学的研究者提出的“Online Convolutional Sparse Coding with Sample-Dependent Dictionary：样本自适应的在线卷积稀疏编码”，入选了ICML 2018中选论文榜单。 "
           
           >
           
@@ -570,27 +507,25 @@
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wengjj.github.io/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之家&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.github.io/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之家&summary="
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/&title=数据矿工学习-样本自适应的在线卷积稀疏编码论文简析 - 挖掘之城&summary=在瑞典斯德哥尔摩国际会展中心举行的国际机器学习大会(ICML)正在受到全世界科技界的关注。来自国内人工智能企业队代表第四范式的姚权铭与来自香港科技大学的研究者提出的“Online Convolutional Sparse Coding with Sample-Dependent Dictionary：样本自适应的在线卷积稀疏编码”，入选了ICML 2018中选论文榜单。 "
           
           >
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
           
         </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
       
     
   </div>
@@ -674,8 +609,6 @@
 <aside class='l_side'>
   
   
-
-  
     
     
 
@@ -690,7 +623,7 @@
 
 
     <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WHAT"><span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WHY"><span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HOW"><span class="toc-text">HOW</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DICUSS"><span class="toc-text">DICUSS</span></a></li></ol>
     </div>
   </section>
 
@@ -706,35 +639,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -742,7 +651,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -750,7 +659,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -758,7 +667,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -784,7 +693,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -889,16 +798,6 @@
 
 
 
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
-
 
 
 
@@ -945,8 +844,8 @@
     el: '#valine_container',
     meta: meta,
     
-    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    appId: "8Isa3npIOKxatqlt6LGUnBcj-gzGzoHsz",
+    appKey: "w9JX0AWIJuBHlmcf5ICliSx4",
     placeholder: "快来评论吧~",
     pageSize:'10',
     avatar:'robohash',

@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：numpy - 挖掘之家</title>
+    <title>标签：numpy - 挖掘之城</title>
   
   
 
@@ -42,8 +42,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +158,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +168,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +260,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +270,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -372,9 +346,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -384,9 +358,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+    <a href='/categories/Python/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python/数据挖掘</p>
+      <p>Python</p>
     </a>
   </div>
 
@@ -426,58 +400,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>刚开始学习数据挖掘时，有时总是对<strong>numpy</strong>和<strong>pandas</strong>傻傻分不清楚，这个问题在训练模型阶段<strong>输入训练数据</strong>的时候最为明显，下面就来详细介绍下numpy  </p>
-<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><h2 id="WHAT？"><a href="#WHAT？" class="headerlink" title="WHAT？"></a>WHAT？</h2><p>numpy是专门为科学计算设计的一个python扩展包，为python提供高效率的多维数组，也被称为<strong>面向阵列计算（array oriented computing）</strong>，同时numpy也是github上的一个开源项目：<a href="https://github.com/numpy/numpy" target="_blank" rel="noopener">numpy</a>，numpy是基于<strong>c语言</strong>开发，所以这使得numpy的运行速度很快，高效率运行就是numpy的一大优势。 </p>
-<p>下面我们就来生成一个最简单的numpy对象，首先我们要导入numpy包，一般我们都把它命名为<strong>np</strong>： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
-<p>接着就可以生成一个numpy一维数组：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">2</span>]: a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]],dtype=np.int32) </span><br><span class="line">In [<span class="number">3</span>]: a </span><br><span class="line">Out[<span class="number">3</span>]: array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-<p>numpy中定义的最重要的数据结构是称为ndarray的n维数组类型，这个结构引用了两个对象，一块用于<strong>保存数据的存储区域</strong>和一个<strong>用于描述元素类型的dtype对象</strong>：</p>
-<p><img src="https://i.loli.net/2020/08/29/oefQZTqNu1pmSOj.jpg" alt=""></p>
-<h2 id="WHY？"><a href="#WHY？" class="headerlink" title="WHY？"></a>WHY？</h2><p>二维数组的生成在python中我们还可以用到<strong>list列表</strong>，如果用list来表示[1,2,3]，由于list中的元素可以是<strong>任何对象</strong>，所以list中保存的是<strong>对象的指针</strong>，如果要保存[1,2,3]就需要三个<strong>指针</strong>和三个<strong>整数对象</strong>，是比较浪费<strong>内存资源</strong>和<strong>cpu计算时间</strong>的，而<strong>ndarray</strong>是一种保存<strong>单一</strong>数据类型的<strong>多维</strong>数组结构，在数据处理上比list列表要快上很多，在这里我们可以用<strong><em>%timeit</em></strong>命令来检测两者的数据处理速度： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">9</span>]: a = range(<span class="number">1000</span>) </span><br><span class="line">In [<span class="number">10</span>]: %timeit[i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> a] </span><br><span class="line"><span class="number">381</span> µs ± <span class="number">6.1</span> µs per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">1000</span> loops each) </span><br><span class="line">In [<span class="number">11</span>]: b = np.arange(<span class="number">1000</span>) </span><br><span class="line">In [<span class="number">12</span>]: %timeit b**<span class="number">2</span> </span><br><span class="line"><span class="number">1.41</span> µs ± <span class="number">18</span> ns per loop (mean ± std. dev. of <span class="number">7</span> runs, <span class="number">1000000</span> loops each)</span><br></pre></td></tr></table></figure>
-<p>由于<strong>相同数据大小的array运算直接作用到元素级上</strong>这一numpy特性，结果显而易见，在数据处理上numpy数组比使用for循环的list列表快的不是一点两点。</p>
-<h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW?"></a>HOW?</h2><p>OK,知道了numpy大概是个什么东西，下面我们就来介绍下numpy数组的一些常用操作： <strong>这里生成一个3x3的矩阵作为例子：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">2</span>]: data = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]) <span class="comment">#等价于data=np.arange(1，10).reshape(3,3)</span></span><br><span class="line">In [<span class="number">3</span>]: data</span><br><span class="line">Out[<span class="number">3</span>]:</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">       [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
-<p><strong>查看矩阵信息：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">6</span>]: data.shape <span class="comment">#返回元组，表示n行n列 </span></span><br><span class="line">Out[<span class="number">6</span>]: (<span class="number">3</span>, <span class="number">3</span>) </span><br><span class="line">In [<span class="number">7</span>]: data.dtype <span class="comment">#返回数组数据类型</span></span><br><span class="line">Out[<span class="number">7</span>]: dtype(<span class="string">'int32'</span>) </span><br><span class="line">In [<span class="number">8</span>]: data.ndim <span class="comment">#返回是几维数组 </span></span><br><span class="line">Out[<span class="number">8</span>]: <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p><strong>转换数据类型：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">11</span>]: a = data.astype(float) <span class="comment">#拷贝一份新的数组 </span></span><br><span class="line">In [<span class="number">12</span>]: a.dtype </span><br><span class="line">Out[<span class="number">12</span>]: dtype(<span class="string">'float64'</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>数组之间的计算：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">15</span>]: data+data</span><br><span class="line">Out[<span class="number">15</span>]:</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">4</span>,  <span class="number">6</span>],</span><br><span class="line">       [ <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>],</span><br><span class="line">       [<span class="number">14</span>, <span class="number">16</span>, <span class="number">18</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">16</span>]: data*data</span><br><span class="line">Out[<span class="number">16</span>]:</span><br><span class="line">array([[ <span class="number">1</span>,  <span class="number">4</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>],</span><br><span class="line">       [<span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]])</span><br></pre></td></tr></table></figure>
-<p>可以看出相同规格的数组计算是直接作用在其元素级上的，那不同的规格的数组是否能进行运算呢，我们来看下这个例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">18</span>]: data1 = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">1</span>,<span class="number">2</span>]])    <span class="comment">#生成一个2x2numpy数组</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">19</span>]: data+data1</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">ValueError                                Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input<span class="number">-19</span>-f2592a975589&gt; <span class="keyword">in</span> &lt;module&gt;()</span><br><span class="line">----&gt; 1 data+data1</span><br><span class="line"> </span><br><span class="line">ValueError: operands could <span class="keyword">not</span> be broadcast together <span class="keyword">with</span> shapes (<span class="number">3</span>,<span class="number">3</span>) (<span class="number">2</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>我们可以看出不同规格的数组一起计算的话是会报出<strong>广播错误</strong>的，那是不是可以下结论了，别急我们再来看下方两个特殊例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">20</span>]: data2 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">21</span>]: data + data2</span><br><span class="line">Out[<span class="number">21</span>]:</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">4</span>,  <span class="number">6</span>],</span><br><span class="line">       [ <span class="number">5</span>,  <span class="number">7</span>,  <span class="number">9</span>],</span><br><span class="line">       [ <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">22</span>]: data3 = np.array([[<span class="number">1</span>],[<span class="number">2</span>],[<span class="number">3</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">23</span>]: data+data3</span><br><span class="line">Out[<span class="number">23</span>]:</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>],</span><br><span class="line">       [ <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]])</span><br></pre></td></tr></table></figure>
-<p>data2数组的列数量与data数组相等，data3数组的行数量与data数组相等，这两个numpy数组虽然规格与data数组不一样，但却依然可以与data数组进行运算。</p>
-<p><strong>数组的切片：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">24</span>]: data[:<span class="number">2</span>]    <span class="comment">#沿着行(axis=0)进行索引</span></span><br><span class="line">Out[<span class="number">24</span>]:</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">25</span>]: data[:<span class="number">2</span>,:<span class="number">2</span>]    <span class="comment">#先沿着行(axis=0)进行索引，再沿着列(axis=1)进行索引</span></span><br><span class="line">Out[<span class="number">25</span>]:</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">26</span>]: data[<span class="number">1</span>,<span class="number">0</span>:<span class="number">2</span>]    <span class="comment">#下标是从0开始</span></span><br><span class="line">Out[<span class="number">26</span>]: array([<span class="number">4</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
-<p>这里需要注意的是，切片操作是在原始数组上创建一个视图view，这只是访问数组数据的一种方式。 因此原始数组不会被复制到内存中，传递的是一个类似引用的东西，与上面的astype（）方法是两种不同的拷贝方式，这里我们来看一个例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">32</span>]: a = data[<span class="number">1</span>]</span><br><span class="line"> </span><br><span class="line">In [<span class="number">33</span>]: a</span><br><span class="line">Out[<span class="number">33</span>]: array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">34</span>]: a[:] = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">35</span>]: data</span><br><span class="line">Out[<span class="number">35</span>]:</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
-<p>当切片对象a改变时，data的对应值也会跟着改变，这是在我们日常数据处理中有时会疏忽的一个点，最安全的复制方法是使用 <strong>copy（）方法进行浅拷贝：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">36</span>]: a = data[<span class="number">1</span>].copy()</span><br><span class="line"> </span><br><span class="line">In [<span class="number">37</span>]: a</span><br><span class="line">Out[<span class="number">37</span>]: array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">38</span>]: a[:]=<span class="number">9</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">39</span>]: data</span><br><span class="line">Out[<span class="number">39</span>]:</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
-<p><strong>数组的布尔索引：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">43</span>]: data</span><br><span class="line">Out[<span class="number">43</span>]:</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span><br><span class="line">       [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">44</span>]: data&gt;<span class="number">3</span></span><br><span class="line">Out[<span class="number">44</span>]:</span><br><span class="line">array([[<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">45</span>]: data[data&gt;<span class="number">3</span>]    <span class="comment">#找出大于3的元素</span></span><br><span class="line">Out[<span class="number">45</span>]: array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br></pre></td></tr></table></figure>
-<p><strong>数组的逻辑表达处理：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">46</span>]: np.where(data&gt;<span class="number">3</span>,<span class="number">1</span>,<span class="number">0</span>)    <span class="comment">#大于3的标记为1，小于等于3的标记为0</span></span><br><span class="line">Out[<span class="number">46</span>]:</span><br><span class="line">array([[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]])</span><br></pre></td></tr></table></figure>
-<p><strong>数组的常用统计操作：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">47</span>]: data.mean(axis=<span class="number">0</span>) <span class="comment">#沿着行(axis=0)进行索引，求出其平均值 </span></span><br><span class="line">Out[<span class="number">47</span>]: array([<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]) </span><br><span class="line">In [<span class="number">49</span>]: data.std() <span class="comment">#求出全部元素的方差 </span></span><br><span class="line">Out[<span class="number">49</span>]: <span class="number">2.581988897471611</span> </span><br><span class="line">In [<span class="number">50</span>]: (data&gt;<span class="number">3</span>).sum() <span class="comment">#统计数组中元素大于3的个数 </span></span><br><span class="line">Out[<span class="number">50</span>]: <span class="number">6</span> </span><br><span class="line">In [<span class="number">51</span>]: data.any() <span class="comment">#数组中是否存在一个或多个true </span></span><br><span class="line">Out[<span class="number">51</span>]: <span class="literal">True</span> </span><br><span class="line">In [<span class="number">52</span>]: data.all() <span class="comment">#数组中是否全部数都是true </span></span><br><span class="line">Out[<span class="number">52</span>]: <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">53</span>]: data.cumsum(<span class="number">0</span>)    <span class="comment">#沿着行(axis=0)进行索引，进行累加</span></span><br><span class="line">Out[<span class="number">53</span>]:</span><br><span class="line">array([[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">       [ <span class="number">5</span>,  <span class="number">7</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">12</span>, <span class="number">15</span>, <span class="number">18</span>]], dtype=int32)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">54</span>]: data.cumprod(<span class="number">1</span>)    <span class="comment">#沿着列(axis=1)进行索引，进行累乘</span></span><br><span class="line">Out[<span class="number">54</span>]:</span><br><span class="line">array([[  <span class="number">1</span>,   <span class="number">2</span>,   <span class="number">6</span>],</span><br><span class="line">       [  <span class="number">4</span>,  <span class="number">20</span>, <span class="number">120</span>],</span><br><span class="line">       [  <span class="number">7</span>,  <span class="number">56</span>, <span class="number">504</span>]], dtype=int32)</span><br></pre></td></tr></table></figure>
-<p><strong>数组的排序操作：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">55</span>]: data=np.random.randn(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">56</span>]: data</span><br><span class="line">Out[<span class="number">56</span>]:</span><br><span class="line">array([[ <span class="number">1.58669867</span>,  <span class="number">1.57692769</span>, <span class="number">-1.85828013</span>,  <span class="number">1.17201164</span>],</span><br><span class="line">       [ <span class="number">1.68160714</span>, <span class="number">-0.83957549</span>, <span class="number">-0.33771694</span>, <span class="number">-0.33782379</span>],</span><br><span class="line">       [<span class="number">-0.03148106</span>, <span class="number">-0.97819034</span>,  <span class="number">0.51126626</span>, <span class="number">-0.08184963</span>],</span><br><span class="line">       [<span class="number">-0.02822319</span>, <span class="number">-0.31934723</span>,  <span class="number">0.70764701</span>,  <span class="number">0.80444954</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">57</span>]: data.sort(<span class="number">0</span>)    <span class="comment">#沿着行(axis=0)进行索引，并进行升序排序</span></span><br><span class="line"> </span><br><span class="line">In [<span class="number">58</span>]: data</span><br><span class="line">Out[<span class="number">58</span>]:</span><br><span class="line">array([[<span class="number">-0.03148106</span>, <span class="number">-0.97819034</span>, <span class="number">-1.85828013</span>, <span class="number">-0.33782379</span>],</span><br><span class="line">       [<span class="number">-0.02822319</span>, <span class="number">-0.83957549</span>, <span class="number">-0.33771694</span>, <span class="number">-0.08184963</span>],</span><br><span class="line">       [ <span class="number">1.58669867</span>, <span class="number">-0.31934723</span>,  <span class="number">0.51126626</span>,  <span class="number">0.80444954</span>],</span><br><span class="line">       [ <span class="number">1.68160714</span>,  <span class="number">1.57692769</span>,  <span class="number">0.70764701</span>,  <span class="number">1.17201164</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">59</span>]: data[::<span class="number">-1</span>]    <span class="comment">#降序操作</span></span><br><span class="line">Out[<span class="number">59</span>]:</span><br><span class="line">array([[ <span class="number">1.68160714</span>,  <span class="number">1.57692769</span>,  <span class="number">0.70764701</span>,  <span class="number">1.17201164</span>],</span><br><span class="line">       [ <span class="number">1.58669867</span>, <span class="number">-0.31934723</span>,  <span class="number">0.51126626</span>,  <span class="number">0.80444954</span>],</span><br><span class="line">       [<span class="number">-0.02822319</span>, <span class="number">-0.83957549</span>, <span class="number">-0.33771694</span>, <span class="number">-0.08184963</span>],</span><br><span class="line">       [<span class="number">-0.03148106</span>, <span class="number">-0.97819034</span>, <span class="number">-1.85828013</span>, <span class="number">-0.33782379</span>]])</span><br></pre></td></tr></table></figure>
-<p>注意：直接调用数组的方法的排序将直接改变数组而不会产生新的拷贝。</p>
-<p><strong>矩阵运算：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">62</span>]: x=np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">63</span>]: x</span><br><span class="line">Out[<span class="number">63</span>]:</span><br><span class="line">array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">       [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">64</span>]: np.dot(x,x)    <span class="comment">#矩阵相乘</span></span><br><span class="line">Out[<span class="number">64</span>]:</span><br><span class="line">array([[ <span class="number">15</span>,  <span class="number">18</span>,  <span class="number">21</span>],</span><br><span class="line">       [ <span class="number">42</span>,  <span class="number">54</span>,  <span class="number">66</span>],</span><br><span class="line">       [ <span class="number">69</span>,  <span class="number">90</span>, <span class="number">111</span>]])</span><br><span class="line"> </span><br><span class="line">In [<span class="number">65</span>]: x.T    <span class="comment">#矩阵转置</span></span><br><span class="line">Out[<span class="number">65</span>]:</span><br><span class="line">array([[<span class="number">0</span>, <span class="number">3</span>, <span class="number">6</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>],</span><br><span class="line">       [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>]])</span><br></pre></td></tr></table></figure>
-<p>在numpy中的linalg中有还有很多矩阵运算，比如svd分解，qr分解，cholesky分解等等。 </p>
-<p><strong>numpy数据的读取和保存：</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">68</span>]: np.save(<span class="string">'name'</span>,data)</span><br><span class="line"> </span><br><span class="line">In [<span class="number">69</span>]: np.load(<span class="string">'name.npy'</span>)</span><br><span class="line">Out[<span class="number">69</span>]:</span><br><span class="line">array([[<span class="number">-0.03148106</span>, <span class="number">-0.97819034</span>, <span class="number">-1.85828013</span>, <span class="number">-0.33782379</span>],</span><br><span class="line">       [<span class="number">-0.02822319</span>, <span class="number">-0.83957549</span>, <span class="number">-0.33771694</span>, <span class="number">-0.08184963</span>],</span><br><span class="line">       [ <span class="number">1.58669867</span>, <span class="number">-0.31934723</span>,  <span class="number">0.51126626</span>,  <span class="number">0.80444954</span>],</span><br><span class="line">       [ <span class="number">1.68160714</span>,  <span class="number">1.57692769</span>,  <span class="number">0.70764701</span>,  <span class="number">1.17201164</span>]])</span><br></pre></td></tr></table></figure>
-
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>numpy的知识学到这里，就已经可以应付好日常的数据处理了，便捷的操作，高效的处理，都使得numpy成为科学计算的一大利器。     </p>
-<p>参考资料：<br><a href="https://www.yiibai.com/numpy/numpy_ndarray_object.html" target="_blank" rel="noopener">易百教程-numpy教程</a><br><a href="http://www.scipy-lectures.org/intro/numpy/array_object.html" target="_blank" rel="noopener">scipy讲义-numpy</a><br><a href="http://danzhuibing.github.io/py_numpy_ndarray.html" target="_blank" rel="noopener">LEVEL-numpy ndarray详解</a></p>
-<p><font color =red><strong>才学疏浅，欢迎评论指导</strong></font></p>
-
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2018/05/21/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bnumpy/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
@@ -510,26 +441,17 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box' href='/about/'>
+        <a class='avatar flat-box' href='https://github.com/wengJJ' target="_blank" rel="noopener">
           <img no-lazy src='https://i.loli.net/2020/07/11/p7e1WQKUfnClyxi.png'/>
         </a>
       
     
     
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">挖掘之家</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
     
       <div class="social-wrapper">
         
           
-            <a href="/atom.xml"
+            <a href="https://github.com/wengJJ/wengJJ.github.io"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -537,7 +459,7 @@
           
         
           
-            <a href="mailto:me@xaoxuu.com"
+            <a href="mailto:weng-jj@foxmail.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -545,7 +467,7 @@
           
         
           
-            <a href="https://github.com/xaoxuu"
+            <a href="https://github.com/wengJJ"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -553,7 +475,7 @@
           
         
           
-            <a href="https://music.163.com/#/user/home?id=63035382"
+            <a href="https://music.163.com/#/user/home?id=75517789"
               class="social fas fa-headphones-alt flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -592,27 +514,22 @@
           <li><a class="flat-box child"
             title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesNLPE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesNLPE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
             id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesPythonE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>Python</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/"
             id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808B"
             ><div class='name'>《统计学习方法-李航》</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808BE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"
@@ -622,17 +539,22 @@
           <li><a class="flat-box child"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
             id="categoriesE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>数据挖掘</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/" href="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/"
+            id="categoriesE6AF94E8B59BE9A1B9E79BAE"
+            ><div class='name'>比赛项目</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
@@ -640,9 +562,9 @@
             ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
-            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -666,7 +588,7 @@
 
 
     <div class='content'>
-      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #999">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #999">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #999">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #555">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #999">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #999">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #555">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #999">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #999">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #999">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #999">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #999">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #999">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">非线性支持向量机</a>
+      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #9c9c9c">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #9c9c9c">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #9c9c9c">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #9c9c9c">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #9c9c9c">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #9c9c9c">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #cfcfcf">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #9c9c9c">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #9c9c9c">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #cfcfcf">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #9c9c9c">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #9c9c9c">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #9c9c9c">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #9c9c9c">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #9c9c9c">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #9c9c9c">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">非线性支持向量机</a>
     </div>
   </section>
 
@@ -684,35 +606,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -720,7 +618,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -728,7 +626,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -736,7 +634,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -762,7 +660,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -866,16 +764,6 @@
   
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
 
 
 

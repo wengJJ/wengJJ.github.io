@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>归档：2020 - 挖掘之家</title>
+    <title>分类：论文翻译 - 挖掘之城</title>
   
   
 
@@ -42,8 +42,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -70,136 +68,7 @@
 
 <body>
   
-  <div class="cover-wrapper">
-    
-      <cover class='cover  half'>
-        <div class='cover-body'>
-  <div class='a'>
-    
-      <img class='logo' src='https://i.loli.net/2020/07/11/fDHcmznoxPZgi2p.png'/>
-    
-    
-    
-  </div>
-  <div id="binft" style="margin-top:20px"></div>
-  <script>
-    var binft = function (r) {
-      function t() {
-        return b[Math.floor(Math.random() * b.length)]
-      }  
-      function e() {
-        return String.fromCharCode(94 * Math.random() + 33)
-      }
-      function n(r) {
-        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
-          var l = document.createElement("span");
-          l.textContent = e(), l.style.color = t(), n.appendChild(l)
-        }
-        return n
-      }
-      function i() {
-        var t = o[c.skillI];
-        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
-      }
-      var l = "",
-      o = ["wengJJ个人技术小站"].map(function (r) {
-      return r + ""
-      }),
-      a = 2,
-      g = 1,
-      s = 5,
-      d = 75,
-      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
-      c = {
-        text: "",
-        prefixP: -s,
-        skillI: 0,
-        skillP: 0,
-        direction: "forward",
-        delay: a,
-        step: g
-      };
-      i()
-      };
-      binft(document.getElementById('binft'));
-  </script>
-  <div class='b' style="margin-top:20px">
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation'>
-      <ul class='cover-list-h'>
-        
-          
-            <li>
-              <a class="nav home"
-                href="https://volantis.js.org/getting-started/"
-                
-                
-                id="https:volantisjsorggetting-started">
-                <i class='fas fa-book fa-fw'></i>文档
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="https://volantis.js.org/archives/"
-                
-                
-                id="https:volantisjsorgarchives">
-                <i class='fas fa-rss fa-fw'></i>博文
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="https://volantis.js.org/examples/"
-                
-                
-                id="https:volantisjsorgexamples">
-                <i class='fas fa-play-circle fa-fw'></i>示例
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="https://github.com/xaoxuu/hexo-theme-volantis/"
-                
-                  rel="external nofollow noopener noreferrer"
-                
-                
-                  target="_blank"
-                
-                id="https:githubcomxaoxuuhexo-theme-volantis">
-                <i class='fas fa-file-code fa-fw'></i>源码
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="https://volantis.js.org/contributors/"
-                
-                
-                id="https:volantisjsorgcontributors">
-                <i class='fas fa-handshake fa-fw'></i>鸣谢
-              </a>
-            </li>
-          
-        
-      </ul>
-    </div>
-	
-  </div>
-</div>
-
-      </cover>
-    
-    <div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
@@ -289,7 +158,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -299,27 +168,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -403,7 +260,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -413,27 +270,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -452,16 +297,17 @@
 
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
       
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list ">
     
       
@@ -486,8 +332,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/06/06/hello-world/">
-      Hello World
+    <a href="/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/">
+      数据矿工学习-样本自适应的在线卷积稀疏编码论文-个人中文翻译
     </a>
   </h2>
 
@@ -500,9 +346,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -510,6 +356,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>图像识别/论文翻译</p>
+    </a>
+  </div>
+
 
             
           
@@ -517,7 +371,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月6日</p>
+    <p>发布于：2018年7月23日</p>
   </a>
 </div>
 
@@ -545,23 +399,18 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p><img src="https://i.loli.net/2020/08/29/HFrb6MPyDSk3iph.png" alt=""> </p>
+<p>论文地址 ： <a href="https://arxiv.org/abs/1804.10366" target="_blank" rel="noopener">https://arxiv.org/abs/1804.10366</a></p>
+<p>文中的数学公式符号并不能很好的显示，采用普通字母代替，故带有一定的误差，建议数学公式的推导还是回归论文查看。</p>
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2018/07/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81%E8%AE%BA%E6%96%87-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
@@ -581,7 +430,9 @@
   
 
 
-	
+    
+  
+
 </div>
 <aside class='l_side'>
   
@@ -593,26 +444,17 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box' href='/about/'>
+        <a class='avatar flat-box' href='https://github.com/wengJJ' target="_blank" rel="noopener">
           <img no-lazy src='https://i.loli.net/2020/07/11/p7e1WQKUfnClyxi.png'/>
         </a>
       
     
     
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">挖掘之家</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
     
       <div class="social-wrapper">
         
           
-            <a href="/atom.xml"
+            <a href="https://github.com/wengJJ/wengJJ.github.io"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -620,7 +462,7 @@
           
         
           
-            <a href="mailto:me@xaoxuu.com"
+            <a href="mailto:weng-jj@foxmail.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -628,7 +470,7 @@
           
         
           
-            <a href="https://github.com/xaoxuu"
+            <a href="https://github.com/wengJJ"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -636,7 +478,7 @@
           
         
           
-            <a href="https://music.163.com/#/user/home?id=63035382"
+            <a href="https://music.163.com/#/user/home?id=75517789"
               class="social fas fa-headphones-alt flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -675,27 +517,22 @@
           <li><a class="flat-box child"
             title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesNLPE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/NLP/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesNLPE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
             id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesPythonE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>Python</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/"
             id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808B"
             ><div class='name'>《统计学习方法-李航》</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
-            id="categoriesE3808AE7BB9FE8AEA1E5ADA6E4B9A0E696B9E6B395-E69D8EE888AAE3808BE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"
@@ -705,17 +542,22 @@
           <li><a class="flat-box child"
             title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
             id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE59BBEE5838FE8AF86E588ABE8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
             id="categoriesE695B0E68DAEE68C96E68E98"
-            ><div class='name'>数据挖掘</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>数据挖掘</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE69CBAE599A8E5ADA6E4B9A0"
-            ><div class='name'>机器学习</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/" href="/categories/%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE/"
+            id="categoriesE6AF94E8B59BE9A1B9E79BAE"
+            ><div class='name'>比赛项目</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
@@ -723,9 +565,9 @@
             ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AE%80%E6%9E%90/"
-            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7AE80E69E90"
-            ><div class='name'>论文简析</div><div class='badge'>(1)</div></a></li>
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/"
+            id="categoriesE6B7B1E5BAA6E5ADA6E4B9A0E8AEBAE69687E7BFBBE8AF91"
+            ><div class='name'>论文翻译</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -749,7 +591,7 @@
 
 
     <div class='content'>
-      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #999">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #999">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #999">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #999">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #555">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #999">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #999">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #555">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #999">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #999">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #999">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #999">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #999">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #999">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #999">非线性支持向量机</a>
+      <a href="/tags/100%E5%A4%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%8C%91%E6%88%98/" style="font-size: 14px; color: #9c9c9c">100天机器学习挑战</a> <a href="/tags/K%E8%BF%91%E9%82%BB%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">K近邻法</a> <a href="/tags/SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">SMO序列最小最优化算法</a> <a href="/tags/numpy/" style="font-size: 14px; color: #9c9c9c">numpy</a> <a href="/tags/pandas/" style="font-size: 14px; color: #9c9c9c">pandas</a> <a href="/tags/pyecharts/" style="font-size: 14px; color: #9c9c9c">pyecharts</a> <a href="/tags/python/" style="font-size: 14px; color: #9c9c9c">python</a> <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" style="font-size: 14px; color: #9c9c9c">决策树</a> <a href="/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6DeepEmo/" style="font-size: 24px; color: #cfcfcf">情感分析框架DeepEmo</a> <a href="/tags/%E6%84%9F%E7%9F%A5%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">感知机</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" style="font-size: 14px; color: #9c9c9c">数据拆分</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #9c9c9c">数据挖掘</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">最优化算法</a> <a href="/tags/%E6%9C%80%E5%A4%A7%E7%86%B5%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">最大熵模型</a> <a href="/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #9c9c9c">朴素贝叶斯法</a> <a href="/tags/%E6%A0%B7%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%8D%B7%E7%A7%AF%E7%A8%80%E7%96%8F%E7%BC%96%E7%A0%81/" style="font-size: 24px; color: #cfcfcf">样本自适应的在线卷积稀疏编码</a> <a href="/tags/%E6%A0%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #9c9c9c">核函数</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" style="font-size: 14px; color: #9c9c9c">模型的评估与选择</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #9c9c9c">深度学习</a> <a href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" style="font-size: 14px; color: #9c9c9c">特征缩放</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">生成器</a> <a href="/tags/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" style="font-size: 14px; color: #9c9c9c">监督学习与统计学习三要素</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性可分支持向量机</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">线性支持向量机</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA/" style="font-size: 14px; color: #9c9c9c">统计学习概论</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 14px; color: #9c9c9c">迭代器</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #9c9c9c">逻辑斯蒂回归模型</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" style="font-size: 14px; color: #9c9c9c">非线性支持向量机</a>
     </div>
   </section>
 
@@ -767,35 +609,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -803,7 +621,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -811,7 +629,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -819,7 +637,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -845,7 +663,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -853,14 +671,6 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -957,16 +767,6 @@
   
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
 
 
 

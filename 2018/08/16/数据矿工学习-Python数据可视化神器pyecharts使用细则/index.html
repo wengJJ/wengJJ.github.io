@@ -16,10 +16,13 @@
 
   <!-- 页面元数据 -->
   
-    <title>数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之家</title>
+    <title>数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之城</title>
   
     <meta name="keywords" content="pyecharts">
   
+  
+    <meta name="description" content="注意：2018年的这篇文章是基于pyecharts-v0.5编写的，目前最新版本为v1.0，pyecharts-v1.0为船新的版本，详情请看gallery.pyecharts.org
+前言我们都知道python上的一款可视化工具matplotlib,而前些阵子做一个Spark项目的时候用到了百度开源的一个可视化...">
   
 
   <!-- feed -->
@@ -42,8 +45,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
   
 
   
@@ -160,7 +161,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -170,27 +171,15 @@
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -274,7 +263,7 @@
                   
                     id="archives"
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>所有文章
                 </a>
                 
               </li>
@@ -284,27 +273,15 @@
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="flat-box" href=https://github.com/wengJJ/wengJJ.github.io
+                  
+                    rel="external nofollow noopener noreferrer"
                   
                   
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
+                    target="_blank"
                   
                   
-                  
-                    id="about"
+                    id="https:githubcomwengJJwengJJgithubio"
                   >
                   <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
@@ -359,9 +336,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
-    <p>Mr. X</p>
+  <a href="https://github.com/wengJJ" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/06/14/hMqVxO14JSg6z3Q.png">
+    <p>wengJJ</p>
   </a>
 </div>
 
@@ -371,9 +348,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+    <a href='/categories/Python/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python/数据挖掘</p>
+      <p>Python</p>
     </a>
   </div>
 
@@ -408,7 +385,9 @@
         <div class="article-entry" itemprop="articleBody">
           
           <p><font color = red>注意</font>：<em>2018年的这篇文章是基于pyecharts-v0.5编写的，目前最新版本为v1.0，pyecharts-v1.0为船新的版本，详情请看<a href="https://github.com/pyecharts/pyecharts" target="_blank" rel="noopener">gallery.pyecharts.org</a></em></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们都知道python上的一款可视化工具<strong>matplotlib</strong>,而前些阵子做一个Spark项目的时候用到了百度开源的一个可视化JS工具-<strong>Echarts</strong>，可视化类型非常多，但是得通过导入js库在Java Web项目上运行，平时用Python比较多，于是就在想有没有Python与Echarts结合的轮子。Google后，找到一个国人开发的一个Echarts与Python结合的轮子：<strong><a href="https://github.com/pyecharts/pyecharts" target="_blank" rel="noopener">pyecharts</a></strong>，下面就来简述下<strong>pyecharts</strong>一些使用细则：</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们都知道python上的一款可视化工具<strong>matplotlib</strong>,而前些阵子做一个Spark项目的时候用到了百度开源的一个可视化JS工具-<strong>Echarts</strong>，可视化类型非常多，但是得通过导入js库在Java Web项目上运行，平时用Python比较多，于是就在想有没有Python与Echarts结合的轮子。Google后，找到一个国人开发的一个Echarts与Python结合的轮子：<strong><a href="https://github.com/pyecharts/pyecharts" target="_blank" rel="noopener">pyecharts</a></strong>，下面就来简述下<strong>pyecharts</strong>一些使用细则。</p>
+<a id="more"></a>
+
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>写这篇文章用的是Win环境，首先打开命令行(win+R),输入： </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyecharts</span><br></pre></td></tr></table></figure>
 <p>但笔者实测时发现，可能由于墙的原因，下载时会出现断线和速度过慢的问题导致下载失败，所以建议通过清华镜像来进行下载：</p>
@@ -473,14 +452,6 @@
     
     
 
-
-
-  
-
-  
-    
-    
-
 <section class="widget copyright  desktop mobile">
   <div class='content'>
     
@@ -492,38 +463,10 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.github.io/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/>https://wengjj.github.io/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/>https://wengjj.ink/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/</a></p>
           
         
       </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
     
   </div>
 </section>
@@ -543,10 +486,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T20:23:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-30T16:00:02+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月29日</p>
+    <p>更新于：2020年8月30日</p>
   </a>
 </div>
 
@@ -562,18 +505,14 @@
       
         
           
-
-        
-      
-        
-          
   <div class="new-meta-item share -mob-share-list">
   <div class="-mob-share-list share-body">
     
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.github.io/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/&title=数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之家&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/&title=数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之城&summary=注意：2018年的这篇文章是基于pyecharts-v0.5编写的，目前最新版本为v1.0，pyecharts-v1.0为船新的版本，详情请看gallery.pyecharts.org
+前言我们都知道python上的一款可视化工具matplotlib,而前些阵子做一个Spark项目的时候用到了百度开源的一个可视化JS工具-Echarts，可视化类型非常多，但是得通过导入js库在Java Web项目上运行，平时用Python比较多，于是就在想有没有Python与Echarts结合的轮子。Google后，找到一个国人开发的一个Echarts与Python结合的轮子：pyecharts，下面就来简述下pyecharts一些使用细则。"
           
           >
           
@@ -583,27 +522,26 @@
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wengjj.github.io/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/&title=数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之家&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.github.io/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/&title=数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之家&summary="
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2018/08/16/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A5%9E%E5%99%A8pyecharts%E4%BD%BF%E7%94%A8%E7%BB%86%E5%88%99/&title=数据矿工学习-Python数据可视化神器pyecharts使用细则 - 挖掘之城&summary=注意：2018年的这篇文章是基于pyecharts-v0.5编写的，目前最新版本为v1.0，pyecharts-v1.0为船新的版本，详情请看gallery.pyecharts.org
+前言我们都知道python上的一款可视化工具matplotlib,而前些阵子做一个Spark项目的时候用到了百度开源的一个可视化JS工具-Echarts，可视化类型非常多，但是得通过导入js库在Java Web项目上运行，平时用Python比较多，于是就在想有没有Python与Echarts结合的轮子。Google后，找到一个国人开发的一个Echarts与Python结合的轮子：pyecharts，下面就来简述下pyecharts一些使用细则。"
           
           >
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
           
         </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
       
     
   </div>
@@ -684,8 +622,6 @@
 <aside class='l_side'>
   
   
-
-  
     
     
 
@@ -700,7 +636,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#柱状图-Bar"><span class="toc-text">柱状图-Bar</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#运行结果如下："><span class="toc-text">运行结果如下：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#饼图-Pie"><span class="toc-text">饼图-Pie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箱体图-Boxplot"><span class="toc-text">箱体图-Boxplot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#折线图-Line"><span class="toc-text">折线图-Line</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#雷达图-Rader"><span class="toc-text">雷达图-Rader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#散点图-scatter"><span class="toc-text">散点图-scatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图表布局-Grid"><span class="toc-text">图表布局 Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两图结合-Overlap"><span class="toc-text">两图结合 Overlap</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用实例"><span class="toc-text">使用实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#柱状图-Bar"><span class="toc-text">柱状图-Bar</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#运行结果如下："><span class="toc-text">运行结果如下：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#饼图-Pie"><span class="toc-text">饼图-Pie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箱体图-Boxplot"><span class="toc-text">箱体图-Boxplot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#折线图-Line"><span class="toc-text">折线图-Line</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#雷达图-Rader"><span class="toc-text">雷达图-Rader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#散点图-scatter"><span class="toc-text">散点图-scatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图表布局-Grid"><span class="toc-text">图表布局 Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两图结合-Overlap"><span class="toc-text">两图结合 Overlap</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 
@@ -716,35 +652,11 @@
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
+              <a href="https://github.com/wengJJ/wengJJ.github.io"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -752,7 +664,7 @@
             
           
             
-              <a href="mailto:me@xaoxuu.com"
+              <a href="mailto:weng-jj@foxmail.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -760,7 +672,7 @@
             
           
             
-              <a href="https://github.com/xaoxuu"
+              <a href="https://github.com/wengJJ"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -768,7 +680,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=75517789"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -794,7 +706,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p>2018-2020 wengJJ 粤ICP备18030727号</p>
 
         </div>
       
@@ -899,16 +811,6 @@
 
 
 
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
-
 
 
 
@@ -955,8 +857,8 @@
     el: '#valine_container',
     meta: meta,
     
-    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    appId: "8Isa3npIOKxatqlt6LGUnBcj-gzGzoHsz",
+    appKey: "w9JX0AWIJuBHlmcf5ICliSx4",
     placeholder: "快来评论吧~",
     pageSize:'10',
     avatar:'robohash',
