@@ -329,12 +329,12 @@ table::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 table::-webkit-scrollbar-thumb {
-  background: rgba(211,211,211,0.4);
+  background: rgba(172,172,172,0.4);
   cursor: pointer;
   border-radius: 2px;
 }
 table::-webkit-scrollbar-thumb:hover {
-  background: #d3d3d3;
+  background: #acacac;
 }
 table th {
   background-color: #464646;
@@ -420,7 +420,7 @@ div.btns,
 div.btns p,
 div.btns a {
   font-size: 0.8125rem;
-  color: #fff;
+  color: #cfcfcf;
 }
 div.btns b {
   font-size: 0.875rem;
@@ -869,7 +869,7 @@ details summary {
   padding: 16px;
   margin: -16px;
   border-radius: 4px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(207,207,207,0.7);
   font-size: 0.875rem;
   font-weight: bold;
   position: relative;
@@ -886,7 +886,7 @@ details summary > h6 {
   border-bottom: none !important;
 }
 details summary:hover {
-  color: #fff;
+  color: #cfcfcf;
 }
 details summary:hover:after {
   position: absolute;
@@ -930,10 +930,10 @@ details[red] >summary {
   background: #392929;
 }
 details[open] {
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(207,207,207,0.2);
 }
 details[open] >summary {
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(207,207,207,0.2);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -968,7 +968,7 @@ details[open][red] >summary {
   border-bottom-color: rgba(254,95,88,0.3);
 }
 details[open] >summary {
-  color: #fff;
+  color: #cfcfcf;
   margin-bottom: 0;
 }
 details[open] >summary:hover:after {
@@ -1369,7 +1369,7 @@ div.tabs {
   margin-bottom: 0.5rem;
   border-radius: 4px;
   background: #242424;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(207,207,207,0.2);
   font-size: 0.9375rem;
 }
 div.tabs .highlight,
@@ -1413,20 +1413,20 @@ div.tabs ul.nav-tabs li.tab a {
   border: 1px solid transparent;
 }
 div.tabs ul.nav-tabs li.tab a:hover {
-  color: #fff;
+  color: #cfcfcf;
 }
 div.tabs ul.nav-tabs li.tab a i {
   pointer-events: none;
 }
 div.tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #fff;
+  color: #cfcfcf;
   background: #242424;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(207,207,207,0.2);
   border-bottom: 1px solid #242424;
 }
 div.tabs .tab-content {
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(207,207,207,0.2);
   margin-top: -1px;
 }
 div.tabs .tab-content .tab-pane {
@@ -1473,12 +1473,12 @@ pre {
   background: transparent;
 }
 .hljs::-webkit-scrollbar-thumb {
-  background: rgba(211,211,211,0.4);
+  background: rgba(172,172,172,0.4);
   cursor: pointer;
   border-radius: 2px;
 }
 .hljs::-webkit-scrollbar-thumb:hover {
-  background: #d3d3d3;
+  background: #acacac;
 }
 .hljs:before {
   position: absolute;
@@ -1741,7 +1741,7 @@ pre {
   color: #3f51b5;
 }
 .highlight pre .comment {
-  color: rgba(255,255,255,0.5);
+  color: rgba(207,207,207,0.5);
 }
 .highlight pre .keyword,
 .highlight pre .meta-keyword,
@@ -2148,13 +2148,13 @@ div.gallery.stretch>p img {
 }
 .l_main #comments #valine_container .vwrap .vemojis::-webkit-scrollbar-thumb,
 .l_main #comments #valine_container .vwrap .vpreview::-webkit-scrollbar-thumb {
-  background: rgba(211,211,211,0.4);
+  background: rgba(172,172,172,0.4);
   cursor: pointer;
   border-radius: 2px;
 }
 .l_main #comments #valine_container .vwrap .vemojis::-webkit-scrollbar-thumb:hover,
 .l_main #comments #valine_container .vwrap .vpreview::-webkit-scrollbar-thumb:hover {
-  background: #d3d3d3;
+  background: #acacac;
 }
 .l_main #comments #valine_container .vwrap .vemojis .vemoji,
 .l_main #comments #valine_container .vwrap .vpreview .vemoji {
@@ -2173,19 +2173,19 @@ div.gallery.stretch>p img {
   margin: 10px;
 }
 .l_main #comments #valine_container .vwrap .vedit span {
-  fill: #fff;
+  fill: #cfcfcf;
 }
 .l_main #comments #valine_container .vwrap .vedit span.actived {
   fill: #c0c;
 }
 .l_main #comments #valine_container .vcount {
-  color: #fff;
+  color: #cfcfcf;
   font-size: 0.875rem;
   padding: 0;
   font-weight: inherit;
 }
 .l_main #comments #valine_container .vcount .vnum {
-  color: #fff;
+  color: #cfcfcf;
   font-size: 1.375rem;
 }
 .l_main #comments #valine_container button {
@@ -2228,7 +2228,7 @@ div.gallery.stretch>p img {
   color: #fff;
 }
 .l_main #comments #valine_container .vcards .vhead span.vnick {
-  color: #fff;
+  color: #e9e9e9;
   cursor: default;
 }
 .l_main #comments #valine_container .vcards .vhead a.vnick {
@@ -2267,7 +2267,7 @@ div.gallery.stretch>p img {
   -o-transition: all 0.28s ease;
 }
 .l_main #comments #valine_container .vcards .vcontent code {
-  color: #fff;
+  color: #cfcfcf;
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 .l_main #comments #valine_container .vcards .vcontent pre {
@@ -2289,7 +2289,7 @@ div.gallery.stretch>p img {
   text-decoration: underline;
 }
 .l_main #comments #valine_container .vcards .vcontent p {
-  color: #fff;
+  color: #cfcfcf;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   line-height: inherit;
@@ -2308,7 +2308,7 @@ div.gallery.stretch>p img {
   font-size: 0.75rem;
 }
 .l_main #comments #valine_container .vpower a {
-  color: #fff;
+  color: #cfcfcf;
 }
 .l_main #comments #valine_container .vpower a:hover {
   text-decoration: underline;
@@ -2444,7 +2444,7 @@ div.gallery.stretch>p img {
   text-decoration: underline;
 }
 .article {
-  color: #fff;
+  color: #cfcfcf;
   word-wrap: break-word;
 }
 .article img {
@@ -3069,7 +3069,7 @@ article .readmore >a {
   width: 32px;
   top: 0;
   left: 5px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(207,207,207,0.75);
 }
 .cover-wrapper .cover .cover-body .m_search .input {
   display: block;
@@ -4678,12 +4678,12 @@ ul.list-v >li>a.active {
   background: transparent;
 }
 #u-search .modal-body::-webkit-scrollbar-thumb {
-  background: rgba(211,211,211,0.4);
+  background: rgba(172,172,172,0.4);
   cursor: pointer;
   border-radius: 2px;
 }
 #u-search .modal-body::-webkit-scrollbar-thumb:hover {
-  background: #d3d3d3;
+  background: #acacac;
 }
 #u-search .modal-body .modal-results {
   list-style: none;
@@ -4774,12 +4774,12 @@ ul.list-v >li>a.active {
   background: transparent;
 }
 .l_side .widget >.content::-webkit-scrollbar-thumb {
-  background: rgba(211,211,211,0.4);
+  background: rgba(172,172,172,0.4);
   cursor: pointer;
   border-radius: 2px;
 }
 .l_side .widget >.content::-webkit-scrollbar-thumb:hover {
-  background: #d3d3d3;
+  background: #acacac;
 }
 .widget {
   z-index: 0;
