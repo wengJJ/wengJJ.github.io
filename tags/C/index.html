@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：SMO序列最小最优化算法 - 挖掘之城</title>
+    <title>标签：C++ - 挖掘之城</title>
   
   
 
@@ -324,8 +324,8 @@
         
           
   <h2 class="title">
-    <a href="/2018/08/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE7.4-SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">
-      数据矿工学习-《统计学习方法》思维导图7.4-SMO序列最小最优化算法
+    <a href="/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/">
+      C++疑问集
     </a>
   </h2>
 
@@ -350,9 +350,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%9D%8E%E8%88%AA%E3%80%8B/' rel="nofollow">
+    <a href='/categories/C/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>《统计学习方法-李航》</p>
+      <p>C++</p>
     </a>
   </div>
 
@@ -363,7 +363,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2018年8月23日</p>
+    <p>发布于：2020年8月30日</p>
   </a>
 </div>
 
@@ -391,16 +391,69 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>由Platt提出的SMO算法是支持向量机学习的一种快速算法，其特点为不断将原二次规划问题分解为只有两个变量的二次子规划问题，并对子问题进行解析求解，直到所有变量满足KKT条件为止。SVM是通过求得全局最优解来进行学习，SVM在面对大规模的训练样本时，效果往往不是很好·，SMO算法正是为了解决这个问题而提出的。至此SVM章节的相关内容就全部结束了（本节思维导图涉及较多的证明过程，各位可根据需要查阅）</p>
+        <h1 id="十进制浮点数的二进制存储方式以及转换"><a href="#十进制浮点数的二进制存储方式以及转换" class="headerlink" title="十进制浮点数的二进制存储方式以及转换"></a>十进制浮点数的二进制存储方式以及转换</h1><p>V = (-1)^s^×M×2^E^</p>
+<ul>
+<li>(-1)^s^表示符号位，当s=0，V为正数；当s=1，V为负数</li>
+<li>M表示有效数字，大于等于1，小于2</li>
+<li>2^E^表示指数</li>
+</ul>
+<p>例如：将十进制178.125表示成机器内的32个字节的二进制形式</p>
+<ul>
+<li>第一步:将178.125表示成二进制数:(178.125)(十进制数)=(10110010.001)(二进制形式); </li>
+</ul>
+<p><strong>十进制整数转换为二进制整数</strong>：==除2取余，逆序排列==<br><strong>十进制小数转换为二进制小数</strong>：==乘2取整，顺序排列==</p>
+<ul>
+<li>第二步:将二进制形式的浮点实数转化为规格化的形式:(小数点向左移动7个二进制位可以得到) </li>
+</ul>
+<p>10110010.001=1.0110010001*2^7^ 因而产生了以下三项: </p>
+<ul>
+<li>符号位：该数为正数,故第31位为0,占一个二进制位</li>
+<li>阶码：指数为7,故其阶码为127+7=134=(10000110)(二进制),占从第30到第23共8个二进制位</li>
+<li>尾数：为小数点后的部分, 即0110010001.因为尾数共23个二进制位,在后面补13个0,即01100100010000000000000 </li>
+</ul>
+<p>所以178.125在内存中的实际表示方式为:<br>0|10000110 |01100100010000000000000</p>
+<h1 id="cerr、cout、clog的区别"><a href="#cerr、cout、clog的区别" class="headerlink" title="cerr、cout、clog的区别"></a>cerr、cout、clog的区别</h1><ul>
+<li>cout：标准输出流，用于常规输出，输入读进缓冲区，触发刷新缓冲区动作时输出缓冲区内容至终端显示器，也可被重定向输出至磁盘文件</li>
+<li>cerr：非缓冲的标准错误流，用于显示错误信息，错误信息不输入缓冲区，直接显示在终端显示器，一般情况下不被重定向</li>
+<li>clog：缓冲的标准错误流，一般用于记录运行日志，日志消息读进缓冲区，触发刷新缓冲区动作时输出缓冲区内容至终端显示器，一般情况下可被重定向输出至日志文件</li>
+</ul>
+<p><em>tip：重定向在不同的操作环境定义不同</em></p>
+<p><strong>缓冲区的作用</strong>：计算机对缓冲区的操作快于磁盘操作，可以减少计算机对磁盘的读写次数，对低速的输入输出设备和高速的CPU之间进行协调工作。</p>
+<p><strong>触发刷新缓冲区的动作</strong>：</p>
+<ol>
+<li>缓冲区满时</li>
+<li>执行flush语句</li>
+<li>行缓冲时遇到endl，cerr或cin时</li>
+<li>关闭文件</li>
+</ol>
+<h1 id="cerr与clog的使用场景"><a href="#cerr与clog的使用场景" class="headerlink" title="cerr与clog的使用场景"></a>cerr与clog的使用场景</h1><ul>
+<li>clog：clog为缓冲输出，cerr为无缓冲输出，缓冲输出通常比无缓冲效率高，所以记录日志一般使用clog</li>
+<li>cerr：由于clog为缓冲输出，当程序崩溃时，如果所有日志信息以及错误信息都使用clog来输出，因为程序崩溃可能导致的缓冲区丢失，则可能看不到所有的信息。因此，我们一般使用cerr来输出错误信息，当程序崩溃时，由于cerr为无缓冲输出，则不会出现因为缓冲区丢失而导致的信息缺失的情况</li>
+</ul>
+<h1 id="c-typedef的使用场景"><a href="#c-typedef的使用场景" class="headerlink" title="c++ typedef的使用场景"></a>c++ typedef的使用场景</h1><ol>
+<li><strong>定义类型的别名</strong>（区分#define的宏替换）<br>例子：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pStr1;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pStr2 char *;</span></span><br><span class="line">pStr1 s1, s2;		<span class="comment">//s1,s2为char*类型</span></span><br><span class="line">pStr2 s3, s4;		<span class="comment">//s3为char*类型，s4为char类型</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><em>注意：#define进行的宏替换类似于简单的replace操作，typedef相当于定义新的类型，编译器编译时会将typedef定义的类型认定为新的类型，详情见下方例子</em>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* pStr;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pStr1 char* ;</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* p1 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">const</span> pStr p2 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">const</span> pStr1 p3 = <span class="string">"hello"</span>;</span><br><span class="line">p1++;<span class="comment">//正常，常量指针是可变的</span></span><br><span class="line">p2++;<span class="comment">//报错，系统将pStr认定为常量的新类型，常量不可修改</span></span><br><span class="line">p3++;<span class="comment">//正常，#define进行的是简单的文本替换，pStr1还是常量指针</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>定义struct结构体别名</strong><br>例子：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPOINT</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">    <span class="keyword">int</span> x;  </span><br><span class="line">    <span class="keyword">int</span> y;  </span><br><span class="line">&#125;POINT;  </span><br><span class="line">POINT p1; 		<span class="comment">//省略了struct</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>定义多平台应用类型</strong><br>例子：<br>定义浮点类型为REAL，只需要修改typedef就可以在多个平台使用REAL来定义浮点类型变量<br>平台一支持long与double类型：typedef long double REAL;<br>平台二支持long类型：typedef long REAL;<br>平台三long与double类型都不支持：typedef float REAL;</li>
+</ol>
+<p><em>注意：typedef跟static和register等存储类关键字一样，所以一行typedef声明中不能出现其他的存储类关键字（编译错误：typedef static int A;）</em><br>4. <strong>简化复杂的变量声明</strong><br>例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="keyword">int</span> <span class="title">A</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">char</span> b)</span></span>;	<span class="comment">//定义函数A，包含两个char类型形参，返回int类型值</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:A(fun);	<span class="comment">//函数声明，等价于int fun(char a,char b);</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">X::fun</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">char</span> b)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"succcess"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    X *xx;</span><br><span class="line">	xx-&gt;fun(<span class="string">'a'</span>,<span class="string">'b'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Java与C-的成员和类的默认访问修饰符？"><a href="#Java与C-的成员和类的默认访问修饰符？" class="headerlink" title="Java与C++的成员和类的默认访问修饰符？"></a>Java与C++的成员和类的默认访问修饰符？</h1><ul>
+<li>Java：接口的默认修饰符为public;类的默认修饰符为default（整个包内都可以被访问）</li>
+<li>C++：类的默认修饰符为private（变量或函数在类的外部不可访问），而struct中则是public</li>
+</ul>
+<hr>
+<p><font color='red'> <strong>才学疏浅，欢迎评论指导</strong></font></p>
+
       
     </div>
     
-      
-        <div class="button readmore">
-          <a href="/2018/08/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE7.4-SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
       
     
   </section>

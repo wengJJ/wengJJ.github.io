@@ -16,12 +16,10 @@
 
   <!-- 页面元数据 -->
   
-    <title>数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题 - 挖掘之城</title>
+    <title>C++疑问集 - 挖掘之城</title>
   
-    <meta name="keywords" content="数据拆分,特征缩放">
+    <meta name="keywords" content="C++">
   
-  
-    <meta name="description" content="前些天在100-Days-Of-ML-Code上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。我的观点是：机器学习工程中，应该先进行数据划分，再进行特征缩放。出于严谨性，本篇文章是从机器学习-数据挖掘方面进行数据拆分与特征缩放的顺序问题阐述，同时也欢迎大家...">
   
 
   <!-- feed -->
@@ -313,8 +311,8 @@
         
           
   <h1 class="title">
-    <a href="/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/">
-      数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题
+    <a href="/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/">
+      C++疑问集
     </a>
   </h1>
 
@@ -339,9 +337,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/' rel="nofollow">
+    <a href='/categories/C/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据挖掘</p>
+      <p>C++</p>
     </a>
   </div>
 
@@ -352,7 +350,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2018年8月30日</p>
+    <p>发布于：2020年8月30日</p>
   </a>
 </div>
 
@@ -375,35 +373,65 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>前些天在<strong><a href="https://github.com/MachineLearning100/100-Days-Of-ML-Code" target="_blank" rel="noopener">100-Days-Of-ML-Code</a></strong>上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。<strong>我的观点是：机器学习工程中，应该先进行数据划分，再进行特征缩放</strong>。出于严谨性，本篇文章是从机器学习-数据挖掘方面进行数据拆分与特征缩放的顺序问题阐述，同时也欢迎大家一起讨论这个问题。</p>
-<a id="more"></a>
-
-<h1 id="问题阐述"><a href="#问题阐述" class="headerlink" title="问题阐述"></a>问题阐述</h1><p>关于数据拆分与特征缩放的顺序先后问题，一般会在工程中遇到，具体表现为：</p>
-<p><strong>先数据拆分再特征缩放</strong> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler,MinMaxScaler </span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=<span class="number">0.1</span>) </span><br><span class="line">sc = StandardScaler() </span><br><span class="line">X_train = sc.fit_transform(X_train) </span><br><span class="line">X_test = sc.transform(X_test)</span><br></pre></td></tr></table></figure>
-
-<!-- more -->
-
-<p><strong>先数据缩放再数据拆分</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler,MinMaxScaler </span><br><span class="line">sc = StandardScaler() </span><br><span class="line">X_transform = sc.fit_transform(X) </span><br><span class="line">X_train,X_test,y_train,y_test = train_test_split(X_transform,y,test_size=<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="论点阐述"><a href="#论点阐述" class="headerlink" title="论点阐述"></a>论点阐述</h1><p>首先先来看下我们常用的两种 sklearn 上的特征缩放：<strong>StandardScaler()</strong>与<strong>MinMaxScaler()</strong><br><img src="https://i.loli.net/2020/08/29/Swdj8uivr2HL7Q1.png" alt=""><br>从图中可以看出StandardScalar涉及到了<strong>均值μ</strong>与<strong>标准差σ</strong>，而MinMaxScaler则涉及到了<strong>最大值max</strong>与<strong>最小值min</strong>。这些参数的取值都得考虑到<strong>全局样本</strong>的，什么意思呢？我们来看下两者的输出结果： </p>
-<p><strong>先数据拆分再特征缩放</strong></p>
-<p><img src="https://i.loli.net/2020/08/29/3p1NbgBruTw8IQY.png" alt=""><br><strong>先数据缩放再数据拆分</strong></p>
-<p><img src="https://i.loli.net/2020/08/29/vzIewp9XNQRdu4q.png" alt=""><br>可以很明显看出，两种不同的操作顺序输出的数据是完全不同的，也就是说<strong>样本的分布是完全不同</strong>的(很重要！后面阐述要用到)，那这种差异性在现实工程中会有什么影响？要解答这个问题，首先我们首先需要了解<strong>fit_transform()</strong>方法，fit_transform()你可以理解为<strong>fit()</strong>方法和<strong>transform()</strong>方法的pipeline，进行特征缩放时我们的顺序是</p>
-<ol>
-<li>先fit获得相应的参数值（可以理解为获得特征缩放规则）</li>
-<li>再用transform进行转换</li>
-</ol>
-<p>fit_transform方法就是先执行fit()方法再执行transform()方法，所以每执行一次就会采用新的<strong>特征缩放规则</strong>，我们可以将训练集的特征缩放规则应用到测试集上，可以将测试集的特征缩放规则应用到训练集上(不过一般很少这么做)，但是通过全部数据集(训练集+测试集)fit到的的特征缩放规则是<strong>没有模型训练意义</strong>的。 这里我们举一个例子：假设农业部要求我们用LR模型来对花类型进行分类，我们经过学习得到了一个LR模型，模型上线后，现在需要对新的花数据进行预测分类（此时我们可以把<strong>旧花数据看做训练集</strong>，<strong>新花数据看做测试集</strong>）：</p>
+          <h1 id="十进制浮点数的二进制存储方式以及转换"><a href="#十进制浮点数的二进制存储方式以及转换" class="headerlink" title="十进制浮点数的二进制存储方式以及转换"></a>十进制浮点数的二进制存储方式以及转换</h1><p>V = (-1)^s^×M×2^E^</p>
 <ul>
-<li>按照<strong>先数据拆分再特征缩放</strong>的做法是：先将旧花数据fit出特征缩放规则，接着将其transform到新花数据上，接着对<strong>应用旧花数据特征缩放规则</strong>的新花数据进行预测分类；</li>
-<li>按照<strong>先数据缩放再数据拆分</strong>的做法是：将新旧花数据合并为一个总数据集，接着对总数据集进行fit_transform操作，最后再把新花数据切分出来进行预测分类；</li>
+<li>(-1)^s^表示符号位，当s=0，V为正数；当s=1，V为负数</li>
+<li>M表示有效数字，大于等于1，小于2</li>
+<li>2^E^表示指数</li>
 </ul>
-<p><strong>重点！！！</strong><br>这时候问题来了，“我们经过学习得到了一个LR模型”，请问我们学习的数据是什么？旧花数据 OR 新旧花合并数据？<br>答案肯定是旧花数据啊，更为详细地讲，是<strong>应用旧花数据特征缩放规则的旧花数据</strong>，这时候第二种做法的问题就出来了，我们这个LR模型是根据<strong>应用旧花数据特征缩放规则的旧花数据</strong>的<strong>分布</strong>学习到的这条分类线</p>
-<p><img src="https://i.loli.net/2020/08/29/anTWRmOQHG2ilrx.png" alt=""><br>而此时你却将这条分类线去应用在<strong>应用新旧花数据特征缩放规则的新花数据</strong>上，根据上方我们得到的论点“<strong>两种不同的操作顺序输出的样本的分布是完全不同</strong>”，两种完全不同的分布，你用根据<strong>其中一种分布</strong>学习得到分类线对<strong>另一种分布</strong>来说是<strong>完全没有使用意义</strong>的，因为两者根本可以说是根据不同的数据学习而来的，所以有些时候第二种做法效果可能会很好也可能会很糟糕，这就像你拿<strong>牛数据学习的LR模型去预测花的分类一样。</strong>而机器学习的前身就是统计学，而统计学的一个样本基本原则就是<strong>样本同质性（homogenetic）。</strong></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>iris = load_iris()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X, y = iris.data, iris.target</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>quantile_transformer = preprocessing.QuantileTransformer(random_state=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_train_trans = quantile_transformer.fit_transform(X_train)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>X_test_trans = quantile_transformer.transform(X_test)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.percentile(X_train[:, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="number">100</span>]) </span><br><span class="line">array([ <span class="number">4.3</span>,  <span class="number">5.1</span>,  <span class="number">5.8</span>,  <span class="number">6.5</span>,  <span class="number">7.9</span>])</span><br></pre></td></tr></table></figure>
-<p>这里我贴的是sklearn的一段官方demo代码，可以看出sklearn的演示代码也是遵从<strong>先数据拆分再特征缩放的顺序</strong>进行的操作，先fit到X_train的特征缩放规则，再将其应用在X_test上，这也从一个小方面验证了我的观点吧(虽然我也不喜欢不严谨的举例论证方法)。所以综上所述，我的观点是在进行数据挖掘方面的工作时，在面对特征缩放环节时，应该<strong>先进行数据拆分再进行特征缩放环节。</strong> </p>
-<p><font color = red><strong>才学疏浅，欢迎评论指导</strong></font></p>
+<p>例如：将十进制178.125表示成机器内的32个字节的二进制形式</p>
+<ul>
+<li>第一步:将178.125表示成二进制数:(178.125)(十进制数)=(10110010.001)(二进制形式); </li>
+</ul>
+<p><strong>十进制整数转换为二进制整数</strong>：==除2取余，逆序排列==<br><strong>十进制小数转换为二进制小数</strong>：==乘2取整，顺序排列==</p>
+<ul>
+<li>第二步:将二进制形式的浮点实数转化为规格化的形式:(小数点向左移动7个二进制位可以得到) </li>
+</ul>
+<p>10110010.001=1.0110010001*2^7^ 因而产生了以下三项: </p>
+<ul>
+<li>符号位：该数为正数,故第31位为0,占一个二进制位</li>
+<li>阶码：指数为7,故其阶码为127+7=134=(10000110)(二进制),占从第30到第23共8个二进制位</li>
+<li>尾数：为小数点后的部分, 即0110010001.因为尾数共23个二进制位,在后面补13个0,即01100100010000000000000 </li>
+</ul>
+<p>所以178.125在内存中的实际表示方式为:<br>0|10000110 |01100100010000000000000</p>
+<h1 id="cerr、cout、clog的区别"><a href="#cerr、cout、clog的区别" class="headerlink" title="cerr、cout、clog的区别"></a>cerr、cout、clog的区别</h1><ul>
+<li>cout：标准输出流，用于常规输出，输入读进缓冲区，触发刷新缓冲区动作时输出缓冲区内容至终端显示器，也可被重定向输出至磁盘文件</li>
+<li>cerr：非缓冲的标准错误流，用于显示错误信息，错误信息不输入缓冲区，直接显示在终端显示器，一般情况下不被重定向</li>
+<li>clog：缓冲的标准错误流，一般用于记录运行日志，日志消息读进缓冲区，触发刷新缓冲区动作时输出缓冲区内容至终端显示器，一般情况下可被重定向输出至日志文件</li>
+</ul>
+<p><em>tip：重定向在不同的操作环境定义不同</em></p>
+<p><strong>缓冲区的作用</strong>：计算机对缓冲区的操作快于磁盘操作，可以减少计算机对磁盘的读写次数，对低速的输入输出设备和高速的CPU之间进行协调工作。</p>
+<p><strong>触发刷新缓冲区的动作</strong>：</p>
+<ol>
+<li>缓冲区满时</li>
+<li>执行flush语句</li>
+<li>行缓冲时遇到endl，cerr或cin时</li>
+<li>关闭文件</li>
+</ol>
+<h1 id="cerr与clog的使用场景"><a href="#cerr与clog的使用场景" class="headerlink" title="cerr与clog的使用场景"></a>cerr与clog的使用场景</h1><ul>
+<li>clog：clog为缓冲输出，cerr为无缓冲输出，缓冲输出通常比无缓冲效率高，所以记录日志一般使用clog</li>
+<li>cerr：由于clog为缓冲输出，当程序崩溃时，如果所有日志信息以及错误信息都使用clog来输出，因为程序崩溃可能导致的缓冲区丢失，则可能看不到所有的信息。因此，我们一般使用cerr来输出错误信息，当程序崩溃时，由于cerr为无缓冲输出，则不会出现因为缓冲区丢失而导致的信息缺失的情况</li>
+</ul>
+<h1 id="c-typedef的使用场景"><a href="#c-typedef的使用场景" class="headerlink" title="c++ typedef的使用场景"></a>c++ typedef的使用场景</h1><ol>
+<li><strong>定义类型的别名</strong>（区分#define的宏替换）<br>例子：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pStr1;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pStr2 char *;</span></span><br><span class="line">pStr1 s1, s2;		<span class="comment">//s1,s2为char*类型</span></span><br><span class="line">pStr2 s3, s4;		<span class="comment">//s3为char*类型，s4为char类型</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><em>注意：#define进行的宏替换类似于简单的replace操作，typedef相当于定义新的类型，编译器编译时会将typedef定义的类型认定为新的类型，详情见下方例子</em>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* pStr;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pStr1 char* ;</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* p1 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">const</span> pStr p2 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">const</span> pStr1 p3 = <span class="string">"hello"</span>;</span><br><span class="line">p1++;<span class="comment">//正常，常量指针是可变的</span></span><br><span class="line">p2++;<span class="comment">//报错，系统将pStr认定为常量的新类型，常量不可修改</span></span><br><span class="line">p3++;<span class="comment">//正常，#define进行的是简单的文本替换，pStr1还是常量指针</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>定义struct结构体别名</strong><br>例子：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPOINT</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">    <span class="keyword">int</span> x;  </span><br><span class="line">    <span class="keyword">int</span> y;  </span><br><span class="line">&#125;POINT;  </span><br><span class="line">POINT p1; 		<span class="comment">//省略了struct</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>定义多平台应用类型</strong><br>例子：<br>定义浮点类型为REAL，只需要修改typedef就可以在多个平台使用REAL来定义浮点类型变量<br>平台一支持long与double类型：typedef long double REAL;<br>平台二支持long类型：typedef long REAL;<br>平台三long与double类型都不支持：typedef float REAL;</li>
+</ol>
+<p><em>注意：typedef跟static和register等存储类关键字一样，所以一行typedef声明中不能出现其他的存储类关键字（编译错误：typedef static int A;）</em><br>4. <strong>简化复杂的变量声明</strong><br>例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="keyword">int</span> <span class="title">A</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">char</span> b)</span></span>;	<span class="comment">//定义函数A，包含两个char类型形参，返回int类型值</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:A(fun);	<span class="comment">//函数声明，等价于int fun(char a,char b);</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">X::fun</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">char</span> b)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"succcess"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    X *xx;</span><br><span class="line">	xx-&gt;fun(<span class="string">'a'</span>,<span class="string">'b'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Java与C-的成员和类的默认访问修饰符？"><a href="#Java与C-的成员和类的默认访问修饰符？" class="headerlink" title="Java与C++的成员和类的默认访问修饰符？"></a>Java与C++的成员和类的默认访问修饰符？</h1><ul>
+<li>Java：接口的默认修饰符为public;类的默认修饰符为default（整个包内都可以被访问）</li>
+<li>C++：类的默认修饰符为private（变量或函数在类的外部不可访问），而struct中则是public</li>
+</ul>
+<hr>
+<p><font color='red'> <strong>才学疏浅，欢迎评论指导</strong></font></p>
 
           
             <div class='article_footer'>
@@ -432,7 +460,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.ink/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/>https://wengjj.ink/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/>https://wengjj.ink/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/</a></p>
           
         
       </blockquote>
@@ -455,10 +483,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-30T16:00:46+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-06T23:38:37+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月30日</p>
+    <p>更新于：2020年9月6日</p>
   </a>
 </div>
 
@@ -467,7 +495,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据拆分</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>特征缩放</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C++</p></a></div>
 
 
         
@@ -480,7 +508,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/&title=数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题 - 挖掘之城&summary=前些天在100-Days-Of-ML-Code上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。我的观点是：机器学习工程中，应该先进行数据划分，再进行特征缩放。出于严谨性，本篇文章是从机器学习-数据挖掘方面进行数据拆分与特征缩放的顺序问题阐述，同时也欢迎大家一起讨论这个问题。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/&title=C++疑问集 - 挖掘之城&summary="
           
           >
           
@@ -492,7 +520,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/&title=数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题 - 挖掘之城&summary=前些天在100-Days-Of-ML-Code上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。我的观点是：机器学习工程中，应该先进行数据划分，再进行特征缩放。出于严谨性，本篇文章是从机器学习-数据挖掘方面进行数据拆分与特征缩放的顺序问题阐述，同时也欢迎大家一起讨论这个问题。"
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/&title=C++疑问集 - 挖掘之城&summary="
           
           >
           
@@ -506,7 +534,7 @@
         <div class='hoverbox'>
           <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjgAAAI4CAAAAABCHswqAAALz0lEQVR42u3aW3LkNhAEQN3/0usDOBSDri4OuHbijxo+gO6EPirw88cwgvGjBAY4BjgGOAY4hgGOAY5xDc5POH57/tN7/zWR4XOn93/63qf3fvr7r4UdrnfcuOH6pvX6+Dw44IADDjjggAMOOOCAAw444IBzHc504tuFtBr7aV6nDWi9P31ve4OcrmPcb3DAAQcccMABBxxwwAEHHHDAAec1cKYBXAqqFRS2g7cUbuv5acNbG+wYMDjggAMOOOCAAw444IADDjjggPPXwqkfFFoeCJvONwWQ1i0N8lqBHzjggAMOOOCAAw444IADDjjggPP/hbMNrtqBXxo4prBvBanbjQ0OOOCAAw444IADDjjggAMOOOD8/XBSCK1Gbd+3PSDWPii1DeieXs94fuCAAw444IADDjjggAMOOOCAA851OO2DV67ffR33GxxwwHENjmtwXIMDDjjguAbH9TU429EK8rbv385jG2CeBninDT2tVxoExv0GBxxwwAEHHHDAAQcccMABBxxwrsE5XcD04NQUSOv7Lfjpwanphkh/n64jhX18AhAccMABBxxwwAEHHHDAAQcccMB5HM50YulEnw64WgeatkHotn7pRmwFgR/XAQ444IADDjjggAMOOOCAAw444FyDczqRVrD0dOCVfncKafu97bqePkh2nByDAw444IADDjjggAMOOOCAAw44X4eTFrIdYD0V5G0Pkj0NYfr+6XtbB+DAAQcccMABBxxwwAEHHHDAAQece3DS4CkN0n4Ox2mAld6/XcdTQWYrGEyBfwQLDjjggAMOOOCAAw444IADDjjgvAbONuiaFuapQC8NxNJ5TeeZBqrpdRpwggMOOOCAAw444IADDjjggAMOOO+Bkx4ISgs9DdZagLZB5NPr2wKdBodpXcEBBxxwwAEHHHDAAQcccMABB5x7cFoB2Tao2h6c2jZyerBr+3urLum64/WAAw444IADDjjggAMOOOCAAw441+Ckgd42kNoewJoeTHoacBpApges0sD2dIP8+jw44IADDjjggAMOOOCAAw444IBzHU4rAGwv4KnxLQhpndMNmq7vOCgFBxxwwAEHHHDAAQcccMABBxxwrsFpFW46oRRqGkS2Djptg8Xp862NlQa+4IADDjjggAMOOOCAAw444IADzvvgtBqZwpr+3npuGpi1gsQt6LQex0Hfb98HBxxwwAEHHHDAAQcccMABBxxwrsN5KjCbTmz6vtaBrdbBs22Dtxtge/9HgOCAAw444IADDjjggAMOOOCAA841ONPgKC1A2vjT+1sBYSvIm/49PRg3res2EAUHHHDAAQcccMABBxxwwAEHHHDuwUkDuVYhngrg2htjCjEO2JZBajswPD4BCA444IADDjjggAMOOOCAAw444HwNzrax2wluA8H0+9v5t9bT2hitQPE4AAQHHHDAAQcccMABBxxwwAEHHHC+Dmca8KUB1DQonMJpB4ZpHZ7akE8Focf1AwcccMABBxxwwAEHHHDAAQcccF4Hpx3UPV2ALeBWoLcFsw0c2+8HBxxwwAEHHHDAAQcccMABBxxw3genBWgaPKWQtge4tg1Pg9Lp+rZw0+D2OAAEBxxwwAEHHHDAAQcccMABBxxwvganHeS13rdt0Bb4FGzciHLDU+DH7wUHHHDAAQcccMABBxxwwAEHHHCuwWkdlNoGVqcTT8E9FURO57e9bzvv9cYBBxxwwAEHHHDAAQcccMABBxxwXgNnCmk7wfTv24NX04AwbUh6MG07r1Z9wQEHHHDAAQcccMABBxxwwAEHnPfAaQdz0wNQaaOnhZtC3B5ka2/ENGjdBrj/mic44IADDjjggAMOOOCAAw444IBzHc422JoWrhWYbYOtFqRTCO1g76mN+fEgFzjggAMOOOCAAw444IADDjjggHMNTvqhdgGeLki6vtPnto1OD8RNg7943eCAAw444IADDjjggAMOOOCAA851ONNGtYO4VvCWFrYNvR0ATp+b3nd8DQ444IADDjjggAMOOOCAAw444FyDsw3g0oBqGyg+BXILbnpAqlW/7fqO+w8OOOCAAw444IADDjjggAMOOOBcgzP9cBqQbYOrNEA7beDp89NGbwPNbwWsx38HBxxwwAEHHHDAAQcccMABBxxwrsNpjTTISgPF1nPT9T21oVJw00Ay7h844IADDjjggAMOOOCAAw444IBzDU4aBLVhPDWfp3/fBoxpAJrevw4GwQEHHHDAAQcccMABBxxwwAEHnGtw0glOgbSenzYsvW/6XNrgVhA7XX8MFRxwwAEHHHDAAQcccMABBxxwwLkGZxs8TQ8kbSFNC9MOylJI2432ZzgeCwbBAQcccMABBxxwwAEHHHDAAQeca3CeXlAafD0FLp3f9CBaK5C8BRYccMABBxxwwAEHHHDAAQcccMB5H5z4Ba2JhN/ZFrzd6Gl9tvNM65luGHDAAQcccMABBxxwwAEHHHDAAec+nNMArhWUPdXgP+HYHuQ6vS8N5NL3T/9+7AAccMABBxxwwAEHHHDAAQcccMC5Bif98Dbg+wnHtHAtEO1AL23cdD3TA2AfnwcHHHDAAQcccMABBxxwwAEHHHCuwRkHQKVGp0HhFmwarE2DyC3sdtCX1mecHIMDDjjggAMOOOCAAw444IADDjiPw2lNdAptWsAUxPY720a157d9Lt5Y4IADDjjggAMOOOCAAw444IADzjU408Atbfy3ArUWmO2GaTcyDWrbGxAccMABBxxwwAEHHHDAAQcccMC5B+dTYVqQnj749VQA9jTIFoQUzvh5cMABBxxwwAEHHHDAAQcccMAB5xqcbQB12pg0sDsN4qb3tYLAbTB42rjtRkvrDg444IADDjjggAMOOOCAAw444LwPThqYbUG17psGWumBphak7UGrbX9qJwDBAQcccMABBxxwwAEHHHDAAQecr8OJX7QM4FoHybbBYAts62BVGlhu6/Sx/+CAAw444IADDjjggAMOOOCAA85r4KQB3bcbMQ3CthsibXja2Kc2XgoMHHDAAQcccMABBxxwwAEHHHDAeT+cbUHa12mgNwWWQp42vn2wbNqvcR/BAQcccMABBxxwwAEHHHDAAQeca3DSgtQCpbChre+11vnUPLffTQPUX+cJDjjggAMOOOCAAw444IADDjjgXIOTBktbCNvA6lvvSwu8Deq285n+Yzi+DxxwwAEHHHDAAQcccMABBxxwwLkO51tBXn0h5QNX26BwWr9WYHcc4A3r8zEABAcccMABBxxwwAEHHHDAAQcccL4OZ3qAqN34aeHS4OzbGyWt61OwTu//9fvggAMOOOCAAw444IADDjjggAPO6+CkhdwGTNuAbQslPaA1rd+0DtN1teoMDjjggAMOOOCAAw444IADDjjgvAfO0yC2jWkFZduDYS04aVC4DTjTYBEccMABBxxwwAEHHHDAAQcccMB5L5w4GApBtGCmsFrBZWsDfBvUeD3ggAMOOOCAAw444IADDjjggAPO6+CkBd8GdCm0NABsr2cLaLuhW0EsOOCAAw444IADDjjggAMOOOCA8z44rYmlwdoW0FNBWetA2LbR6X2PBYvggAMOOOCAAw444IADDjjggAPONTjtIG8LLA0it4XbznPbmHa9p+s7ris44IADDjjggAMOOOCAAw444IBzHU4r8Gs14Cko2wDw03dP57c9aJYGoes6gwMOOOCAAw444IADDjjggAMOOK+B0w6gWkHZNqCcNrQV/J1e367b8UYBBxxwwAEHHHDAAQcccMABBxxw/lo424mlQdXp760gsf2e6XxbYFLo4IADDjjggAMOOOCAAw444IADzn8HThp0tQu8LVwakLUCuOmGSgHEgSM44IADDjjggAMOOOCAAw444IDzGjjTibWDuCnkLcQ0kGxvjFaAOd0Y476BAw444IADDjjggAMOOOCAAw441+GkgVV6nS4gbewWXgpnuu4U/HYDH78XHHDAAQcccMABBxxwwAEHHHDAuQbHMCYDHAMcAxwDHAMcwwDHAMf4+vgHMEPDMEGSZ+MAAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADpElEQVR42u3aQZLiQAwEQP7/6d0XEG6V1KAhsm94bNNKc9CU/PpnReuFABw4cOAscOCWwL3C9fbGw39/972n5727f1ovOHDgwIEDBw7cNrjjBnAIJgU8/b5T8Gq94MCBAwcOHDhwW+EeG8DhxjM9/xSsuv/H88GBAwcOHDhw4H4MLm14q8fTfYMDBw4cOHDgwIHLAsbTAPG08C4UOHDgwIEDBw7cr8GVB7TFQrqFdQfnayb54MCBAwcOHDhwQ3DVVS182+e4XnDgwIEDBw4cuCVw3TUdeKYg1UY4rhccOHDgwIEDB24JXNogVkGrkE/XTe/r9D7gwIEDBw4cOHBb4aYCwukHcet+pw8MHDhw4MCBAwduG9xT4d0NpwHk1L6qMI8/BHDgwIEDBw4cuGVw3YKrBUwNltPr04E5OHDgwIEDBw7cNrjuBqqNatqYpg35q7nAgQMHDhw4cOD+GtzpRqoB5K0BeDUgLTfc4MCBAwcOHDhwS+CmA8u0IU7Pm26Aj4NMcODAgQMHDhy4pXC3gs000JwaSLeDV3DgwIEDBw4cuCVwtwe91cBy+nj1B1EeSIMDBw4cOHDgwH0JLi1wKoCcgk0b7bGBNDhw4MCBAwcO3Jfhbg+Iq4112gCnA+hrCTA4cODAgQMHDtww3ClIdSCdBp3T11V/EI/1gQMHDhw4cODALYHrNrxVwKkGdWogfdp4gwMHDhw4cODAbYNLG8TuQLhaYNoYp418/J8DOHDgwIEDBw7ch+BuDXLT+51eX4VM9wEOHDhw4MCBA7cVbirwmxocdwfb040zOHDgwIEDBw7cVripQqdeEJx+YN0gFRw4cODAgQMHbjtc9YtuBYjVgLQKUh2gv32xEBw4cODAgQMHbilcN6jsXtdtWNPAc2ySDw4cOHDgwIED92G4qYFxGjR2g9RbgSk4cODAgQMHDtxfgUsDw7TxTRvk6qA6DV7BgQMHDhw4cOC2wXVXd1B82oinINMPDBw4cODAgQMHbgvc1Ea6x6svME418OXP4MCBAwcOHDhwy+CmA8PqxqYe2NgLhN0EGBw4cODAgQMH7sNwKcSnX/zrNvDxgwYHDhw4cODAgftRuBQsPX7asI8FoeDAgQMHDhw4cD8KV21wu1CnD64a1H4tyAQHDhw4cODAgQvhqgPpqcH0rca1ex44cODAgQMHDtx2uGsD3KFBcXVgnQal5QYYHDhw4MCBAwfuS3BWMehEAA4cOHAWOHDfXf8BPUqCeZVIkYsAAAAASUVORK5CYII=">
           </div>
         </div>
       
@@ -526,19 +554,10 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/08/30/C++%E7%96%91%E9%97%AE%E9%9B%86/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C++疑问集</p>
-                <p class='content'>十进制浮点数的二进制存储方式以及转换V = (-1)^s^×M×2^E^
-
-(-1)^s^表示符号位，当s=0，V为正数；当s=1，V为负数
-M表示有效数字，大于等于1，小于2
-2^E^表示指数...</p>
-              </a>
             
-            
-              <a class='next' href='/2018/08/23/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE7.4-SMO%E5%BA%8F%E5%88%97%E6%9C%80%E5%B0%8F%E6%9C%80%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/'>
-                <p class='title'>数据矿工学习-《统计学习方法》思维导图7.4-SMO序列最小最优化算法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>由Platt提出的SMO算法是支持向量机学习的一种快速算法，其特点为不断将原二次规划问题分解为只有两个变量的二次子规划问题，并对子问题进行解析求解，直到所有变量满足KKT条件为止。SVM是通过求...</p>
+              <a class='next' href='/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/'>
+                <p class='title'>数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>前些天在100-Days-Of-ML-Code上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。我的观点是：机器学习工程中，应该先进行数据...</p>
               </a>
             
           </div>
@@ -583,7 +602,7 @@ M表示有效数字，大于等于1，小于2
 
   <script>
     window.subData = {
-      title: '数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题',
+      title: 'C++疑问集',
       tools: true
     }
   </script>
@@ -607,7 +626,7 @@ M表示有效数字，大于等于1，小于2
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题阐述"><span class="toc-text">问题阐述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#论点阐述"><span class="toc-text">论点阐述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#十进制浮点数的二进制存储方式以及转换"><span class="toc-text">十进制浮点数的二进制存储方式以及转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cerr、cout、clog的区别"><span class="toc-text">cerr、cout、clog的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cerr与clog的使用场景"><span class="toc-text">cerr与clog的使用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c-typedef的使用场景"><span class="toc-text">c++ typedef的使用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java与C-的成员和类的默认访问修饰符？"><span class="toc-text">Java与C++的成员和类的默认访问修饰符？</span></a></li></ol>
     </div>
   </section>
 
