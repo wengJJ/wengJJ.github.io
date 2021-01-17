@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++疑问集2-对象与指针</title>
+      <link href="/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/"/>
+      <url>/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><em>2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当今主流程序设计语言中最复杂的一员-<a href="https://zh.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">维基百科C++词条</a></em></p></blockquote><p>丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。</p><a id="more"></a><h1 id="创建对象的两方法"><a href="#创建对象的两方法" class="headerlink" title="创建对象的两方法"></a>创建对象的两方法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A a1 = A;<span class="comment">//在栈上创建一个A类的对象a1</span></span><br></pre></td></tr></table></figure><p>创建对象时在栈上分配用于保存其数据成员的内存空间,其成员函数保存在公共代码区<br>栈的内存分配由操作系统决定，所以函数执行完毕，操作系统会自动释放内存。</p><ul><li>优点：系统自动分配和回收内存，数据存取块</li><li>缺点：栈的最大容量由系统预先设定好的，能获得的空间较小</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A a2 = <span class="keyword">new</span> A();<span class="comment">//在堆上创建一个A类的对象a2</span></span><br><span class="line"><span class="keyword">delete</span> a2;<span class="comment">//释放对象a2的内存空间sd</span></span><br></pre></td></tr></table></figure><p>创建对象时在堆上分配用于保存其数据成员的内存空间，其成员函数保存在公共代码区<br>堆的内存分配由使用者决定，所以函数执行完毕，需要使用者手动delete对象</p><ul><li>优点：堆的大小受限与有效的虚拟内存，能获得的空间大</li><li>缺点：由new分配的内存，系统响应速度较慢，容易产生内存碎片，忘记释放内存，容易导致内存泄漏</li></ul><h1 id="c-编译器内存分布"><a href="#c-编译器内存分布" class="headerlink" title="c++编译器内存分布"></a>c++编译器内存分布</h1><p><strong>全局数据区</strong>：分初始化区和未初始化区，存放全局变量(extern)，静态数据(static)<br><strong>常量区</strong>：存放常量(注意：const局部变量存储在栈区)<br><strong>代码区</strong>：函数代码的公共存放区域<br><strong>栈区</strong>：非new方法构造对象，存放对象的数据成员（注意：int main(){…}属于非new构造对象，其数据成员也存放在栈区）<br><strong>堆区</strong>：new方法构造对象，存放对象的数据成员<br><em>Tips：c++每个对象所占用的存储空间只是该对象的数据成员（虚函数指针和虚基类指针也属于数据部分）所占用的存储空间，而函数代码则存放在公共函数代码的存储空间，两者的存储空间互不影响。</em><br><img src="https://i.loli.net/2021/01/17/PWEwueoH97ZONm6.png" alt="c++编译器内存分布"></p><h1 id="创建指针对象-创建引用的区别"><a href="#创建指针对象-创建引用的区别" class="headerlink" title="创建指针对象/创建引用的区别"></a>创建指针对象/创建引用的区别</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;<span class="comment">//创建指针对象</span></span><br><span class="line"><span class="keyword">int</span> &amp;r = a;<span class="comment">//创建引用</span></span><br></pre></td></tr></table></figure><table><thead><tr><th></th><th>创建指针对象</th><th>创建引用</th></tr></thead><tbody><tr><td>内存空间</td><td>编译器为指针分配内存</td><td>编译器器不为引用分配内存，sizeof方法显示为所引用对象的内存</td></tr><tr><td>初始化</td><td>定义时可以不初始化</td><td>必须初始化</td></tr><tr><td>可否为空</td><td>指针可以为空</td><td>引用不可为空</td></tr><tr><td>指向性</td><td>指针可以指向其他对象</td><td>引用一旦创建不可以更改其指向</td></tr></tbody></table><h1 id="指针常量与常量指针"><a href="#指针常量与常量指针" class="headerlink" title="指针常量与常量指针"></a>指针常量与常量指针</h1><table><thead><tr><th>const int i = 1;</th><th align="left">const int *p1 = &i;</th><th>int const *p2 = &i;</th><th>int *const p3 = &i;</th></tr></thead><tbody><tr><td>整形常量(const int)</td><td align="left">指向常量的指针/*指针常量(pointer to const)</td><td>指向常量的指针/*指针常量(pointer to const)</td><td>*常量指针(const pointer)</td></tr><tr><td>常量为只读状态，其值不可改变</td><td align="left">指针指向的内容为常量，常量不可改变</td><td>指针指向的内容为常量，常量不可改变</td><td>指针自身为常量，始终指向同一个地址（定义时必须初始化）</td></tr><tr><td>const int i = 1;<br> i = 2;<br>//Error,i为只读状态，其值不可改变<br>（error: assignment of read-only variable ‘i’）</td><td align="left">int i =1;<br>int j =2;<br>const int *p1 = &i;<br>i = 100;//OK<br>p1 = &j;//OK<br>*p1 = 100;<br>//Error,*p1为常量，其值不可变<br>（error: assignment of read-only location ‘* p1’）<br>注意：*p1的值不可变指的不可通过*p1=100这种方式改变，可通过类似上方i = 100的方式改变其所指的值。</td><td>int i =1;<br>int j =2;<br>int const *p2 = &i;<br>i = 100;//OK<br>p2 = &j;//OK<br>*p2 = 100;<br>//Error,*p2为常量，其值不可变（error: assignment of read-only location ‘*p2’）<br>注意：*p2的值不可变指的不可通过*p2=100这种方式改变，可通过类似上方i = 100的方式改变其所指的值。</td><td>int i =1;<br>int j =2;<br>int *const p3 = &i;<br>i = 100;//OK<br>p3 = &j;<br>//Error,指针p3为常量，指针p3的地址不可变（error: assignment of read-only variable ‘p3’）<br>*p3 = 100;//OK</td></tr></tbody></table><p><font color='red'> <strong>注意</font>：指针常量(pointer to const)和常量指针(const pointer)，这两个名词的中文翻译是经常引起争议的地方，而造成争议的地方就在于(const pointer)的中文翻译，详情见下表：</strong></p><table><thead><tr><th>指针常量(pointer to const)和常量指针(const pointer)</th><th>常量指针(pointer to const)和指针常量(const pointer)</th></tr></thead><tbody><tr><td>《c++ primer（第五版）中文版》2.4.2指针和const一节中，作者将(pointer to const)翻译为指向常量的指针，将(const pointer)翻译为常量指针，这是目前大家比较认同的翻译。而《c++ primer plus（第六版）中文版》为了避免歧义，作者将(pointer to const)翻译为指向const的指针，将(const pointer)翻译为const指针。</td><td>这种翻译方式来源于我们对常量的普遍翻译，例如(const int)一般我们将其称为整形常量，所以自然而然一部分程序员就会将(const pointer)翻译为指针常量。</td></tr></tbody></table><hr><p><font color='red'> <strong>才学疏浅，欢迎评论指导</strong></font></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++疑问集</title>
       <link href="/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/"/>
       <url>/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/</url>
