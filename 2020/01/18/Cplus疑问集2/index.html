@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>C++疑问集 - 挖掘之城</title>
+    <title>C++疑问集2-对象与指针 - 挖掘之城</title>
   
     <meta name="keywords" content="C++">
   
@@ -316,8 +316,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/">
-      C++疑问集
+    <a href="/2020/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/">
+      C++疑问集2-对象与指针
     </a>
   </h1>
 
@@ -355,7 +355,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年8月30日</p>
+    <p>发布于：2020年1月18日</p>
   </a>
 </div>
 
@@ -384,63 +384,91 @@
 <p>丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。</p>
 <a id="more"></a>
 
-<h1 id="十进制浮点数的二进制存储方式以及转换"><a href="#十进制浮点数的二进制存储方式以及转换" class="headerlink" title="十进制浮点数的二进制存储方式以及转换"></a>十进制浮点数的二进制存储方式以及转换</h1><p>V = (-1)^s×M×2^E</p>
+<h1 id="创建对象的两方法"><a href="#创建对象的两方法" class="headerlink" title="创建对象的两方法"></a>创建对象的两方法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A a1 = A;		<span class="comment">//在栈上创建一个A类的对象a1</span></span><br></pre></td></tr></table></figure>
+<p>创建对象时在栈上分配用于保存其数据成员的内存空间,其成员函数保存在公共代码区<br>栈的内存分配由操作系统决定，所以函数执行完毕，操作系统会自动释放内存。</p>
 <ul>
-<li>(-1)^s表示符号位，当s=0，V为正数；当s=1，V为负数</li>
-<li>M表示有效数字，大于等于1，小于2</li>
-<li>2^E表示指数</li>
+<li>优点：系统自动分配和回收内存，数据存取块</li>
+<li>缺点：栈的最大容量由系统预先设定好的，能获得的空间较小</li>
 </ul>
-<p>例如：将十进制178.125表示成机器内的32个字节的二进制形式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A a2 = <span class="keyword">new</span> A();	<span class="comment">//在堆上创建一个A类的对象a2</span></span><br><span class="line"><span class="keyword">delete</span> a2;	<span class="comment">//释放对象a2的内存空间sd</span></span><br></pre></td></tr></table></figure>
+<p>创建对象时在堆上分配用于保存其数据成员的内存空间，其成员函数保存在公共代码区<br>堆的内存分配由使用者决定，所以函数执行完毕，需要使用者手动delete对象</p>
 <ul>
-<li>第一步:将178.125表示成二进制数:(178.125)(十进制数)=(10110010.001)(二进制形式); </li>
+<li>优点：堆的大小受限与有效的虚拟内存，能获得的空间大</li>
+<li>缺点：由new分配的内存，系统响应速度较慢，容易产生内存碎片，忘记释放内存，容易导致内存泄漏</li>
 </ul>
-<p><strong>十进制整数转换为二进制整数</strong>：==除2取余，逆序排列==<br><strong>十进制小数转换为二进制小数</strong>：==乘2取整，顺序排列==</p>
-<ul>
-<li>第二步:将二进制形式的浮点实数转化为规格化的形式:(小数点向左移动7个二进制位可以得到) </li>
-</ul>
-<p>10110010.001=1.0110010001*2^7 因而产生了以下三项: </p>
-<ul>
-<li>符号位：该数为正数,故第31位为0,占一个二进制位</li>
-<li>阶码：指数为7,故其阶码为127+7=134=(10000110)(二进制),占从第30到第23共8个二进制位</li>
-<li>尾数：为小数点后的部分, 即0110010001.因为尾数共23个二进制位,在后面补13个0,即01100100010000000000000 </li>
-</ul>
-<p>所以178.125在内存中的实际表示方式为:<br>0|10000110 |01100100010000000000000</p>
-<h1 id="cerr、cout、clog的区别"><a href="#cerr、cout、clog的区别" class="headerlink" title="cerr、cout、clog的区别"></a>cerr、cout、clog的区别</h1><ul>
-<li>cout：标准输出流，用于常规输出，输入读进缓冲区，触发刷新缓冲区动作时输出缓冲区内容至终端显示器，也可被重定向输出至磁盘文件</li>
-<li>cerr：非缓冲的标准错误流，用于显示错误信息，错误信息不输入缓冲区，直接显示在终端显示器，一般情况下不被重定向</li>
-<li>clog：缓冲的标准错误流，一般用于记录运行日志，日志消息读进缓冲区，触发刷新缓冲区动作时输出缓冲区内容至终端显示器，一般情况下可被重定向输出至日志文件</li>
-</ul>
-<p><em>tip：重定向在不同的操作环境定义不同</em></p>
-<p><strong>缓冲区的作用</strong>：计算机对缓冲区的操作快于磁盘操作，可以减少计算机对磁盘的读写次数，对低速的输入输出设备和高速的CPU之间进行协调工作。</p>
-<p><strong>触发刷新缓冲区的动作</strong>：</p>
-<ol>
-<li>缓冲区满时</li>
-<li>执行flush语句</li>
-<li>行缓冲时遇到endl，cerr或cin时</li>
-<li>关闭文件</li>
-</ol>
-<h1 id="cerr与clog的使用场景"><a href="#cerr与clog的使用场景" class="headerlink" title="cerr与clog的使用场景"></a>cerr与clog的使用场景</h1><ul>
-<li>clog：clog为缓冲输出，cerr为无缓冲输出，缓冲输出通常比无缓冲效率高，所以记录日志一般使用clog</li>
-<li>cerr：由于clog为缓冲输出，当程序崩溃时，如果所有日志信息以及错误信息都使用clog来输出，因为程序崩溃可能导致的缓冲区丢失，则可能看不到所有的信息。因此，我们一般使用cerr来输出错误信息，当程序崩溃时，由于cerr为无缓冲输出，则不会出现因为缓冲区丢失而导致的信息缺失的情况</li>
-</ul>
-<h1 id="C-typedef的使用场景"><a href="#C-typedef的使用场景" class="headerlink" title="C++ typedef的使用场景"></a>C++ typedef的使用场景</h1><ol>
-<li><strong>定义类型的别名</strong>（区分#define的宏替换）<br>例子：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pStr1;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pStr2 char *;</span></span><br><span class="line">pStr1 s1, s2;		<span class="comment">//s1,s2为char*类型</span></span><br><span class="line">pStr2 s3, s4;		<span class="comment">//s3为char*类型，s4为char类型</span></span><br></pre></td></tr></table></figure>
+<h1 id="c-编译器内存分布"><a href="#c-编译器内存分布" class="headerlink" title="c++编译器内存分布"></a>c++编译器内存分布</h1><p><strong>全局数据区</strong>：分初始化区和未初始化区，存放全局变量(extern)，静态数据(static)<br><strong>常量区</strong>：存放常量(注意：const局部变量存储在栈区)<br><strong>代码区</strong>：函数代码的公共存放区域<br><strong>栈区</strong>：非new方法构造对象，存放对象的数据成员（注意：int main(){…}属于非new构造对象，其数据成员也存放在栈区）<br><strong>堆区</strong>：new方法构造对象，存放对象的数据成员<br><em>Tips：c++每个对象所占用的存储空间只是该对象的数据成员（虚函数指针和虚基类指针也属于数据部分）所占用的存储空间，而函数代码则存放在公共函数代码的存储空间，两者的存储空间互不影响。</em><br><img src="https://i.loli.net/2021/01/17/PWEwueoH97ZONm6.png" alt="c++编译器内存分布"></p>
+<h1 id="创建指针对象-创建引用的区别"><a href="#创建指针对象-创建引用的区别" class="headerlink" title="创建指针对象/创建引用的区别"></a>创建指针对象/创建引用的区别</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;		<span class="comment">//创建指针对象</span></span><br><span class="line"><span class="keyword">int</span> &amp;r = a;		<span class="comment">//创建引用</span></span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<p><em>注意：#define进行的宏替换类似于简单的replace操作，typedef相当于定义新的类型，编译器编译时会将typedef定义的类型认定为新的类型，详情见下方例子</em>：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* pStr;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pStr1 char* ;</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* p1 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">const</span> pStr p2 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">const</span> pStr1 p3 = <span class="string">"hello"</span>;</span><br><span class="line">p1++;<span class="comment">//正常，常量指针是可变的</span></span><br><span class="line">p2++;<span class="comment">//报错，系统将pStr认定为常量的新类型，常量不可修改</span></span><br><span class="line">p3++;<span class="comment">//正常，#define进行的是简单的文本替换，pStr1还是常量指针</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><strong>定义struct结构体别名</strong><br>例子：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPOINT</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">    <span class="keyword">int</span> x;  </span><br><span class="line">    <span class="keyword">int</span> y;  </span><br><span class="line">&#125;POINT;  </span><br><span class="line">POINT p1; 		<span class="comment">//省略了struct</span></span><br></pre></td></tr></table></figure></li>
-<li><strong>定义多平台应用类型</strong><br>例子：<br>定义浮点类型为REAL，只需要修改typedef就可以在多个平台使用REAL来定义浮点类型变量<br>平台一支持long与double类型：typedef long double REAL;<br>平台二支持long类型：typedef long REAL;<br>平台三long与double类型都不支持：typedef float REAL;</li>
-</ol>
-<p><em>注意：typedef跟static和register等存储类关键字一样，所以一行typedef声明中不能出现其他的存储类关键字（编译错误：typedef static int A;）</em><br>4. <strong>简化复杂的变量声明</strong><br>例子：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="keyword">int</span> <span class="title">A</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">char</span> b)</span></span>;	<span class="comment">//定义函数A，包含两个char类型形参，返回int类型值</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:A(fun);	<span class="comment">//函数声明，等价于int fun(char a,char b);</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">X::fun</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">char</span> b)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"succcess"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    X *xx;</span><br><span class="line">	xx-&gt;fun(<span class="string">'a'</span>,<span class="string">'b'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Java与C-的成员和类的默认访问修饰符？"><a href="#Java与C-的成员和类的默认访问修饰符？" class="headerlink" title="Java与C++的成员和类的默认访问修饰符？"></a>Java与C++的成员和类的默认访问修饰符？</h1><ul>
-<li>Java：接口的默认修饰符为public;类的默认修饰符为default（整个包内都可以被访问）</li>
-<li>C++：类的默认修饰符为private（变量或函数在类的外部不可访问），而struct中则是public</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>创建指针对象</th>
+<th>创建引用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内存空间</td>
+<td>编译器为指针分配内存</td>
+<td>编译器器不为引用分配内存，sizeof方法显示为所引用对象的内存</td>
+</tr>
+<tr>
+<td>初始化</td>
+<td>定义时可以不初始化</td>
+<td>必须初始化</td>
+</tr>
+<tr>
+<td>可否为空</td>
+<td>指针可以为空</td>
+<td>引用不可为空</td>
+</tr>
+<tr>
+<td>指向性</td>
+<td>指针可以指向其他对象</td>
+<td>引用一旦创建不可以更改其指向</td>
+</tr>
+</tbody></table>
+<h1 id="指针常量与常量指针"><a href="#指针常量与常量指针" class="headerlink" title="指针常量与常量指针"></a>指针常量与常量指针</h1><table>
+<thead>
+<tr>
+<th>const int i = 1;</th>
+<th align="left">const int *p1 = &i;</th>
+<th>int const *p2 = &i;</th>
+<th>int *const p3 = &i;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整形常量(const int)</td>
+<td align="left">指向常量的指针/*指针常量(pointer to const)</td>
+<td>指向常量的指针/*指针常量(pointer to const)</td>
+<td>*常量指针(const pointer)</td>
+</tr>
+<tr>
+<td>常量为只读状态，其值不可改变</td>
+<td align="left">指针指向的内容为常量，常量不可改变</td>
+<td>指针指向的内容为常量，常量不可改变</td>
+<td>指针自身为常量，始终指向同一个地址（定义时必须初始化）</td>
+</tr>
+<tr>
+<td>const int i = 1;<br> i = 2;<br>//Error,i为只读状态，其值不可改变<br>（error: assignment of read-only variable ‘i’）</td>
+<td align="left">int i =1;<br>int j =2;<br>const int *p1 = &i;<br>i = 100;//OK<br>p1 = &j;//OK<br>*p1 = 100;<br>//Error,*p1为常量，其值不可变<br>（error: assignment of read-only location ‘* p1’）<br>注意：*p1的值不可变指的不可通过*p1=100这种方式改变，可通过类似上方i = 100的方式改变其所指的值。</td>
+<td>int i =1;<br>int j =2;<br>int const *p2 = &i;<br>i = 100;//OK<br>p2 = &j;//OK<br>*p2 = 100;<br>//Error,*p2为常量，其值不可变（error: assignment of read-only location ‘*p2’）<br>注意：*p2的值不可变指的不可通过*p2=100这种方式改变，可通过类似上方i = 100的方式改变其所指的值。</td>
+<td>int i =1;<br>int j =2;<br>int *const p3 = &i;<br>i = 100;//OK<br>p3 = &j;<br>//Error,指针p3为常量，指针p3的地址不可变（error: assignment of read-only variable ‘p3’）<br>*p3 = 100;//OK</td>
+</tr>
+</tbody></table>
+<p><font color='red'> 注意</font>：<strong>指针常量(pointer to const)和常量指针(const pointer)，这两个名词的中文翻译是经常引起争议的地方，而造成争议的地方就在于(const pointer)的中文翻译，详情见下表：</strong></p>
+<table>
+<thead>
+<tr>
+<th>指针常量(pointer to const)和常量指针(const pointer)</th>
+<th>常量指针(pointer to const)和指针常量(const pointer)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>《c++ primer（第五版）中文版》2.4.2指针和const一节中，作者将(pointer to const)翻译为指向常量的指针，将(const pointer)翻译为常量指针，这是目前大家比较认同的翻译。而《c++ primer plus（第六版）中文版》为了避免歧义，作者将(pointer to const)翻译为指向const的指针，将(const pointer)翻译为const指针。</td>
+<td>这种翻译方式来源于我们对常量的普遍翻译，例如(const int)一般我们将其称为整形常量，所以自然而然一部分程序员就会将(const pointer)翻译为指针常量。</td>
+</tr>
+</tbody></table>
 <hr>
 <p><font color='red'> <strong>才学疏浅，欢迎评论指导</strong></font></p>
 
@@ -471,7 +499,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.ink/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/>https://wengjj.ink/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2020/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/>https://wengjj.ink/2020/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/</a></p>
           
         
       </blockquote>
@@ -494,10 +522,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-17T23:44:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T00:15:46+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月17日</p>
+    <p>更新于：2021年1月18日</p>
   </a>
 </div>
 
@@ -519,7 +547,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/&title=C++疑问集 - 挖掘之城&summary=
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2020/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/&title=C++疑问集2-对象与指针 - 挖掘之城&summary=
 2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当今主流程序设计语言中最复杂的一员-维基百科C++词条
 
 丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。"
@@ -534,7 +562,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/&title=C++疑问集 - 挖掘之城&summary=
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2020/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/&title=C++疑问集2-对象与指针 - 挖掘之城&summary=
 2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当今主流程序设计语言中最复杂的一员-维基百科C++词条
 
 丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。"
@@ -551,7 +579,7 @@
         <div class='hoverbox'>
           <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADu0lEQVR42u3aQZLiQAwEQP7/afa+GxOWSjLuYbNvMNjQ2ZcalV9vK1ovBODAgQNngQN3CNwrXP/c8K/3f/rcT997dZ+r33F13dZ+wYEDBw4cOHDgToMrB8AiyNUGut+TXr91H3DgwIEDBw4cuNPh0qB598ar16dBvbxfcODAgQMHDhy4L4VL7zcNztXPgwMHDhw4cODAgesF4G4Q7hbK6UAUHDhw4MCBAwfuW+DSongrsKbgW/f5WJMPDhw4cODAgQO3BNdd08Hm06/j/YIDBw4cOHDgwB0CN13VAFz9YdOgPA28l/cDBw4cOHDgwIE7BC4NiOkgsPp+ehDp4LV8kODAgQMHDhw4cIfBbRfB0w2nxXhahJcPFhw4cODAgQMH7jC46uCwGzRT0OlBjINutckHBw4cOHDgwIF7GK4bKLeK57uK5e4DkeWgDQ4cOHDgwIEDdwhcGkS3NzwtvKtQ6efBgQMHDhw4cOBOg+sOFqfF8HZw3iq0y9eBAwcOHDhw4MAdDleFqQ4KbxssLhfY7QkwOHDgwIEDBw7cQ3DbAbE7+JwW19UD2ArY4MCBAwcOHDhwp8B1A+32+2kBnQ5cqwG6/Z8DOHDgwIEDBw7cw3Dp4LEdJJcC7bRAbxfn4MCBAwcOHDhwh8BtB87qwHB7cFkN2rdPgMGBAwcOHDhw4D4ElxbPWxvrFtrxhpuBPh5kggMHDhw4cODAfQiuC7IVaFOA7sBzWkiXB5ngwIEDBw4cOHAPwaWBs/tDu9d1B5RbBXS5kAYHDhw4cODAgTsMLg2SWwPHu4vrFB4cOHDgwIEDB+4UuLsHhdP7paDdgF8+WHDgwIEDBw4cuEPgtovoLsj079MifK2QBgcOHDhw4MCB+zBcCnZXwNwqqt/NVd4nOHDgwIEDBw7coXDT19Uf+F5e3cI5Lt7BgQMHDhw4cOB+CVw6ENyC7AJMgzs4cODAgQMHDty3wW0V19MBaDeYp2s8yAQHDhw4cODAgbsZbmuA2A3Q0wPZftCxvA9w4MCBAwcOHLhD4LYCYvfv6X27UOuvwYEDBw4cOHDgDoObBt50g1sHtlV4x4U0OHDgwIEDBw7cw3BpoJwW0N3BZnfjW4NQcODAgQMHDhy4/wVua3BZPZitBx7bg0xw4MCBAwcOHLhfCrcF2y2604FsFxwcOHDgwIEDB+50uG4h3S14pwE2Dq7N4vn2BwvBgQMHDhw4cOCW4LYK3GmwTgPv9oGWAzA4cODAgQMHDtxDcFZzwIkAHDhw4Cxw4J5dfwDcpnoAgmIx6wAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADoklEQVR42u3aS27DMAwFwNz/0u2+gBH+VNPGaJfElqVRFg+kPz9GaXwQgAMHDpwBDtwSuE9x/L0/+vlyQRf3fXv+1TxX17X3Cw4cOHDgwIEDtwwuHACbUFXIKNTUQV7eDw4cOHDgwIEDtxSuupBvgTO7kepzuuv/ej04cODAgQMHDtxL4LqFyOkC5bfrwYEDBw4cOHDgwMUWeKpBXQ3Y4MCBAwcOHDhwb4U71SieahBPFURv7+SDAwcOHDhw4MANwWXHdAD978/l/YIDBw4cOHDgwC2BmxrVABpdcLZwGm10p/cJDhw4cODAgQO3BC66wOrCTm0oO0/3hUhw4MCBAwcOHLitcNnGbfX3qQZ1NQB3/xDgwIEDBw4cOHBb4KpBeCqQTgNU5w8fEDhw4MCBAwcO3FK4qUAcvT+78VMN9PCBgQMHDhw4cODALYWrBtFuwK0eQPX51evBgQMHDhw4cOC2wVUDY3WeaMO6erDdgurl9eDAgQMHDhw4cA+BqzZ+pxrS3QZ2NECPB2Bw4MCBAwcOHLjDcNMN32zw7AbvaGGy+qIiOHDgwIEDBw7cVripAuLpgJuFqR4YOHDgwIEDBw7cU+C6gbULU91QNfBmD/qyIQ0OHDhw4MCBA3cz3KkGchekOu/UetqdfHDgwIEDBw4cuJvhTjWsuzDp4JoslIIDBw4cOHDgwD0NLvoi31QBM3tw2fmqhc10IRMcOHDgwIEDB24pXDU4dhvI0XVVQdIFVHDgwIEDBw4cuCVwUwutNozTATQInG1Yh/8w4MCBAwcOHDhwS+CqMFON7O4LhVWgcvAGBw4cOHDgwIFbAlcNvqcax9NBdmo94MCBAwcOHDhwW+G6QTK68FPBufp7utEODhw4cODAgQO3HK468amNRQPs1LrbnXxw4MCBAwcOHLh/gssWFNPBsRmMp+5rHzg4cODAgQMHDtzD4LpBMhwwiy82fg4NcODAgQMHDhy4rXCnAmO20d2dZyqYhwMwOHDgwIEDBw7czXDdYNhtHHeDcRcm/UIlOHDgwIEDBw7cMrhq4O0G3W5juVqQBAcOHDhw4MCBextcdqPRAuMpyOxzugVUcODAgQMHDhy4t8NFN9gtQGYb1WkocODAgQMHDhy4l8JlgaqA3QZ19ntw4MCBAwcOHLinwZ0KslMF0e5BZoM1OHDgwIEDBw7cdrhqA/cUTPZ5UwXQdAAGBw4cOHDgwIG7Cc7IDXDgwIEDZ4ADd/P4BYCf9MtIrirVAAAAAElFTkSuQmCC">
           </div>
         </div>
       
@@ -571,11 +599,16 @@
         
           <div class="prev-next">
             
-            
-              <a class='next' href='/2020/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/'>
-                <p class='title'>C++疑问集2-对象与指针<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+              <a class='prev' href='/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C++疑问集</p>
                 <p class='content'>
 2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/08/30/%E6%95%B0%E6%8D%AE%E7%9F%BF%E5%B7%A5%E5%AD%A6%E4%B9%A0-%E5%85%88%E6%9C%89%E9%B8%A1or%E5%85%88%E6%9C%89%E8%9B%8B%EF%BC%9F%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/'>
+                <p class='title'>数据矿工学习-先有鸡or先有蛋？浅谈数据拆分与特征缩放的顺序问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>前些天在100-Days-Of-ML-Code上回答了一个关于数据拆分与特征缩放的顺序先后的一个issue，感觉挺有争议性的，故单独拎出来做下笔记说明。我的观点是：机器学习工程中，应该先进行数据...</p>
               </a>
             
           </div>
@@ -620,7 +653,7 @@
 
   <script>
     window.subData = {
-      title: 'C++疑问集',
+      title: 'C++疑问集2-对象与指针',
       tools: true
     }
   </script>
@@ -644,7 +677,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#十进制浮点数的二进制存储方式以及转换"><span class="toc-text">十进制浮点数的二进制存储方式以及转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cerr、cout、clog的区别"><span class="toc-text">cerr、cout、clog的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cerr与clog的使用场景"><span class="toc-text">cerr与clog的使用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-typedef的使用场景"><span class="toc-text">C++ typedef的使用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java与C-的成员和类的默认访问修饰符？"><span class="toc-text">Java与C++的成员和类的默认访问修饰符？</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建对象的两方法"><span class="toc-text">创建对象的两方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c-编译器内存分布"><span class="toc-text">c++编译器内存分布</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建指针对象-创建引用的区别"><span class="toc-text">创建指针对象&#x2F;创建引用的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#指针常量与常量指针"><span class="toc-text">指针常量与常量指针</span></a></li></ol>
     </div>
   </section>
 
