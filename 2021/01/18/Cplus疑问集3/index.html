@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>C++疑问集2-对象与指针 - 挖掘之城</title>
+    <title>C++疑问集3-函数模板 - 挖掘之城</title>
   
     <meta name="keywords" content="C++">
   
@@ -316,8 +316,8 @@
         
           
   <h1 class="title">
-    <a href="/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/">
-      C++疑问集2-对象与指针
+    <a href="/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%863/">
+      C++疑问集3-函数模板
     </a>
   </h1>
 
@@ -384,89 +384,100 @@
 <p>丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。</p>
 <a id="more"></a>
 
-<h1 id="创建对象的两方法"><a href="#创建对象的两方法" class="headerlink" title="创建对象的两方法"></a>创建对象的两方法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A a1 = A;		<span class="comment">//在栈上创建一个A类的对象a1</span></span><br></pre></td></tr></table></figure>
-<p>创建对象时在栈上分配用于保存其数据成员的内存空间,其成员函数保存在公共代码区<br>栈的内存分配由操作系统决定，所以函数执行完毕，操作系统会自动释放内存。</p>
-<ul>
-<li>优点：系统自动分配和回收内存，数据存取块</li>
-<li>缺点：栈的最大容量由系统预先设定好的，能获得的空间较小</li>
+<h1 id="静态多态与动态多态的区别？"><a href="#静态多态与动态多态的区别？" class="headerlink" title="静态多态与动态多态的区别？"></a>静态多态与动态多态的区别？</h1><ul>
+<li>编译时多态：通过重载函数或者函数模板实现-静态联编</li>
+<li>运行时多态：通过虚函数实现-动态联编</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A a2 = <span class="keyword">new</span> A();	<span class="comment">//在堆上创建一个A类的对象a2</span></span><br><span class="line"><span class="keyword">delete</span> a2;	<span class="comment">//释放对象a2的内存空间sd</span></span><br></pre></td></tr></table></figure>
-<p>创建对象时在堆上分配用于保存其数据成员的内存空间，其成员函数保存在公共代码区<br>堆的内存分配由使用者决定，所以函数执行完毕，需要使用者手动delete对象</p>
-<ul>
-<li>优点：堆的大小受限与有效的虚拟内存，能获得的空间大</li>
-<li>缺点：由new分配的内存，系统响应速度较慢，容易产生内存碎片，忘记释放内存，容易导致内存泄漏</li>
+<h1 id="函数模板相关问题"><a href="#函数模板相关问题" class="headerlink" title="函数模板相关问题"></a>函数模板相关问题</h1><p><strong>函数模板</strong>：泛型编程思想，通过建立一个通用函数，其函数类型和形参类型可以不用具体指定，调用函数时，系统会根据实参的类型，取代函数模板的类型参数，得到实例化的函数，注意在这之前函数模板未实例化，编译器没有为其生成可执行代码。编译器对模板都是进行二次编译，当编译器第一次遇到模板时进行一次普通的编译，当调用函数模板时进行第二次编译。（与此功能类似的还有类模板）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;	<span class="comment">//C++98之前未添加关键字typename，需要使用class来定义类型</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">(T &amp;a,T &amp;b)</span></span>&#123;</span><br><span class="line"><span class="comment">/*函数实现*/</span></span><br><span class="line">&#125;</span><br><span class="line">......</span><br><span class="line"><span class="keyword">int</span> a,b;	</span><br><span class="line"><span class="keyword">double</span> c,d;</span><br><span class="line">function(a,b);	<span class="comment">//生成void function(int &amp;a,int &amp;b)</span></span><br><span class="line">function(a,d);	<span class="comment">// template parameter 'T' is ambiguous</span></span><br></pre></td></tr></table></figure>
+<h2 id="隐式实例化implicit-instantiation："><a href="#隐式实例化implicit-instantiation：" class="headerlink" title="隐式实例化implicit instantiation："></a>隐式实例化implicit instantiation：</h2><p>例子中调用function(a,b),使得编译器为function函数模板进行模板实参推演，从而生成一个参数类型为int的实例。</p>
+<p><strong>作用：类型让编译器进行判断，好处就是方便可以偷懒。</strong></p>
+<h2 id="显式实例化explicit-instantiation："><a href="#显式实例化explicit-instantiation：" class="headerlink" title="显式实例化explicit instantiation："></a>显式实例化explicit instantiation：</h2><p>(语法格式：template 函数返回类型 函数名 &lt;实例化的类型&gt; (函数形参表); )；<br>例如template void function<int>(int &amp;a,int &amp;b)将function模板实例化为int类型；</p>
+<p>实例化后的模板，编译器为其生成了可执行代码，这样就可以将其打包做成库供他人使用，最常见的例子就是STL标准库。</p>
+<p><strong>作用：提高编译效率，使用模板前，编译器根据显式实例化指定的类型生成模板实例，接下来调用相同参数类型的模板就无需重新生成该类型的代码，一般制作库需要用到显式实例化。（显式实例化声明所在的文件必须存在函数模板的定义）</strong></p>
+<h2 id="显式特化-显式具体化explicit-specialization"><a href="#显式特化-显式具体化explicit-specialization" class="headerlink" title="显式特化/显式具体化explicit specialization:"></a>显式特化/显式具体化explicit specialization:</h2><p>(语法格式：template &lt;&gt; 函数返回类型 函数名 &lt;实例化的类型&gt; (函数形参表) {函数体})；<br>例如template &lt;&gt; void function<int>(int &amp;a,int &amp;b){/<em>函数实现</em>/}将function模板特化为int类型的特化版本；</p>
+<p>特化与实例化最大的不同就是可以对模板函数进行全面的定制，可以增减成员以及成员函数，而显式实例化编译器会自动帮我们完成函数实现部分，因此显式实例化一般只需要声明即可。</p>
+<p><strong>作用：遇到特殊的参数类型（例如结构体），不能使用泛型编程则需要用到显式特化，则需要自己手动来编写模板的函数实现。（特化和实例化功能上是共通的，是从编程习惯上将两者区分开，需要自己定制的函数实现一般就使用显示特化来编写，而显式实例化一般只需要声明而不需要手动编写函数实现）</strong></p>
+<p><font color='red'> <strong>备注：</strong></font></p>
+<ol>
+<li>类模板可以进行偏特化，而函数模板只可以进行全特化，函数模板可以使用重载来实现偏特化相同的功能，但需要注意重载带来的二义性问题。</li>
+<li>模板的声明和定义不能在局部范围或者函数内被执行。</li>
+<li>一个程序不允许同一模板实参集的同一模板既有显式特化又有实例化。</li>
+<li>类模板必须指定模板类型，因为编译器无法根据返回值推导其类型。</li>
+<li>编译器的问题，模板的声明和实现一般都是需要我们写在.hpp文件中。</li>
+</ol>
+<h3 id="程序函数调用顺序优先级（高到低）"><a href="#程序函数调用顺序优先级（高到低）" class="headerlink" title="程序函数调用顺序优先级（高到低）"></a>程序函数调用顺序优先级（高到低）</h3><p>普通函数（包括隐式转换（char类型转为int））&gt; 模板函数实例化\具体化 &gt; 普通模板（注意实例化和具体化两者同时存在时，不同编译其对其rank的控制是不同的，所以编程中一般禁止出现同类型模板的实例化和具体化）</p>
+<h3 id="模板函数调用顺序优先级（高到低）："><a href="#模板函数调用顺序优先级（高到低）：" class="headerlink" title="模板函数调用顺序优先级（高到低）："></a>模板函数调用顺序优先级（高到低）：</h3><p>参数完全匹配&gt;隐式转换（char转为int，float转为double）&gt; *普通转换（int转为char，double转为float）&gt; *用户自定义转换（未亲自实现，来源<a href="https://blog.csdn.net/qq_42128241/article/details/81632910" target="_blank" rel="noopener">https://blog.csdn.net/qq_42128241/article/details/81632910</a> ）</p>
+<h3 id="c-算术表达式隐式转换顺序："><a href="#c-算术表达式隐式转换顺序：" class="headerlink" title="c++算术表达式隐式转换顺序："></a>c++算术表达式隐式转换顺序：</h3><ul>
+<li>char -&gt; int -&gt; long -&gt; double</li>
+<li>float -&gt; double</li>
 </ul>
-<h1 id="c-编译器内存分布"><a href="#c-编译器内存分布" class="headerlink" title="c++编译器内存分布"></a>c++编译器内存分布</h1><p><strong>全局数据区</strong>：分初始化区和未初始化区，存放全局变量(extern)，静态数据(static)<br><strong>常量区</strong>：存放常量(注意：const局部变量存储在栈区)<br><strong>代码区</strong>：函数代码的公共存放区域<br><strong>栈区</strong>：非new方法构造对象，存放对象的数据成员（注意：int main(){…}属于非new构造对象，其数据成员也存放在栈区）<br><strong>堆区</strong>：new方法构造对象，存放对象的数据成员<br><em>Tips：c++每个对象所占用的存储空间只是该对象的数据成员（虚函数指针和虚基类指针也属于数据部分）所占用的存储空间，而函数代码则存放在公共函数代码的存储空间，两者的存储空间互不影响。</em><br><img src="https://i.loli.net/2021/01/17/PWEwueoH97ZONm6.png" alt="c++编译器内存分布"></p>
-<h1 id="创建指针对象-创建引用的区别"><a href="#创建指针对象-创建引用的区别" class="headerlink" title="创建指针对象/创建引用的区别"></a>创建指针对象/创建引用的区别</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;		<span class="comment">//创建指针对象</span></span><br><span class="line"><span class="keyword">int</span> &amp;r = a;		<span class="comment">//创建引用</span></span><br></pre></td></tr></table></figure>
-
-<table>
+<h2 id="存在疑问：显式具体化与普通函数重载的选择？"><a href="#存在疑问：显式具体化与普通函数重载的选择？" class="headerlink" title="存在疑问：显式具体化与普通函数重载的选择？"></a>存在疑问：显式具体化与普通函数重载的选择？</h2><p>个人理解，这两者在功能上的表现基本是一致，为何选择模板函数的显式具体化，个人认为一些库函数都是用模板来编写的，在一些需要将模板进行重载的情况下，就需要使用显式具体化来进行重载，而不是将函数进行重载，举个不恰当的例子，就好像一直用筷子吃饭，送进口中这个操作也可以用叉子完成，但既然拿的是筷子继续使用筷子送入口中。</p>
+<h2 id="存在疑问：为何需要显式具体化-实例化，要的不就是惰性编程？"><a href="#存在疑问：为何需要显式具体化-实例化，要的不就是惰性编程？" class="headerlink" title="存在疑问：为何需要显式具体化/实例化，要的不就是惰性编程？"></a>存在疑问：为何需要显式具体化/实例化，要的不就是惰性编程？</h2><p>模板只有定义的时候，编译器并不会为其生成可执行的二进制代码，这也意味编译器进行连接步骤的时候是寻找不到我们要的模板函数的，所以就需要我们将模板进行实例化/具体化在模板定义的同个文件中，让编译器将我们的模板进行实例化生成可执行代码，这样制作出来的库才可以供给他人使用。</p>
+<h1 id="c-STL准模板库中常见的组件"><a href="#c-STL准模板库中常见的组件" class="headerlink" title="c++STL准模板库中常见的组件"></a>c++STL准模板库中常见的组件</h1><h2 id="序列容器"><a href="#序列容器" class="headerlink" title="序列容器"></a>序列容器</h2><table>
 <thead>
 <tr>
-<th></th>
-<th>创建指针对象</th>
-<th>创建引用</th>
+<th>模板</th>
+<th>含义</th>
+<th>优点</th>
+<th>缺点</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>内存空间</td>
-<td>编译器为指针分配内存</td>
-<td>编译器器不为引用分配内存，sizeof方法显示为所引用对象的内存</td>
+<td>list&lt;T&gt;</td>
+<td>创建一个表示存储T类型对象的双向链表的类</td>
+<td>- 使用的是非连续的内存空间进行存储，提高了内存的利用率 - 可在内部方便的进行插入和删除操作<br> - 可在两端进行push、pop操作</td>
+<td>- 不能进行内部的随机访问，访问内容必须全遍历操作，即不支持[ ]操作符和vector.at()<br> - 相对于verctor占用内存多</td>
 </tr>
 <tr>
-<td>初始化</td>
-<td>定义时可以不初始化</td>
-<td>必须初始化</td>
+<td>vector&lt;T&gt;</td>
+<td>创建一个表示存储T类型对象的动态数组的类</td>
+<td>- 不需要指定内存大小的连续存储，可以对数组进行动态操作<br> - 随机访问方便，即支持[ ]操作符和vector.at() <br>- 相对于list节省了内存空间</td>
+<td>- 由于时连续存储，只能对尾部进行操作，对插入和删除效率低<br> - 只可以在vector的尾部进行pust、pop操作，不允许在头部进行<br> - 动态添加的数据大小超过默认分配大小，需要对整个vector进行内存分配、拷贝和释放</td>
 </tr>
 <tr>
-<td>可否为空</td>
-<td>指针可以为空</td>
-<td>引用不可为空</td>
-</tr>
-<tr>
-<td>指向性</td>
-<td>指针可以指向其他对象</td>
-<td>引用一旦创建不可以更改其指向</td>
+<td>deque&lt;T&gt;</td>
+<td>创建一个表示存储T类型对象的双端队列的类</td>
+<td>- 整合了list和vector的优点，一般面对插入和删除都在头部和尾部的进行时，我们趋向于选择deque</td>
+<td>- 占用内存大</td>
 </tr>
 </tbody></table>
-<h1 id="指针常量与常量指针"><a href="#指针常量与常量指针" class="headerlink" title="指针常量与常量指针"></a>指针常量与常量指针</h1><table>
+<h2 id="容器适配器-基于deque-lt-T-gt-容器实现"><a href="#容器适配器-基于deque-lt-T-gt-容器实现" class="headerlink" title="容器适配器-基于deque&lt;T&gt;容器实现"></a>容器适配器-基于deque&lt;T&gt;容器实现</h2><table>
 <thead>
 <tr>
-<th>const int i = 1;</th>
-<th align="left">const int *p1 = &i;</th>
-<th>int const *p2 = &i;</th>
-<th>int *const p3 = &i;</th>
+<th>模板</th>
+<th>含义</th>
+<th>运行机制</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>整形常量(const int)</td>
-<td align="left">指向常量的指针/*指针常量(pointer to const)</td>
-<td>指向常量的指针/*指针常量(pointer to const)</td>
-<td>*常量指针(const pointer)</td>
+<td>queue&lt;T&gt;</td>
+<td>创建一个表示存储T类型对象的队列的类</td>
+<td>默认情况下基于deque&lt;T&gt;容器实现先进先出机制，queue不提供便利功能，也不提供迭代器，只能尾部增加元素，头部移除元素</td>
 </tr>
 <tr>
-<td>常量为只读状态，其值不可改变</td>
-<td align="left">指针指向的内容为常量，常量不可改变</td>
-<td>指针指向的内容为常量，常量不可改变</td>
-<td>指针自身为常量，始终指向同一个地址（定义时必须初始化）</td>
-</tr>
-<tr>
-<td>const int i = 1;<br> i = 2;<br>//Error,i为只读状态，其值不可改变<br>（error: assignment of read-only variable ‘i’）</td>
-<td align="left">int i =1;<br>int j =2;<br>const int *p1 = &i;<br>i = 100;//OK<br>p1 = &j;//OK<br>*p1 = 100;<br>//Error,*p1为常量，其值不可变<br>（error: assignment of read-only location ‘* p1’）<br>注意：*p1的值不可变指的不可通过*p1=100这种方式改变，可通过类似上方i = 100的方式改变其所指的值。</td>
-<td>int i =1;<br>int j =2;<br>int const *p2 = &i;<br>i = 100;//OK<br>p2 = &j;//OK<br>*p2 = 100;<br>//Error,*p2为常量，其值不可变（error: assignment of read-only location ‘*p2’）<br>注意：*p2的值不可变指的不可通过*p2=100这种方式改变，可通过类似上方i = 100的方式改变其所指的值。</td>
-<td>int i =1;<br>int j =2;<br>int *const p3 = &i;<br>i = 100;//OK<br>p3 = &j;<br>//Error,指针p3为常量，指针p3的地址不可变（error: assignment of read-only variable ‘p3’）<br>*p3 = 100;//OK</td>
+<td>stack&lt;T&gt;</td>
+<td>创建一个表示存储T类型对象的堆栈的类</td>
+<td>默认情况下基于deque&lt;T&gt;容器实现后进先出机制，增删改查只能在尾节点进行</td>
 </tr>
 </tbody></table>
-<p><font color='red'> <strong>注意</font>：指针常量(pointer to const)和常量指针(const pointer)，这两个名词的中文翻译是经常引起争议的地方，而造成争议的地方就在于(const pointer)的中文翻译，详情见下表：</strong></p>
-<table>
+<h2 id="关联容器-基于高效的红黑树实现"><a href="#关联容器-基于高效的红黑树实现" class="headerlink" title="关联容器-基于高效的红黑树实现"></a>关联容器-基于高效的红黑树实现</h2><table>
 <thead>
 <tr>
-<th>指针常量(pointer to const)和常量指针(const pointer)</th>
-<th>常量指针(pointer to const)和指针常量(const pointer)</th>
+<th>模板</th>
+<th>含义</th>
+<th>特性</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>《c++ primer（第五版）中文版》2.4.2指针和const一节中，作者将(pointer to const)翻译为指向常量的指针，将(const pointer)翻译为常量指针，这是目前大家比较认同的翻译。而《c++ primer plus（第六版）中文版》为了避免歧义，作者将(pointer to const)翻译为指向const的指针，将(const pointer)翻译为const指针。</td>
-<td>这种翻译方式来源于我们对常量的普遍翻译，例如(const int)一般我们将其称为整形常量，所以自然而然一部分程序员就会将(const pointer)翻译为指针常量。</td>
+<td>set&lt;T&gt;</td>
+<td>创建一个表示T类型对象的set容器的类</td>
+<td>- 所有元素的只有key没有value，value就是key不允许出现键值重复<br> - 所有的元素都会被自动排序 - 不能通过迭代器来改变set的值，因为set的值就是键</td>
+</tr>
+<tr>
+<td>map&lt;T&gt;</td>
+<td>创建一个表示T类型对象的map容器的类</td>
+<td>- 所有元素都是key+value存在<br> - 不允许键重复所有元素是通过键进行自动排序的<br> - map的键是不能修改的，但是其键对应的值是可以修改的</td>
 </tr>
 </tbody></table>
 <hr>
@@ -499,7 +510,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/>https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/</a></p>
+            <p>本文永久链接是：<a href=https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%863/>https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%863/</a></p>
           
         
       </blockquote>
@@ -522,7 +533,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T00:25:42+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T01:07:27+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月18日</p>
@@ -547,7 +558,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/&title=C++疑问集2-对象与指针 - 挖掘之城&summary=
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%863/&title=C++疑问集3-函数模板 - 挖掘之城&summary=
 2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当今主流程序设计语言中最复杂的一员-维基百科C++词条
 
 丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。"
@@ -562,7 +573,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/&title=C++疑问集2-对象与指针 - 挖掘之城&summary=
+          href="http://service.weibo.com/share/share.php?url=https://wengjj.ink/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%863/&title=C++疑问集3-函数模板 - 挖掘之城&summary=
 2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当今主流程序设计语言中最复杂的一员-维基百科C++词条
 
 丰富的程序库以及本身的语言特性，使得C++在开发效率和运行效率上有着不错平衡，但这同时也增加了学习C++所带来的时间成本，C++疑问集此系列用于记录笔者学习C++路上遇到的问题，对部分易于混淆的知识点加以总结与汇总，以便于读者对C++有更深入的了解。"
@@ -579,7 +590,7 @@
         <div class='hoverbox'>
           <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADoElEQVR42u3aQXIbMQwEwP3/p5N7Ui4TA1CC7OZNKu2K7PVhPNDzx4rWgwAcOHDgLHDglsA94fr3+v++oHn9V/ervv7u/fJ5wYEDBw4cOHDglsEdB8AQ7vS+KWQKXD4vOHDgwIEDBw7cUripwHt6oNP3p/bbvh4cOHDgwIEDB+6HwD3D6zTopgEaHDhw4MCBAwcO3NkBqoG5Czn14MGBAwcOHDhw4D4NLh0Ep8VlFTyFXDfJBwcOHDhw4MCBG4JLC8dPfR2fFxw4cODAgQMHbglcd6XBthpEuzBj5wUHDhw4cODAgVsCd1o4TgXhavGYFpLVgfaxAzhw4MCBAwcO3DK46g8JpwvPtHhMB+UxPDhw4MCBAwcO3BK47oarwLeu697/GB4cOHDgwIEDB24J3K0fEKaFYzeATw3OwYEDBw4cOHDgPgWuWlBWi8PuwHuqSE0/Dw4cOHDgwIEDtx2uGkSnisM0CJ8GWXDgwIEDBw4cuN8Clx64XAyGg+Tu/tIHBA4cOHDgwIEDtx2uW1jeCrbpwauFbPs/B3DgwIEDBw4cuBfBdQfH1QOkBWgahKsF6Jf7AQcOHDhw4MCBWwL3qgOlxWn6wE4Dbvn+4MCBAwcOHDhwS+CqwbH7w71qMJ0eVF8rMsGBAwcOHDhw4F4Ml254OqB2H1x6nnLwBwcOHDhw4MCBWwZ3++C3Csb0++L9gAMHDhw4cODALYNLB83Vg1UPmgbt0wF4dXAODhw4cODAgQO3Da4bGKtA6XW3oMaLTHDgwIEDBw4cuMtw3YB5GqRPQdJBcreoPP48OHDgwIEDBw7cMrhu4TddbKbfn+73OBiDAwcOHDhw4MAtgeuuqQCdgqaBOIYFBw4cOHDgwIFbBjc1CG4HzObgOy1My0UmOHDgwIEDBw7cm+Fuf9H0AHp6X+X9gAMHDhw4cODALYHrDnC7G7oVvKsD83YDDA4cOHDgwIED92a47kC6GmDTgXY6cO7+oYADBw4cOHDgwG2Be8KVBt0pkFsD7G9fgwMHDhw4cODALYNLA28VNA280wVofH5w4MCBAwcOHLilcNVA2S0WqwPutGhNgz04cODAgQMHDtxPhUsDZ7WgvLW/8sAaHDhw4MCBAwful8BNBelq4O4WrteLTHDgwIEDBw4cuGG4tFCsbnzqPtV9pfcBBw4cOHDgwIHbCjc1uJ0aHKfXV+9fDtLgwIEDBw4cOHBL4KziA0IADhw4cBY4cO9dfwFypAEXkFYj+AAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADpUlEQVR42u3aQY4bUQgE0L7/pZN9pKihIDFjvb+z0tOG97MogZ9fTnQeBODAgQPngAN3BO4Jz59///a5+r6/Fjz83rV+wYEDBw4cOHDgjsGVA+BLwW/Pvz2XQqbA7X7BgQMHDhw4cOCOwnUDb7XxbqPp81sBHRw4cODAgQMH7tvhnuXzrwM0OHDgwIEDBw4cuFoD1cXwNEhvXzw4cODAgQMHDtxPg0sXwVsDza3F9PlNPjhw4MCBAwcO3BJcOnD8qZ/jfsGBAwcOHDhw4I7ATU86+OwG0SnMWr/gwIEDBw4cOHBH4NJFcXeAmA4e04FkOkh9dQAHDhw4cODAgTsGt/VF08Vwd/DYDdTjiwcHDhw4cODAgTsCVy0wXVRv/dBw6yKmA09w4MCBAwcOHLgrcNMG00DcXTBPG6/29/oecODAgQMHDhy4Y3BpEE5hthbe00BefR4cOHDgwIEDB+4aXLewrYDZDb7ThTM4cODAgQMHDty3wU0HlGmh00VyeiHTASw4cODAgQMHDtwVuC5ItYCtxlLI7uCzHKTBgQMHDhw4cOCOwFUL7w44p0G0GrDTwWvcFzhw4MCBAwcO3BG47kCyG5BTwOlgNL3Y1/eDAwcOHDhw4MAdgUsHfOnAshtMtxfV64NMcODAgQMHDhy4D8Glg8Nugenz1frSC2j/BwEHDhw4cODAgTsG1238yoBxK5CX6wEHDhw4cODAgTsCtwXRLXh6cdPBa7o4BwcOHDhw4MCBuwaXnuoXdwNvN9BOodqDTHDgwIEDBw4cuA/DbS+Ku4vt7oJ5OmBNgzc4cODAgQMHDtw1uCpIF3AaeKcXlIK+9gcOHDhw4MCBA3cErtt4Ogjcfn4raLdhwYEDBw4cOHDgjsGlPxRMC0sD93TxPV54gwMHDhw4cODAHYGbftF2A+OF8fLgFRw4cODAgQMH7ipcusDtNt799y2o7g8mxxNgcODAgQMHDhy4D8F1TxqU00anC+dxfeDAgQMHDhw4cEfgnvCkC+d0gT0NwGufwYEDBw4cOHDgjsF1A+/W4jkdlG4vpMv9gwMHDhw4cODAHYXrBsrpIntrsZ1eTLtPcODAgQMHDhy4L4GrBs10kb1d33hhDQ4cOHDgwIED96VwVdhukE6Dbfci/tsgExw4cODAgQMHbhkuHSg+4ekulNOLmL4HHDhw4MCBAwfuKtzW4vZfDTanC+u1QA8OHDhw4MCBA3cEzmleEAJw4MCBc8CB++z5DSS/ACYJy/5yAAAAAElFTkSuQmCC">
           </div>
         </div>
       
@@ -599,15 +610,9 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%863/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C++疑问集3-函数模板</p>
-                <p class='content'>
-2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/08/30/Cplus%E7%96%91%E9%97%AE%E9%9B%86/'>
-                <p class='title'>C++疑问集<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+              <a class='next' href='/2021/01/18/Cplus%E7%96%91%E9%97%AE%E9%9B%862/'>
+                <p class='title'>C++疑问集2-对象与指针<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
 2000年至今，由于以Loki、MPL(Boost)等程序库为代表的产生式编程和模板元编程的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当...</p>
               </a>
@@ -654,7 +659,7 @@
 
   <script>
     window.subData = {
-      title: 'C++疑问集2-对象与指针',
+      title: 'C++疑问集3-函数模板',
       tools: true
     }
   </script>
@@ -678,7 +683,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建对象的两方法"><span class="toc-text">创建对象的两方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c-编译器内存分布"><span class="toc-text">c++编译器内存分布</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建指针对象-创建引用的区别"><span class="toc-text">创建指针对象&#x2F;创建引用的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#指针常量与常量指针"><span class="toc-text">指针常量与常量指针</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#静态多态与动态多态的区别？"><span class="toc-text">静态多态与动态多态的区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数模板相关问题"><span class="toc-text">函数模板相关问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#隐式实例化implicit-instantiation："><span class="toc-text">隐式实例化implicit instantiation：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显式实例化explicit-instantiation："><span class="toc-text">显式实例化explicit instantiation：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显式特化-显式具体化explicit-specialization"><span class="toc-text">显式特化&#x2F;显式具体化explicit specialization:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序函数调用顺序优先级（高到低）"><span class="toc-text">程序函数调用顺序优先级（高到低）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板函数调用顺序优先级（高到低）："><span class="toc-text">模板函数调用顺序优先级（高到低）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c-算术表达式隐式转换顺序："><span class="toc-text">c++算术表达式隐式转换顺序：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存在疑问：显式具体化与普通函数重载的选择？"><span class="toc-text">存在疑问：显式具体化与普通函数重载的选择？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存在疑问：为何需要显式具体化-实例化，要的不就是惰性编程？"><span class="toc-text">存在疑问：为何需要显式具体化&#x2F;实例化，要的不就是惰性编程？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c-STL准模板库中常见的组件"><span class="toc-text">c++STL准模板库中常见的组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#序列容器"><span class="toc-text">序列容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器适配器-基于deque-lt-T-gt-容器实现"><span class="toc-text">容器适配器-基于deque&lt;T&gt;容器实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关联容器-基于高效的红黑树实现"><span class="toc-text">关联容器-基于高效的红黑树实现</span></a></li></ol></li></ol>
     </div>
   </section>
 
